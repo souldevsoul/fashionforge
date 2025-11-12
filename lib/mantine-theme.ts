@@ -1,40 +1,40 @@
 import { createTheme, MantineColorsTuple } from '@mantine/core';
 
-// VoiceCraft Brand Colors - Brutalist Black/White/Yellow
-const primaryYellow: MantineColorsTuple = [
-  '#fef9c3',
-  '#fef08a',
-  '#fde047',
-  '#facc15',
-  '#eab308', // Main brand color
-  '#ca8a04',
-  '#a16207',
-  '#854d0e',
-  '#713f12',
-  '#422006',
+// FashionForge Brand Colors - Elegant Purple/Pink/Rose
+const primaryPurple: MantineColorsTuple = [
+  '#f3e8ff',
+  '#e9d5ff',
+  '#d8b4fe',
+  '#c084fc',
+  '#a855f7', // Main brand color
+  '#9333ea',
+  '#7e22ce',
+  '#6b21a8',
+  '#581c87',
+  '#3b0764',
 ];
 
-const secondaryBlack: MantineColorsTuple = [
-  '#f8fafc',
-  '#f1f5f9',
-  '#e2e8f0',
-  '#cbd5e1',
-  '#94a3b8',
-  '#64748b',
-  '#475569',
-  '#334155',
-  '#1e293b',
-  '#0f172a',
+const secondaryPink: MantineColorsTuple = [
+  '#fef1f7',
+  '#fce7f3',
+  '#fbcfe8',
+  '#f9a8d4',
+  '#f472b6',
+  '#ec4899', // Secondary brand color
+  '#db2777',
+  '#be185d',
+  '#9d174d',
+  '#831843',
 ];
 
 export const mantineTheme = createTheme({
-  /** Primary color - Yellow */
-  primaryColor: 'yellow',
+  /** Primary color - Purple */
+  primaryColor: 'purple',
 
   /** Colors */
   colors: {
-    yellow: primaryYellow,
-    dark: secondaryBlack,
+    purple: primaryPurple,
+    pink: secondaryPink,
   },
 
   /** Font family */
@@ -122,8 +122,8 @@ export const mantineTheme = createTheme({
   focusRing: 'auto',
   activeClassName: 'mantine-active',
   defaultGradient: {
-    from: 'yellow',
-    to: 'yellow.6',
+    from: 'purple',
+    to: 'pink',
     deg: 135,
   },
 });

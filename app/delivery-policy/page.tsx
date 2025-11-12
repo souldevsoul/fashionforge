@@ -11,7 +11,7 @@ export default function DeliveryPolicyPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header
-        logoText="VoiceCraft"
+        logoText="FashionForge"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -26,7 +26,7 @@ export default function DeliveryPolicyPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-yellow-400 border-4 border-black mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
               <RiTruckLine className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Delivery Policy</span>
             </div>
@@ -34,7 +34,7 @@ export default function DeliveryPolicyPage() {
               DELIVERY POLICY
             </h1>
             <p className="text-xl text-gray-700 mb-6">
-              VoiceCraft is a digital service platform. Understand how we deliver our services to you.
+              FashionForge is a digital service platform. Understand how we deliver our services to you.
             </p>
             <p className="text-sm font-bold uppercase text-gray-900">
               Last Updated: {lastUpdated}
@@ -50,7 +50,7 @@ export default function DeliveryPolicyPage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiTruckLine className="w-6 h-6 text-yellow-400" />
+                  <RiTruckLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">1. Nature of Service</h2>
               </div>
@@ -59,19 +59,19 @@ export default function DeliveryPolicyPage() {
                 <div className="p-6 bg-white border-4 border-black brutalist-shadow">
                   <h3 className="text-lg font-bold uppercase mb-3">Digital Service Delivery</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    VoiceCraft is a 100% digital service platform. We do not ship physical goods. All services are delivered electronically via our web application and API.
+                    FashionForge is a 100% digital service platform. We do not ship physical goods. All services are delivered electronically via our web application and API.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     There are no shipping addresses, tracking numbers, or physical delivery logistics involved with our service.
                   </p>
                 </div>
 
-                <div className="p-6 bg-yellow-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-4 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">What Gets Delivered</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
-                      <span>Instant access to VoiceCraft web application</span>
+                      <span>Instant access to FashionForge web application</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
@@ -98,7 +98,7 @@ export default function DeliveryPolicyPage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiTimeLine className="w-6 h-6 text-yellow-400" />
+                  <RiTimeLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">2. Delivery Timeframes</h2>
               </div>
@@ -114,7 +114,7 @@ export default function DeliveryPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-yellow-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-4 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Voice Generation</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
@@ -145,7 +145,7 @@ export default function DeliveryPolicyPage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiGlobalLine className="w-6 h-6 text-yellow-400" />
+                  <RiGlobalLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">3. Geographic Availability</h2>
               </div>
@@ -154,14 +154,14 @@ export default function DeliveryPolicyPage() {
                 <div className="p-6 bg-white border-4 border-black brutalist-shadow">
                   <h3 className="text-lg font-bold uppercase mb-3">Global Service</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    VoiceCraft services are available worldwide. You can access our platform from anywhere with an internet connection.
+                    FashionForge services are available worldwide. You can access our platform from anywhere with an internet connection.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     <span className="font-bold">Requirements:</span> Internet connection, modern web browser (Chrome, Firefox, Safari, Edge), valid payment method.
                   </p>
                 </div>
 
-                <div className="p-6 bg-yellow-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-4 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Regional Restrictions</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     Our services may not be available in regions where:
@@ -181,7 +181,7 @@ export default function DeliveryPolicyPage() {
                     </li>
                   </ul>
                   <p className="text-gray-700 leading-relaxed mt-3">
-                    Contact <a href="mailto:support@voicecraft.ai" className="font-bold underline hover:no-underline">support@voicecraft.ai</a> to verify service availability in your region.
+                    Contact <a href="mailto:support@fashionforge.ai" className="font-bold underline hover:no-underline">support@fashionforge.ai</a> to verify service availability in your region.
                   </p>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function DeliveryPolicyPage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiCheckLine className="w-6 h-6 text-yellow-400" />
+                  <RiCheckLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">4. Service Availability & Uptime</h2>
               </div>
@@ -207,7 +207,7 @@ export default function DeliveryPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-yellow-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-4 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Planned Maintenance</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start gap-2">
@@ -220,31 +220,31 @@ export default function DeliveryPolicyPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
-                      <span>Real-time status updates at status.voicecraft.ai</span>
+                      <span>Real-time status updates at status.fashionforge.ai</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                  <h3 className="text-lg font-bold uppercase mb-3 text-yellow-400">Unplanned Outages</h3>
+                  <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">Unplanned Outages</h3>
                   <p className="leading-relaxed mb-3">
                     In rare cases of unplanned service interruption:
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <span className="text-yellow-400 font-bold">•</span>
+                      <span className="text-purple-400 font-bold">•</span>
                       <span>Immediate notification via status page and email</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-yellow-400 font-bold">•</span>
+                      <span className="text-purple-400 font-bold">•</span>
                       <span>Transparent ETAs for service restoration</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-yellow-400 font-bold">•</span>
+                      <span className="text-purple-400 font-bold">•</span>
                       <span>Post-incident reports for major outages</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-yellow-400 font-bold">•</span>
+                      <span className="text-purple-400 font-bold">•</span>
                       <span>Potential service credits for extended downtime (see Refund Policy)</span>
                     </li>
                   </ul>
@@ -254,7 +254,7 @@ export default function DeliveryPolicyPage() {
 
             {/* Enterprise Delivery */}
             <div>
-              <div className="p-8 bg-yellow-400 border-4 border-black brutalist-shadow">
+              <div className="p-8 bg-purple-400 border-4 border-black brutalist-shadow">
                 <h2 className="text-2xl font-bold uppercase mb-4">ENTERPRISE CUSTOMERS</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   <span className="font-bold">Custom Delivery Options:</span> Enterprise customers may have custom service delivery terms including:
@@ -278,7 +278,7 @@ export default function DeliveryPolicyPage() {
                   </li>
                 </ul>
                 <p className="text-gray-900 leading-relaxed mt-4">
-                  Contact: <a href="mailto:enterprise@voicecraft.ai" className="underline hover:no-underline font-bold">enterprise@voicecraft.ai</a>
+                  Contact: <a href="mailto:enterprise@fashionforge.ai" className="underline hover:no-underline font-bold">enterprise@fashionforge.ai</a>
                 </p>
               </div>
             </div>
@@ -286,7 +286,7 @@ export default function DeliveryPolicyPage() {
             {/* Failed Delivery */}
             <div>
               <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                <h2 className="text-2xl font-bold uppercase mb-4 text-yellow-400">
+                <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   IF SERVICE DELIVERY FAILS
                 </h2>
                 <p className="leading-relaxed mb-4">
@@ -294,24 +294,24 @@ export default function DeliveryPolicyPage() {
                 </p>
                 <ol className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <span className="font-bold text-yellow-400">1.</span>
+                    <span className="font-bold text-purple-400">1.</span>
                     <span>Check your email for payment confirmation and account activation</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="font-bold text-yellow-400">2.</span>
+                    <span className="font-bold text-purple-400">2.</span>
                     <span>Verify your internet connection and browser compatibility</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="font-bold text-yellow-400">3.</span>
+                    <span className="font-bold text-purple-400">3.</span>
                     <span>Clear browser cache and cookies, then try logging in again</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="font-bold text-yellow-400">4.</span>
-                    <span>Check status.voicecraft.ai for any ongoing service issues</span>
+                    <span className="font-bold text-purple-400">4.</span>
+                    <span>Check status.fashionforge.ai for any ongoing service issues</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="font-bold text-yellow-400">5.</span>
-                    <span>Contact support@voicecraft.ai immediately - we'll resolve within 24 hours</span>
+                    <span className="font-bold text-purple-400">5.</span>
+                    <span>Contact support@fashionforge.ai immediately - we'll resolve within 24 hours</span>
                   </li>
                 </ol>
               </div>
@@ -327,8 +327,8 @@ export default function DeliveryPolicyPage() {
                 <div className="space-y-2">
                   <p>
                     <span className="font-bold">Email:</span>{" "}
-                    <a href="mailto:support@voicecraft.ai" className="underline hover:no-underline">
-                      support@voicecraft.ai
+                    <a href="mailto:support@fashionforge.ai" className="underline hover:no-underline">
+                      support@fashionforge.ai
                     </a>
                   </p>
                   <p>
@@ -339,8 +339,8 @@ export default function DeliveryPolicyPage() {
                   </p>
                   <p>
                     <span className="font-bold">Status Page:</span>{" "}
-                    <a href="https://status.voicecraft.ai" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">
-                      status.voicecraft.ai
+                    <a href="https://status.fashionforge.ai" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">
+                      status.fashionforge.ai
                     </a>
                   </p>
                 </div>

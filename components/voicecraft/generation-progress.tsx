@@ -46,8 +46,8 @@ const GenerationProgress = React.forwardRef<HTMLDivElement, GenerationProgressPr
         case "processing":
           return {
             icon: Loader2,
-            color: "text-yellow-400",
-            bgColor: "bg-yellow-400",
+            color: "text-purple-400",
+            bgColor: "bg-purple-400",
             label: "Processing",
             animate: true,
           }
@@ -163,14 +163,14 @@ const GenerationProgress = React.forwardRef<HTMLDivElement, GenerationProgressPr
                     {step.progress !== undefined && step.status === "processing" && (
                       <div className="mt-1 h-1 bg-slate-200 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-yellow-400 transition-all duration-300"
+                          className="h-full bg-purple-400 transition-all duration-300"
                           style={{ width: `${step.progress}%` }}
                         />
                       </div>
                     )}
                   </div>
                   {step.status === "completed" && (
-                    <div className="text-xs text-emerald-600 font-medium">
+                    <div className="text-xs text-purple-600 font-medium">
                       Done
                     </div>
                   )}

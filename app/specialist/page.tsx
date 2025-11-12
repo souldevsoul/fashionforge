@@ -109,54 +109,54 @@ export default function SpecialistDashboard() {
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {/* Active Projects */}
-        <Card variant="outlined" className="border-4 border-blue-500 bg-blue-50">
+        <Card variant="outlined" className="border-4 border-pink-500 bg-pink-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-blue-900">
+            <CardTitle className="text-sm font-bold uppercase text-rose-900">
               ACTIVE PROJECTS
             </CardTitle>
-            <RiFolder3Line className="h-6 w-6 text-blue-600" />
+            <RiFolder3Line className="h-6 w-6 text-pink-600" />
           </CardHeader>
           <CardContent>
-            <Heading as="h2" className="text-3xl font-bold text-blue-900">
+            <Heading as="h2" className="text-3xl font-bold text-rose-900">
               {stats.activeProjects}
             </Heading>
-            <Text variant="caption" className="mt-2 text-xs text-blue-800">
+            <Text variant="caption" className="mt-2 text-xs text-rose-800">
               Currently in progress
             </Text>
           </CardContent>
         </Card>
 
         {/* Completed Projects */}
-        <Card variant="outlined" className="border-4 border-green-500 bg-green-50">
+        <Card variant="outlined" className="border-4 border-purple-500 bg-purple-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-green-900">
+            <CardTitle className="text-sm font-bold uppercase text-purple-900">
               COMPLETED
             </CardTitle>
-            <RiCheckboxCircleLine className="h-6 w-6 text-green-600" />
+            <RiCheckboxCircleLine className="h-6 w-6 text-purple-600" />
           </CardHeader>
           <CardContent>
-            <Heading as="h2" className="text-3xl font-bold text-green-900">
+            <Heading as="h2" className="text-3xl font-bold text-purple-900">
               {stats.completedProjects}
             </Heading>
-            <Text variant="caption" className="mt-2 text-xs text-green-800">
+            <Text variant="caption" className="mt-2 text-xs text-purple-800">
               Total finished projects
             </Text>
           </CardContent>
         </Card>
 
         {/* Total Earnings */}
-        <Card variant="outlined" className="border-4 border-yellow-500 bg-yellow-50">
+        <Card variant="outlined" className="border-4 border-purple-500 bg-purple-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-yellow-900">
+            <CardTitle className="text-sm font-bold uppercase text-purple-900">
               TOTAL EARNINGS
             </CardTitle>
-            <RiMoneyDollarCircleLine className="h-6 w-6 text-yellow-600" />
+            <RiMoneyDollarCircleLine className="h-6 w-6 text-purple-600" />
           </CardHeader>
           <CardContent>
-            <Heading as="h2" className="text-3xl font-bold text-yellow-900">
+            <Heading as="h2" className="text-3xl font-bold text-purple-900">
               ${stats.totalEarnings.toLocaleString()}
             </Heading>
-            <Text variant="caption" className="mt-2 text-xs text-yellow-800">
+            <Text variant="caption" className="mt-2 text-xs text-purple-800">
               Lifetime earnings
             </Text>
           </CardContent>

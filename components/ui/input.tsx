@@ -30,9 +30,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     // Success styling
     const successStyles = variant === 'success' ? {
       input: {
-        borderColor: 'var(--mantine-color-emerald-5)',
+        borderColor: 'var(--mantine-color-purple-5)',
         '&:focus': {
-          borderColor: 'var(--mantine-color-emerald-6)',
+          borderColor: 'var(--mantine-color-purple-6)',
         },
       },
     } : {}
@@ -89,9 +89,9 @@ const TextareaInput = React.forwardRef<HTMLTextAreaElement, TextareaInputProps>(
     // Success styling
     const successStyles = variant === 'success' ? {
       input: {
-        borderColor: 'var(--mantine-color-emerald-5)',
+        borderColor: 'var(--mantine-color-purple-5)',
         '&:focus': {
-          borderColor: 'var(--mantine-color-emerald-6)',
+          borderColor: 'var(--mantine-color-purple-6)',
         },
       },
     } : {}

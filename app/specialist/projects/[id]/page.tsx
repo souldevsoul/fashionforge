@@ -261,10 +261,10 @@ export default function SpecialistProjectDetailPage({
 
       {/* Submitted Work - For in_review and completed */}
       {(project.status === "in_review" || project.status === "completed") && project.submittedAt && (
-        <Card variant="outlined" className="border-4 border-cyan-500 bg-cyan-50">
+        <Card variant="outlined" className="border-4 border-rose-500 bg-rose-50">
           <CardHeader>
-            <CardTitle className="text-cyan-900">SUBMITTED WORK</CardTitle>
-            <Text variant="caption" className="text-xs text-cyan-800">
+            <CardTitle className="text-rose-900">SUBMITTED WORK</CardTitle>
+            <Text variant="caption" className="text-xs text-rose-800">
               Submitted on {new Date(project.submittedAt).toLocaleDateString()}
             </Text>
           </CardHeader>
@@ -305,22 +305,22 @@ export default function SpecialistProjectDetailPage({
             </div>
 
             {project.status === "in_review" && (
-              <div className="rounded-md border-2 border-cyan-500 bg-cyan-100 p-4">
-                <Text variant="body" className="font-bold text-cyan-900">
+              <div className="rounded-md border-2 border-rose-500 bg-rose-100 p-4">
+                <Text variant="body" className="font-bold text-rose-900">
                   ⏳ Waiting for client review
                 </Text>
-                <Text variant="caption" className="mt-1 text-xs text-cyan-800">
+                <Text variant="caption" className="mt-1 text-xs text-rose-800">
                   The client will review your work and either approve it or request changes.
                 </Text>
               </div>
             )}
 
             {project.status === "completed" && (
-              <div className="rounded-md border-2 border-green-500 bg-green-100 p-4">
-                <Text variant="body" className="font-bold text-green-900">
+              <div className="rounded-md border-2 border-purple-500 bg-purple-100 p-4">
+                <Text variant="body" className="font-bold text-purple-900">
                   ✅ Project completed successfully!
                 </Text>
-                <Text variant="caption" className="mt-1 text-xs text-green-800">
+                <Text variant="caption" className="mt-1 text-xs text-purple-800">
                   The client has approved your work. Payment has been processed.
                 </Text>
               </div>

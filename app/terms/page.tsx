@@ -21,10 +21,10 @@ export default function TermsPage() {
       icon: RiCheckLine,
       content: [
         {
-          text: "By accessing or using VoiceCraft ('Service', 'Platform', 'we', 'us', 'our'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, you may not access or use the Service.",
+          text: "By accessing or using FashionForge ('Service', 'Platform', 'we', 'us', 'our'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, you may not access or use the Service.",
         },
         {
-          text: "These Terms constitute a legally binding agreement between you (whether personally or on behalf of an entity) and VoiceCraft, Inc. If you are using the Service on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.",
+          text: "These Terms constitute a legally binding agreement between you (whether personally or on behalf of an entity) and FashionForge, Inc. If you are using the Service on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.",
         },
         {
           text: "We reserve the right to modify these Terms at any time. We will notify you of material changes via email or through the Service. Your continued use of the Service after such modifications constitutes your acceptance of the updated Terms.",
@@ -37,7 +37,7 @@ export default function TermsPage() {
       content: [
         {
           subtitle: "Account Creation",
-          text: "To use VoiceCraft, you must create an account by providing accurate, complete, and current information. You must be at least 13 years old (or 16 in the EU) to create an account. You are responsible for maintaining the confidentiality of your account credentials.",
+          text: "To use FashionForge, you must create an account by providing accurate, complete, and current information. You must be at least 13 years old (or 16 in the EU) to create an account. You are responsible for maintaining the confidentiality of your account credentials.",
         },
         {
           subtitle: "Account Security",
@@ -105,7 +105,7 @@ export default function TermsPage() {
       content: [
         {
           subtitle: "Our IP",
-          text: "VoiceCraft, including all software, algorithms, designs, trademarks, logos, and content, is owned by VoiceCraft, Inc. and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.",
+          text: "FashionForge, including all software, algorithms, designs, trademarks, logos, and content, is owned by FashionForge, Inc. and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.",
         },
         {
           subtitle: "Your Content",
@@ -145,7 +145,7 @@ export default function TermsPage() {
       content: [
         {
           subtitle: "Subscription Plans",
-          text: "VoiceCraft offers free and paid subscription plans. Paid plans are billed monthly or annually in advance. Prices are listed on our Pricing page and may change with 30 days' notice to existing subscribers.",
+          text: "FashionForge offers free and paid subscription plans. Paid plans are billed monthly or annually in advance. Prices are listed on our Pricing page and may change with 30 days' notice to existing subscribers.",
         },
         {
           subtitle: "Payment Processing",
@@ -204,7 +204,7 @@ export default function TermsPage() {
       title: "10. Limitation of Liability",
       content: [
         {
-          text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, VOICECRAFT SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR USE, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM YOUR USE OF THE SERVICE.",
+          text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, FASHIONFORGE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR USE, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM YOUR USE OF THE SERVICE.",
         },
         {
           text: "OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATED TO THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM, OR $100 IF YOU HAVE NOT PAID US ANYTHING.",
@@ -218,7 +218,7 @@ export default function TermsPage() {
       title: "11. Indemnification",
       content: [
         {
-          text: "You agree to indemnify, defend, and hold harmless VoiceCraft, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:",
+          text: "You agree to indemnify, defend, and hold harmless FashionForge, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:",
         },
         {
           text: "Your use of the Service; your content or generated audio; your violation of these Terms; your violation of any rights of third parties; your violation of applicable laws or regulations.",
@@ -241,7 +241,7 @@ export default function TermsPage() {
         },
         {
           subtitle: "Class Action Waiver",
-          text: "You agree that any arbitration or court proceeding shall be limited to the dispute between you and VoiceCraft individually. You waive the right to participate in class actions, class arbitrations, or representative actions.",
+          text: "You agree that any arbitration or court proceeding shall be limited to the dispute between you and FashionForge individually. You waive the right to participate in class actions, class arbitrations, or representative actions.",
         },
         {
           subtitle: "Exceptions",
@@ -255,7 +255,7 @@ export default function TermsPage() {
     <main className="min-h-screen bg-white">
       {/* Header */}
       <Header
-        logoText="VoiceCraft"
+        logoText="FashionForge"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -271,7 +271,7 @@ export default function TermsPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-yellow-400 border-4 border-black mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
               <RiFileTextLine className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Terms of Service</span>
             </div>
@@ -279,7 +279,7 @@ export default function TermsPage() {
               TERMS & CONDITIONS
             </h1>
             <p className="text-xl text-gray-700 mb-6">
-              These Terms of Service govern your use of VoiceCraft. Please read them carefully before using our platform.
+              These Terms of Service govern your use of FashionForge. Please read them carefully before using our platform.
             </p>
             <p className="text-sm font-bold uppercase text-gray-900">
               Last Updated: {lastUpdated}
@@ -289,10 +289,10 @@ export default function TermsPage() {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-16 bg-black border-b-8 border-yellow-400">
+      <section className="py-16 bg-black border-b-8 border-purple-400">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold uppercase mb-8 text-yellow-400">
+            <h2 className="text-3xl font-bold uppercase mb-8 text-purple-400">
               THE KEY POINTS
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -348,7 +348,7 @@ export default function TermsPage() {
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-yellow-400" />
+                        <Icon className="w-6 h-6 text-purple-400" />
                       </div>
                       <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
                     </div>
@@ -359,7 +359,7 @@ export default function TermsPage() {
                       <div
                         key={itemIndex}
                         className={`p-6 border-4 border-black ${
-                          itemIndex % 2 === 0 ? "bg-white brutalist-shadow" : "bg-yellow-50"
+                          itemIndex % 2 === 0 ? "bg-white brutalist-shadow" : "bg-purple-50"
                         }`}
                       >
                         {('subtitle' in item) && item.subtitle && (
@@ -379,7 +379,7 @@ export default function TermsPage() {
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                      <RiScalesLine className="w-6 h-6 text-yellow-400" />
+                      <RiScalesLine className="w-6 h-6 text-purple-400" />
                     </div>
                     <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
                   </div>
@@ -389,7 +389,7 @@ export default function TermsPage() {
                   {section.content.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="p-6 bg-yellow-50 border-4 border-black"
+                      className="p-6 bg-purple-50 border-4 border-black"
                     >
                       {('subtitle' in item) && item.subtitle && (
                         <h3 className="text-lg font-bold uppercase mb-3">{item.subtitle}</h3>
@@ -406,7 +406,7 @@ export default function TermsPage() {
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                    <RiFileTextLine className="w-6 h-6 text-yellow-400" />
+                    <RiFileTextLine className="w-6 h-6 text-purple-400" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">13. Miscellaneous</h2>
                 </div>
@@ -416,11 +416,11 @@ export default function TermsPage() {
                 <div className="p-6 bg-white border-4 border-black brutalist-shadow">
                   <h3 className="text-lg font-bold uppercase mb-3">Entire Agreement</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and VoiceCraft regarding the Service. They supersede all prior agreements and understandings.
+                    These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and FashionForge regarding the Service. They supersede all prior agreements and understandings.
                   </p>
                 </div>
 
-                <div className="p-6 bg-yellow-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-4 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Severability</h3>
                   <p className="text-gray-700 leading-relaxed">
                     If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
@@ -434,7 +434,7 @@ export default function TermsPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-yellow-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-4 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Assignment</h3>
                   <p className="text-gray-700 leading-relaxed">
                     You may not assign or transfer these Terms or your rights and obligations hereunder without our prior written consent. We may assign these Terms to any affiliate or in connection with a merger, acquisition, or sale of assets.
@@ -454,13 +454,13 @@ export default function TermsPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black border-t-8 border-yellow-400">
+      <section className="py-24 bg-black border-t-8 border-purple-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-20 h-20 bg-yellow-400 border-4 border-yellow-400 flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 bg-purple-400 border-4 border-purple-400 flex items-center justify-center mx-auto mb-6">
               <RiMailLine className="w-10 h-10 text-black" />
             </div>
-            <h2 className="text-4xl font-bold uppercase mb-6 text-yellow-400">
+            <h2 className="text-4xl font-bold uppercase mb-6 text-purple-400">
               QUESTIONS ABOUT THESE TERMS?
             </h2>
             <p className="text-xl text-white mb-8">
@@ -474,27 +474,27 @@ export default function TermsPage() {
                   <span className="font-bold uppercase text-sm">Email:</span>
                   <br />
                   <a
-                    href="mailto:legal@voicecraft.ai"
+                    href="mailto:legal@fashionforge.ai"
                     className="text-lg font-bold text-black underline hover:no-underline"
                   >
-                    legal@voicecraft.ai
+                    legal@fashionforge.ai
                   </a>
                 </div>
                 <div>
                   <span className="font-bold uppercase text-sm">Support:</span>
                   <br />
                   <a
-                    href="mailto:support@voicecraft.ai"
+                    href="mailto:support@fashionforge.ai"
                     className="text-lg font-bold text-black underline hover:no-underline"
                   >
-                    support@voicecraft.ai
+                    support@fashionforge.ai
                   </a>
                 </div>
                 <div>
                   <span className="font-bold uppercase text-sm">Mailing Address:</span>
                   <br />
                   <address className="text-gray-700 not-italic">
-                    VoiceCraft, Inc.
+                    FashionForge, Inc.
                     <br />
                     123 Voice Street, Suite 100
                     <br />
@@ -507,7 +507,7 @@ export default function TermsPage() {
 
               <div className="mt-6 pt-6 border-t-4 border-black">
                 <p className="text-sm text-gray-600">
-                  By using VoiceCraft, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+                  By using FashionForge, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
                 </p>
               </div>
             </div>

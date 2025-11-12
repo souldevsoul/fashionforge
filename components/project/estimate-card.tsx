@@ -89,7 +89,7 @@ export function EstimateCard({
         <Card variant="outlined" className="border-4 border-black">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <RiMoneyDollarCircleLine className="h-6 w-6 text-yellow-400" />
+              <RiMoneyDollarCircleLine className="h-6 w-6 text-purple-400" />
               AI ESTIMATION
             </CardTitle>
             <CardDescription>
@@ -144,7 +144,7 @@ export function EstimateCard({
               <AlertDialogAction
                 onClick={handleGetEstimate}
                 disabled={requestText.length < 10 || requestText.length > 5000 || loading}
-                className="bg-yellow-400 text-black border-4 border-black hover:bg-yellow-500"
+                className="bg-purple-400 text-black border-4 border-black hover:bg-purple-500"
               >
                 {loading ? "ESTIMATING..." : "GET ESTIMATE"}
               </AlertDialogAction>
@@ -237,7 +237,7 @@ export function EstimateCard({
                   <ul className="space-y-2 rounded-md border-4 border-black bg-white p-4">
                     {estimate.assumptions.map((assumption, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <RiCheckLine className="h-4 w-4 flex-shrink-0 text-green-600" />
+                        <RiCheckLine className="h-4 w-4 flex-shrink-0 text-purple-600" />
                         <Text variant="body" className="text-sm">
                           {assumption}
                         </Text>
@@ -334,40 +334,40 @@ export function EstimateCard({
   // Accepted: Show confirmed estimate
   if (status === "accepted" && estimate) {
     return (
-      <Card variant="outlined" className="border-4 border-green-500 bg-green-50">
+      <Card variant="outlined" className="border-4 border-purple-500 bg-purple-50">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-green-900">
-            <RiCheckLine className="h-6 w-6 text-green-600" />
+          <CardTitle className="flex items-center gap-2 text-purple-900">
+            <RiCheckLine className="h-6 w-6 text-purple-600" />
             ESTIMATE ACCEPTED
           </CardTitle>
-          <CardDescription className="text-green-800">
+          <CardDescription className="text-purple-800">
             Credits reserved • Waiting for expert assignment
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Text variant="caption" className="text-xs font-bold uppercase text-green-700">
+              <Text variant="caption" className="text-xs font-bold uppercase text-purple-700">
                 COST
               </Text>
-              <Heading variant="h3" className="font-bold text-green-900">
+              <Heading variant="h3" className="font-bold text-purple-900">
                 ${estimate.estimatedCost.toFixed(2)}
               </Heading>
             </div>
             <div>
-              <Text variant="caption" className="text-xs font-bold uppercase text-green-700">
+              <Text variant="caption" className="text-xs font-bold uppercase text-purple-700">
                 DURATION
               </Text>
-              <Heading variant="h3" className="font-bold text-green-900">
+              <Heading variant="h3" className="font-bold text-purple-900">
                 {estimate.estimatedDuration}h
               </Heading>
             </div>
           </div>
-          <div className="rounded-md border-2 border-green-600 bg-white p-3">
-            <Text variant="caption" className="text-xs font-bold uppercase text-green-700">
+          <div className="rounded-md border-2 border-purple-600 bg-white p-3">
+            <Text variant="caption" className="text-xs font-bold uppercase text-purple-700">
               CREDITS RESERVED
             </Text>
-            <Text variant="body" className="mt-1 font-bold text-green-900">
+            <Text variant="body" className="mt-1 font-bold text-purple-900">
               {creditsNeeded.toLocaleString()} credits
             </Text>
           </div>

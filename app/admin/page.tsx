@@ -122,37 +122,37 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Total Users */}
-        <Card variant="outlined" className="border-4 border-blue-500 bg-blue-50">
+        <Card variant="outlined" className="border-4 border-pink-500 bg-pink-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-blue-900">
+            <CardTitle className="text-sm font-bold uppercase text-rose-900">
               TOTAL USERS
             </CardTitle>
-            <RiUserLine className="h-6 w-6 text-blue-600" />
+            <RiUserLine className="h-6 w-6 text-pink-600" />
           </CardHeader>
           <CardContent>
-            <h2 className="text-3xl font-bold text-blue-900">
+            <h2 className="text-3xl font-bold text-rose-900">
               {stats.totalUsers}
             </h2>
-            <Text variant="caption" className="mt-2 text-xs text-blue-800">
+            <Text variant="caption" className="mt-2 text-xs text-rose-800">
               Registered clients
             </Text>
           </CardContent>
         </Card>
 
         {/* Specialists */}
-        <Card variant="outlined" className="border-4 border-cyan-500 bg-cyan-50">
+        <Card variant="outlined" className="border-4 border-rose-500 bg-rose-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-cyan-900">
+            <CardTitle className="text-sm font-bold uppercase text-rose-900">
               SPECIALISTS
             </CardTitle>
-            <RiTeamLine className="h-6 w-6 text-cyan-600" />
+            <RiTeamLine className="h-6 w-6 text-rose-600" />
           </CardHeader>
           <CardContent>
-            <h2 className="text-3xl font-bold text-cyan-900">
+            <h2 className="text-3xl font-bold text-rose-900">
               {stats.totalSpecialists}
             </h2>
             <div className="mt-2 flex items-center gap-2">
-              <Text variant="caption" className="text-xs text-cyan-800">
+              <Text variant="caption" className="text-xs text-rose-800">
                 {stats.pendingSpecialists} pending approval
               </Text>
             </div>
@@ -160,18 +160,18 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Total Revenue */}
-        <Card variant="outlined" className="border-4 border-green-500 bg-green-50">
+        <Card variant="outlined" className="border-4 border-purple-500 bg-purple-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-green-900">
+            <CardTitle className="text-sm font-bold uppercase text-purple-900">
               TOTAL REVENUE
             </CardTitle>
-            <RiMoneyDollarCircleLine className="h-6 w-6 text-green-600" />
+            <RiMoneyDollarCircleLine className="h-6 w-6 text-purple-600" />
           </CardHeader>
           <CardContent>
-            <Heading as="h2" className="text-3xl font-bold text-green-900">
+            <Heading as="h2" className="text-3xl font-bold text-purple-900">
               ${stats.totalRevenue.toLocaleString()}
             </Heading>
-            <Text variant="caption" className="mt-2 text-xs text-green-800">
+            <Text variant="caption" className="mt-2 text-xs text-purple-800">
               ${stats.monthlyRevenue.toLocaleString()} this month
             </Text>
           </CardContent>
@@ -206,7 +206,7 @@ export default function AdminDashboard() {
 
           <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiUserLine className="h-12 w-12 text-blue-600" />
+              <RiUserLine className="h-12 w-12 text-pink-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 MANAGE USERS
               </h3>
@@ -226,7 +226,7 @@ export default function AdminDashboard() {
 
           <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiTeamLine className="h-12 w-12 text-cyan-600" />
+              <RiTeamLine className="h-12 w-12 text-rose-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 MANAGE SPECIALISTS
               </h3>
@@ -246,7 +246,7 @@ export default function AdminDashboard() {
 
           <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiMoneyDollarCircleLine className="h-12 w-12 text-green-600" />
+              <RiMoneyDollarCircleLine className="h-12 w-12 text-purple-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 FINANCIALS
               </h3>

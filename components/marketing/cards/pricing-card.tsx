@@ -43,7 +43,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
       <div className="relative">
         {popular && (
           <div className="absolute -top-4 left-0 right-0 flex justify-center z-10">
-            <span className="bg-yellow-400 text-black text-sm font-bold px-4 py-1 border-2 border-black uppercase">
+            <span className="bg-purple-400 text-black text-sm font-bold px-4 py-1 border-2 border-black uppercase">
               Most Popular
             </span>
           </div>
@@ -55,7 +55,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
           hover="glow"
           className={cn(
             "h-full relative",
-            popular && "border-2 border-yellow-400",
+            popular && "border-2 border-purple-400",
             className
           )}
           {...props}
@@ -95,7 +95,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
                   <Check className={cn(
                     "w-5 h-5 mt-0.5 flex-shrink-0",
                     feature.included
-                      ? isPremium ? "text-white" : "text-emerald-500"
+                      ? isPremium ? "text-white" : "text-purple-500"
                       : "text-slate-300"
                   )} />
                   <span className={cn(

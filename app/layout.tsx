@@ -21,7 +21,7 @@ const inter = Inter({
 // Font will be loaded through globals.css
 
 export const metadata: Metadata = {
-  title: "VoiceCraft - AI-Powered Voice Synthesis",
+  title: "FashionForge - AI-Powered Voice Synthesis",
   description: "Create professional voice content in seconds with AI-powered voice synthesis and cloning.",
 };
 

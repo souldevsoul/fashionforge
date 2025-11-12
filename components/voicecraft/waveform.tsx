@@ -17,9 +17,9 @@ const Waveform = React.forwardRef<HTMLDivElement, WaveformProps>(
     }, [bars])
 
     const colorClasses = {
-      primary: "bg-yellow-400",
+      primary: "bg-purple-400",
       secondary: "bg-black",
-      success: "bg-emerald-500",
+      success: "bg-purple-500",
     }
 
     const sizeClasses = {
