@@ -3,17 +3,16 @@
 import * as React from "react"
 import Image from "next/image"
 import { Button, Heading, Text } from "@/components/ui"
-import { Waveform, AudioPlayer } from "@/components/voicecraft"
 import { Footer } from "@/components/marketing/layout/footer"
 import { NewsletterPopup } from "@/components/marketing/NewsletterPopup"
 import {
   RiSparklingLine,
-  RiMicLine,
-  RiMic2Fill,
+  RiPaintBrushLine,
+  RiPaletteLine,
   RiFlashlightLine,
   RiShieldCheckLine,
   RiGlobalLine,
-  RiHeadphoneLine,
+  RiShirtLine,
   RiArrowRightLine,
   RiPlayCircleLine,
   RiCheckLine,
@@ -21,7 +20,7 @@ import {
   RiStarFill,
   RiLineChartLine,
   RiUserLine,
-  RiAwardLine,
+  RiImageEditLine,
   RiTimerLine,
 } from "react-icons/ri"
 
@@ -52,34 +51,34 @@ export default function Home() {
   // Features data
   const features = [
     {
-      icon: RiSparklingLine,
-      title: "POWERED BY KOKORO-82M",
-      description: "Most popular voice model with 56M+ runs. Battle-tested AI technology delivering natural-sounding speech at massive scale.",
+      icon: RiPaintBrushLine,
+      title: "AI Design Generation",
+      description: "Transform sketches and ideas into professional fashion designs. Advanced AI creates detailed apparel mockups instantly.",
     },
     {
-      icon: RiMicLine,
-      title: "VOICE CLONING",
-      description: "Clone voices with Minimax technology. Quick training from 10 seconds to 5 minutes of audio. 300+ preset voices available.",
+      icon: RiPaletteLine,
+      title: "Multiple Styles",
+      description: "From haute couture to streetwear. Generate designs in any fashion style with customizable colors, patterns, and fabrics.",
     },
     {
       icon: RiFlashlightLine,
-      title: "LIGHTNING FAST",
-      description: "Real-time voice synthesis in seconds. Minimax 2.6 Turbo optimized for low latency. Generate hours of content instantly.",
+      title: "Instant Rendering",
+      description: "See your designs come to life in seconds. High-quality renders and mockups perfect for presentations and portfolios.",
+    },
+    {
+      icon: RiImageEditLine,
+      title: "Design Editor",
+      description: "Fine-tune every detail with our intuitive editor. Adjust colors, fabrics, patterns, and styling elements with precision.",
+    },
+    {
+      icon: RiShirtLine,
+      title: "Virtual Try-On",
+      description: "See designs on virtual models. Multiple body types, poses, and styling options for realistic visualization.",
     },
     {
       icon: RiShieldCheckLine,
-      title: "SECURE & PRIVATE",
-      description: "Your voice data is encrypted end-to-end and never shared. Full GDPR compliance. Enterprise-grade security.",
-    },
-    {
-      icon: RiGlobalLine,
-      title: "50+ LANGUAGES",
-      description: "Multilingual support powered by Minimax and XTTS-v2. Native accents, natural intonation, cross-language voice transfer.",
-    },
-    {
-      icon: RiHeadphoneLine,
-      title: "STUDIO QUALITY",
-      description: "Professional 48kHz audio output. Emotion control, pitch adjustment, speed control. MP3, WAV, FLAC formats supported.",
+      title: "HD Export",
+      description: "Download designs in high resolution. Perfect for manufacturing, portfolios, or client presentations.",
     },
   ]
 
