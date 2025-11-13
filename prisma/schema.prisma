@@ -30,6 +30,7 @@ model User {
   sessions      Session[]
   subscriptions Subscription[]
   designs       Design[]
+  collections   Collection[]
   usage         UsageLog[]
   projects      Project[]
   expertProfile ExpertProfile?
@@ -38,11 +39,39 @@ model User {
   @@map("users")
 }
 
+// Collection model - group of related designs (e.g., "Summer 2025", "Streetwear Collection")
+model Collection {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Collection details
+  name String
+  description String? @db.Text
+  theme String?  // "minimalist", "vintage", "futuristic", etc.
+  season String?  // "Spring", "Summer", "Fall", "Winter"
+  year Int?
+
+  // Relations
+  designs Design[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([season])
+  @@map("collections")
+}
+
 // Design model - user's uploaded fashion sketches/designs
 model Design {
   id String @id @default(cuid())
   userId String
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Collection (optional)
+  collectionId String?
+  collection Collection? @relation(fields: [collectionId], references: [id], onDelete: SetNull)
 
   // Design source
   filename String
@@ -50,17 +79,30 @@ model Design {
   fileSize Int?
 
   // Design details
+  type String  // "clothing", "accessory", "footwear", "pattern", "full-outfit"
   category String  // "streetwear", "high-fashion", "casual", "sportswear", "vintage"
-  description String?
+  style String?  // "minimalist", "bold", "elegant", "futuristic", etc.
+  description String? @db.Text
   tags String[]
+
+  // Executor (fashion illustrator) for human enhancement
+  executorId String?
+  executorStatus String @default("none")  // none, pending, in_progress, completed, rejected
+  humanEnhanced Boolean @default(false)
 
   status String @default("ready") // ready, processing, failed
   variations DesignVariation[]
+  mockups Mockup[]
+  techPacks TechPack[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([userId])
+  @@index([collectionId])
   @@index([category])
+  @@index([type])
+  @@index([executorStatus])
   @@index([createdAt])
   @@map("designs")
 }
@@ -78,9 +120,6 @@ model DesignVariation {
   outputUrl String  // Generated design image URL
   thumbnail String?
 
-  // Try-on mockup
-  mockupUrl String?  // Model wearing the design
-
   // Stats
   status String @default("processing") // processing, completed, failed
   downloads Int @default(0)
@@ -91,6 +130,87 @@ model DesignVariation {
   @@index([style])
   @@index([createdAt])
   @@map("design_variations")
+}
+
+// Mockup model - design visualizations (on model, flat lay, etc.)
+model Mockup {
+  id String @id @default(cuid())
+  designId String
+  design Design @relation(fields: [designId], references: [id], onDelete: Cascade)
+
+  // Mockup details
+  type String  // "model", "flat-lay", "hanger", "mannequin", "lifestyle"
+  outputUrl String  // Generated mockup image URL
+  thumbnail String?
+
+  // Model details (if type = "model")
+  modelType String?  // "male", "female", "unisex", "child"
+  pose String?  // "standing", "walking", "sitting", etc.
+
+  status String @default("processing") // processing, completed, failed
+  downloads Int @default(0)
+
+  createdAt DateTime @default(now())
+
+  @@index([designId])
+  @@index([type])
+  @@index([createdAt])
+  @@map("mockups")
+}
+
+// TechPack model - technical specifications for production
+model TechPack {
+  id String @id @default(cuid())
+  designId String
+  design Design @relation(fields: [designId], references: [id], onDelete: Cascade)
+
+  // Technical specifications
+  measurements Json  // Size chart, dimensions
+  materials Json  // Fabric types, composition, weight
+  construction Json  // Seams, stitching, assembly instructions
+  colorways Json?  // Available colors with codes
+  trim Json?  // Buttons, zippers, labels, etc.
+
+  // Files
+  pdfUrl String?  // Generated PDF tech pack
+  notes String? @db.Text  // Additional production notes
+
+  status String @default("draft") // draft, completed
+  downloads Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([designId])
+  @@index([createdAt])
+  @@map("tech_packs")
+}
+
+// CreditBundle model - predefined credit packages for purchase
+model CreditBundle {
+  id String @id @default(cuid())
+
+  // Bundle details
+  name String  // "Starter Pack", "Designer Pack", "Brand Pack"
+  description String? @db.Text
+  credits Int  // Number of credits in the bundle
+  price Float  // Price in dollars
+
+  // Pricing
+  stripePriceId String?  // Stripe Price ID for this bundle
+
+  // Display
+  popular Boolean @default(false)  // Show "Most Popular" badge
+  sortOrder Int @default(0)  // Display order on pricing page
+
+  active Boolean @default(true)  // Is this bundle available for purchase?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active])
+  @@index([sortOrder])
+  @@map("credit_bundles")
 }
 
 // Subscription model
