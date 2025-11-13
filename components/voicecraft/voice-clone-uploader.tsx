@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { ActionIcon, Group, Stack, Text, Progress, Badge, Transition } from "@mantine/core"
 import { Dropzone } from "@mantine/dropzone"
 import { cn } from "@/lib/utils"
-import { Upload, X, FileAudio, AlertCircle, CheckCircle2, Music } from "lucide-react"
+import { X, AlertCircle, CheckCircle2, Music } from "lucide-react"
 import { Waveform } from "./waveform"
 
 export interface UploadedFile {
@@ -182,7 +182,7 @@ const VoiceCloneUploader = React.forwardRef<HTMLDivElement, VoiceCloneUploaderPr
             </Group>
 
             <Stack gap="sm">
-              {uploadedFiles.map((uploadedFile, index) => (
+              {uploadedFiles.map((uploadedFile) => (
                 <Transition
                   key={uploadedFile.id}
                   mounted={true}

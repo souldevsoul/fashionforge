@@ -59,8 +59,7 @@ export async function getUserSubscription(userId: string) {
  */
 export async function createSubscription(
   userId: string,
-  plan: PlanType,
-  startTrial: boolean = false
+  plan: PlanType
 ) {
   const planLimits = PLANS[plan]
 

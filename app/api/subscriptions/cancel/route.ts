@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder'
   apiVersion: "2025-08-27.basil",
 })
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const session = await getServerSession(authOptions)
 
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
         await stripe.subscriptions.update(subscription.stripeSubscriptionId, {
           cancel_at_period_end: true,
         })
-      } catch (stripeError: any) {
+      } catch (stripeError: unknown) {
         console.error("Stripe cancellation error:", stripeError)
         // Continue even if Stripe fails
       }
@@ -81,13 +81,13 @@ export async function POST(request: NextRequest) {
       message:
         "Subscription cancelled successfully. You will have access until the end of your billing period.",
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Cancel subscription error:", error)
 
     return NextResponse.json(
       {
         error: "Failed to cancel subscription",
-        message: error.message,
+        message: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 }
     )

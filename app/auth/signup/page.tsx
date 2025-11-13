@@ -32,7 +32,8 @@ function SignUpForm() {
   useEffect(() => {
     const plan = searchParams?.get('plan')
     if (plan === 'pro') {
-      setSelectedPlan('pro')
+      // Set plan during component mount, not during render
+      Promise.resolve().then(() => setSelectedPlan('pro'))
     }
   }, [searchParams])
 

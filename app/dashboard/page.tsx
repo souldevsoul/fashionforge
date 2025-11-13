@@ -51,7 +51,7 @@ async function getDashboardStats(): Promise<DashboardStats> {
       totalProjects: projectsData.pagination?.total || 0,
       creditsRemaining: 27, // TODO: Get from user subscription
     }
-  } catch (error) {
+  } catch {
     console.error('Error fetching dashboard stats:', error)
     return {
       totalDesigns: 0,
@@ -89,7 +89,7 @@ async function getRecentDesigns(): Promise<RecentDesign[]> {
       createdAt: new Date(design.createdAt).toISOString(),
       status: design.status,
     }))
-  } catch (error) {
+  } catch {
     console.error('Error fetching recent designs:', error)
     return []
   }

@@ -72,7 +72,7 @@ export function CloneVoiceDrawer({ open, onOpenChange, onSuccess }: CloneVoiceDr
       )
 
       return blob.url
-    } catch (err) {
+    } catch {
       throw new Error("Failed to upload audio file")
     } finally {
       setUploading(false)
@@ -141,7 +141,7 @@ export function CloneVoiceDrawer({ open, onOpenChange, onSuccess }: CloneVoiceDr
         setSuccess(false)
       }, 2000)
 
-    } catch (err) {
+    } catch {
       setError(err instanceof Error ? err.message : 'Failed to clone voice')
     } finally {
       setLoading(false)

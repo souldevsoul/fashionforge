@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { requireAuth } from '@/lib/get-current-user'
-import { createSubscription, PLANS } from '@/lib/subscriptions'
+import { createSubscription } from '@/lib/subscriptions'
 
 const CreateSubscriptionSchema = z.object({
   plan: z.enum(['starter', 'pro', 'enterprise']),
@@ -14,10 +14,10 @@ export async function POST(request: NextRequest) {
 
     // Parse and validate request
     const body = await request.json()
-    const { plan, startTrial } = CreateSubscriptionSchema.parse(body)
+    const { plan } = CreateSubscriptionSchema.parse(body)
 
     // Create subscription (FashionForge doesn't have trials)
-    const subscription = await createSubscription(user.id, plan, false)
+    const subscription = await createSubscription(user.id, plan)
 
     return NextResponse.json({
       success: true,
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       },
     })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Create subscription error:', error)
 
     if (error instanceof z.ZodError) {
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       {
         success: false,
         error: 'Failed to create subscription',
-        details: error.message || 'Unknown error',
+        details: error instanceof Error ? error.message : "Unknown error" || 'Unknown error',
       },
       { status: 500 }
     )

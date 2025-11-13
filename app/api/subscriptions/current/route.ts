@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { requireAuth } from '@/lib/get-current-user'
 import { getUserSubscription } from '@/lib/subscriptions'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const user = await requireAuth() as { id: string; email?: string | null; name?: string | null; image?: string | null }
 
@@ -37,13 +37,13 @@ export async function GET(request: NextRequest) {
       },
     })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Get subscription error:', error)
     return NextResponse.json(
       {
         success: false,
         error: 'Failed to get subscription',
-        details: error.message || 'Unknown error',
+        details: error instanceof Error ? error.message : "Unknown error" || 'Unknown error',
       },
       { status: 500 }
     )

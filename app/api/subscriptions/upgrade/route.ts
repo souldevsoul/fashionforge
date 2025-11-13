@@ -5,10 +5,6 @@ import { prisma } from "@/lib/prisma"
 import { z } from "zod"
 import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
-  apiVersion: "2025-08-27.basil",
-})
-
 const UpgradeSchema = z.object({
   plan: z.enum(["pro", "enterprise"]),
 })
@@ -115,7 +111,7 @@ export async function POST(request: NextRequest) {
       { error: "Invalid plan" },
       { status: 400 }
     )
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Upgrade subscription error:", error)
 
     if (error instanceof z.ZodError) {
@@ -134,7 +130,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         error: "Failed to upgrade subscription",
-        message: error.message,
+        message: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 }
     )

@@ -71,7 +71,7 @@ export default function CreateDesignPage() {
       const data = await response.json()
       setVariations(data.variations || [])
       setCurrentStep("results")
-    } catch (error) {
+    } catch {
       console.error("Generation error:", error)
       alert("Failed to generate design variations. Please try again.")
       setCurrentStep("customize")
@@ -94,7 +94,7 @@ export default function CreateDesignPage() {
       a.click()
       document.body.removeChild(a)
       window.URL.revokeObjectURL(url)
-    } catch (error) {
+    } catch {
       console.error("Download error:", error)
       alert("Failed to download design. Please try again.")
     }

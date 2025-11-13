@@ -56,7 +56,7 @@ async function getVoices(): Promise<Voice[]> {
       isCloned: voice.isCloned,
       createdAt: new Date(voice.createdAt).toISOString(),
     }))
-  } catch (error) {
+  } catch {
     console.error('Error fetching voices:', error)
     return []
   }

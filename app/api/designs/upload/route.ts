@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
         createdAt: design.createdAt,
       },
     })
-  } catch (error) {
+  } catch {
     console.error("Upload error:", error)
     return NextResponse.json(
       { error: "Failed to upload design" },

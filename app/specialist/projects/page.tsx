@@ -47,7 +47,7 @@ export default function SpecialistProjectsPage() {
 
       // For now, using empty array until API is implemented
       setProjects([])
-    } catch (error) {
+    } catch {
       console.error('Error fetching specialist projects:', error)
       setProjects([])
     } finally {

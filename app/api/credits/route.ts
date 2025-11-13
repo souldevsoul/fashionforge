@@ -15,7 +15,11 @@ export async function GET(request: NextRequest) {
     // Get current balance
     const balance = await getUserCredits(user.id);
 
-    const response: any = {
+    const response: {
+      success: boolean;
+      balance: number;
+      history?: unknown;
+    } = {
       success: true,
       balance,
     };
@@ -27,12 +31,12 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(response);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Get credits error:', error);
     return NextResponse.json(
       {
         error: 'Failed to get credit information',
-        details: error.message || 'Unknown error',
+        details: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     );

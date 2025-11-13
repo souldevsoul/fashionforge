@@ -1,6 +1,6 @@
 import productQuality from './eslint-plugin-product-quality/index.js';
 
-export default [
+const config = [
   {
     ignores: [
       ".next/**",
@@ -40,3 +40,5 @@ export default [
     },
   },
 ];
+
+export default config;

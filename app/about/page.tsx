@@ -8,7 +8,6 @@ import {
   RiSparklingLine,
   RiHeartLine,
   RiLightbulbLine,
-  RiRocketLine,
   RiShieldCheckLine,
   RiGlobalLine,
   RiTeamLine,
@@ -122,7 +121,7 @@ export default function AboutPage() {
               MAKING AI FASHION DESIGN ACCESSIBLE TO EVERYONE
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              We're building the future of fashion design. Professional-quality apparel designs powered by cutting-edge AI models.
+              We&apos;re building the future of fashion design. Professional-quality apparel designs powered by cutting-edge AI models.
             </p>
           </div>
         </Container>
@@ -140,10 +139,10 @@ export default function AboutPage() {
                 Fashion design technology has the power to transform how we create apparel, explore styles, and bring design visions to life. But for too long, professional design tools have been out of reach for most creators and small brands.
               </p>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                We built FashionForge to change that. By leveraging cutting-edge AI models like FLUX Pro, we're making professional-quality fashion design accessible to everyone—from solo creators to enterprise design teams.
+                We built FashionForge to change that. By leveraging cutting-edge AI models like FLUX Pro, we&apos;re making professional-quality fashion design accessible to everyone—from solo creators to enterprise design teams.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Our platform transforms sketches into production-ready designs in seconds. Generate multiple style variations, explore color palettes, and export high-resolution files. This isn't experimental technology—it's proven AI powered by <span className="font-bold">FLUX Pro</span> and trusted by thousands of designers worldwide.
+                Our platform transforms sketches into production-ready designs in seconds. Generate multiple style variations, explore color palettes, and export high-resolution files. This isn&apos;t experimental technology—it&apos;s proven AI powered by <span className="font-bold">FLUX Pro</span> and trusted by thousands of designers worldwide.
               </p>
             </div>
             <div className="bg-black p-8 border-4 border-black brutalist-shadow-purple">
@@ -310,7 +309,7 @@ export default function AboutPage() {
                       TRANSPARENT PRICING
                     </h3>
                     <p className="text-white">
-                      No hidden fees, no surprises. We show you exactly what you're paying for based on real API costs. Start free, scale as you grow.
+                      No hidden fees, no surprises. We show you exactly what you&apos;re paying for based on real API costs. Start free, scale as you grow.
                     </p>
                   </div>
                 </div>
@@ -352,7 +351,7 @@ export default function AboutPage() {
                       CONSTANTLY IMPROVING
                     </h3>
                     <p className="text-white">
-                      We're always adding new models, features, and capabilities. Beta access to cutting-edge design technology for Pro and Enterprise users.
+                      We&apos;re always adding new models, features, and capabilities. Beta access to cutting-edge design technology for Pro and Enterprise users.
                     </p>
                   </div>
                 </div>

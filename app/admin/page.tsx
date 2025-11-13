@@ -7,7 +7,6 @@ import {
   RiImageLine,
   RiMoneyDollarCircleLine,
   RiLineChartLine,
-  RiDownloadLine,
 } from "react-icons/ri"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
@@ -47,8 +46,8 @@ export default function AdminDashboard() {
         const designsData = await designsResponse.json()
         if (designsData.success && designsData.designs) {
           totalDesigns = designsData.designs.length
-          activeDesigns = designsData.designs.filter((d: any) => d.status === 'ready').length
-          totalVariations = designsData.designs.reduce((acc: number, d: any) =>
+          activeDesigns = designsData.designs.filter((d: { status: string }) => d.status === 'ready').length
+          totalVariations = designsData.designs.reduce((acc: number, d: { variations?: unknown[] }) =>
             acc + (d.variations?.length || 0), 0
           )
         }

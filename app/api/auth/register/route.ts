@@ -51,8 +51,7 @@ export async function POST(request: NextRequest) {
     })
 
     // Create subscription based on selected plan
-    const startTrial = validatedData.plan === 'pro' // Start trial for Pro plan
-    await createSubscription(user.id, validatedData.plan, startTrial)
+    await createSubscription(user.id, validatedData.plan)
 
     const message = validatedData.plan === 'pro'
       ? "Account created successfully! Your 14-day Pro trial has started. You also received 1000 credits ($10) as a welcome bonus."
@@ -63,7 +62,7 @@ export async function POST(request: NextRequest) {
       user,
       message,
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Registration error:", error)
 
     // Handle Zod validation errors
@@ -84,7 +83,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         error: "An error occurred during registration",
-        message: error.message,
+        message: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 }
     )

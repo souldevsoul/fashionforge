@@ -103,7 +103,7 @@ export const authOptions: NextAuthOptions = {
       try {
         await grantInitialCredits(user.id)
         console.log(`Granted initial credits to user: ${user.id}`)
-      } catch (error) {
+      } catch {
         console.error('Failed to grant initial credits:', error)
       }
     },

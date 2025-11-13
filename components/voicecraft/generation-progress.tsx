@@ -139,7 +139,7 @@ const GenerationProgress = React.forwardRef<HTMLDivElement, GenerationProgressPr
             <div className="text-sm font-semibold text-slate-700 mb-2">
               Processing Steps
             </div>
-            {steps.map((step, index) => {
+            {steps.map((step) => {
               const stepConfig = getStatusConfig(step.status)
               const StepIcon = stepConfig.icon
 

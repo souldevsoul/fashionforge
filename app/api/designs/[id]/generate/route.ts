@@ -44,7 +44,7 @@ export async function POST(
 
     // Generate variations using Replicate FLUX Pro
     const output = await replicate.run(
-      "black-forest-labs/flux-pro" as any,
+      "black-forest-labs/flux-pro" as `${string}/${string}:${string}` | `${string}/${string}`,
       {
         input: {
           prompt,

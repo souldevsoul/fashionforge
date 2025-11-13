@@ -39,7 +39,7 @@ function SignInForm() {
 
       router.push(callbackUrl)
       router.refresh()
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.")
       setIsLoading(false)
     }
@@ -132,7 +132,7 @@ function SignInForm() {
           {/* Sign Up Link */}
           <div className="text-center">
             <p className="text-gray-600">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link
                 href="/auth/signup"
                 className="font-bold text-black hover:text-purple-400 underline"

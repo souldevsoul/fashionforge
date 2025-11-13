@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
       sessionId: session.id,
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Checkout error:', error);
 
     // Handle Zod validation errors
@@ -81,11 +81,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Handle Stripe errors
-    if (error.type) {
+    if (error && typeof error === 'object' && 'type' in error) {
       return NextResponse.json(
         {
           error: 'Payment processing error',
-          details: error.message,
+          details: error instanceof Error ? error.message : 'Unknown error',
         },
         { status: 400 }
       );
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         error: 'Failed to create checkout session',
-        details: error.message || 'Unknown error',
+        details: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     );

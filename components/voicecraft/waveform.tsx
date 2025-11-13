@@ -13,7 +13,13 @@ export interface WaveformProps extends React.HTMLAttributes<HTMLDivElement> {
 const Waveform = React.forwardRef<HTMLDivElement, WaveformProps>(
   ({ bars = 40, animated = true, color = "primary", size = "md", className, ...props }, ref) => {
     const heights = React.useMemo(() => {
-      return Array.from({ length: bars }, () => Math.random() * 100 + 20)
+      // Generate consistent random heights for bars
+      const seed = bars;
+      return Array.from({ length: bars }, (_, i) => {
+        // Use deterministic pseudo-random based on index and bars count
+        const value = ((seed * 9301 + i * 49297) % 233280) / 233280.0;
+        return value * 100 + 20;
+      });
     }, [bars])
 
     const colorClasses = {

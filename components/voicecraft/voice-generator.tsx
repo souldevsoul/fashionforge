@@ -142,12 +142,13 @@ export function VoiceGenerator({ className }: VoiceGeneratorProps) {
       } else {
         throw new Error('No audio URL returned');
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Generation error:', error);
 
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       notifications.show({
         title: 'Generation Failed',
-        message: error.message || 'An error occurred during voice generation',
+        message: errorMessage || 'An error occurred during voice generation',
         color: 'red',
       });
     } finally {

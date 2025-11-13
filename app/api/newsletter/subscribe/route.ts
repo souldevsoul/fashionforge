@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
       success: true,
       message: 'Successfully subscribed to newsletter',
     })
-  } catch (error) {
+  } catch {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         {
