@@ -1,6 +1,6 @@
 # Feature Implementation Command
 
-You are helping a developer implement a new feature in the FashionForge application. Follow these steps to ensure a high-quality implementation.
+You are helping a developer implement a new feature in the LogoSmith application. Follow these steps to ensure a high-quality implementation.
 
 ## IMPORTANT: Run Setup First
 
@@ -74,7 +74,7 @@ You are helping a developer implement a new feature in the FashionForge applicat
 
    **Review errors carefully:**
    - **False positives?** Document with inline comments explaining why
-   - **Real violations?** Fix them following FashionForge design system
+   - **Real violations?** Fix them following LogoSmith design system
    - **Unsure?** Ask for clarification before proceeding
 
    **Manual checks:**

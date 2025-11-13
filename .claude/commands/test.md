@@ -1,6 +1,6 @@
 # Testing Command
 
-You are helping test the FashionForge application systematically. Follow this comprehensive testing guide.
+You are helping test the LogoSmith application systematically. Follow this comprehensive testing guide.
 
 ## Testing Levels
 
