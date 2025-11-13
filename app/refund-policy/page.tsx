@@ -151,7 +151,7 @@ export default function RefundPolicyPage() {
                 <h2 className="text-3xl font-bold uppercase">3. Not Eligible for Refund</h2>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <h3 className="text-lg font-bold uppercase mb-4 text-purple-400">The Following Are NOT Eligible:</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
@@ -240,7 +240,7 @@ export default function RefundPolicyPage() {
 
             {/* Enterprise */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   ENTERPRISE CUSTOMERS
                 </h2>

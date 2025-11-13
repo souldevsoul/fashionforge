@@ -13,10 +13,11 @@ import {
   RiGlobalLine,
   RiTeamLine,
   RiCodeLine,
-  RiMicLine,
+  RiShirtLine,
   RiFlashlightLine,
   RiArrowRightLine,
   RiCheckDoubleLine,
+  RiPaletteLine,
 } from "react-icons/ri"
 
 export default function AboutPage() {
@@ -24,48 +25,48 @@ export default function AboutPage() {
     {
       icon: RiLightbulbLine,
       title: "Innovation First",
-      description: "We leverage the most advanced AI models to push the boundaries of what's possible with voice synthesis. Always testing, always improving.",
+      description: "We leverage the most advanced AI models to push the boundaries of fashion design technology. Always testing, always improving.",
     },
     {
       icon: RiShieldCheckLine,
       title: "Privacy & Security",
-      description: "Your data is yours. End-to-end encryption, GDPR compliance, and SOC 2 certification are standard, not optional.",
+      description: "Your design data is yours. End-to-end encryption, GDPR compliance, and SOC 2 certification are standard, not optional.",
     },
     {
       icon: RiHeartLine,
-      title: "User-Centric",
-      description: "Built by creators, for creators. Every feature is designed with real user needs in mind, from hobbyists to enterprise teams.",
+      title: "Creator-Centric",
+      description: "Built by designers, for designers. Every feature is crafted with real creative workflows in mind, from solo creators to design teams.",
     },
     {
       icon: RiGlobalLine,
       title: "Accessible to All",
-      description: "Professional voice technology should be accessible to everyone. That's why we offer a free tier and transparent pricing.",
+      description: "Professional fashion design technology should be accessible to everyone. That's why we offer a free tier and transparent pricing.",
     },
   ]
 
   const technology = [
     {
       icon: RiSparklingLine,
-      name: "Kokoro-82M",
-      description: "The world's most popular voice synthesis model with 56.7M+ production runs. Based on StyleTTS2 with 82M parameters.",
-      stats: "56.7M+ Runs",
+      name: "FLUX Pro",
+      description: "Cutting-edge AI fashion design model with proven reliability. Advanced style transfer and design generation with exceptional quality.",
+      stats: "1M+ Designs",
     },
     {
-      icon: RiMicLine,
-      name: "Minimax AI",
-      description: "Cutting-edge voice cloning and synthesis technology supporting 50+ languages with natural emotion control.",
-      stats: "50+ Languages",
+      icon: RiShirtLine,
+      name: "Style Intelligence",
+      description: "AI-powered design generation supporting multiple fashion categories with natural aesthetic flow and trend-aware outputs.",
+      stats: "5 Categories",
     },
     {
       icon: RiFlashlightLine,
-      name: "XTTS-v2",
-      description: "Advanced multilingual voice cloning supporting 17 languages with one-shot cloning capabilities.",
-      stats: "4.4M+ Runs",
+      name: "Real-Time Generation",
+      description: "Lightning-fast design processing with sub-30-second generation times. Perfect for rapid prototyping and creative exploration.",
+      stats: "Sub-30s Speed",
     },
     {
       icon: RiCodeLine,
-      name: "Replicate Platform",
-      description: "Enterprise-grade infrastructure for running AI models at scale with guaranteed uptime and performance.",
+      name: "Enterprise Platform",
+      description: "Built on enterprise-grade infrastructure with guaranteed uptime, scalability, and performance. Trusted by design studios worldwide.",
       stats: "99.9% Uptime",
     },
   ]
@@ -74,22 +75,22 @@ export default function AboutPage() {
     {
       year: "2024",
       title: "FashionForge Founded",
-      description: "Started with a mission to democratize professional voice synthesis technology.",
+      description: "Started with a mission to democratize professional fashion design technology using AI.",
     },
     {
       year: "2024",
       title: "Beta Launch",
-      description: "Launched private beta with 100 creators testing Kokoro-82M integration.",
+      description: "Launched private beta with 100 designers testing FLUX Pro integration and style generation.",
     },
     {
       year: "2024",
-      title: "Voice Cloning Added",
-      description: "Integrated Minimax voice cloning technology, enabling custom voice creation.",
+      title: "Style Variations Added",
+      description: "Integrated multi-style generation technology, enabling custom design variations from a single sketch.",
     },
     {
       year: "2025",
       title: "Public Launch",
-      description: "Opened to the public with free tier, serving thousands of users worldwide.",
+      description: "Opened to the public with free tier, serving thousands of designers and brands worldwide.",
     },
   ]
 
@@ -118,10 +119,10 @@ export default function AboutPage() {
               <span className="text-sm font-bold uppercase tracking-wider">About Us</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              MAKING VOICE AI ACCESSIBLE TO EVERYONE
+              MAKING AI FASHION DESIGN ACCESSIBLE TO EVERYONE
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              We're building the future of voice synthesis. Professional-quality voices powered by the world's most trusted AI models.
+              We're building the future of fashion design. Professional-quality apparel designs powered by cutting-edge AI models.
             </p>
           </div>
         </Container>
@@ -136,28 +137,28 @@ export default function AboutPage() {
                 OUR MISSION
               </h2>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                Voice technology has the power to transform how we create content, communicate, and connect with audiences. But for too long, professional voice synthesis has been out of reach for most creators and businesses.
+                Fashion design technology has the power to transform how we create apparel, explore styles, and bring design visions to life. But for too long, professional design tools have been out of reach for most creators and small brands.
               </p>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                We built FashionForge to change that. By leveraging the world's most popular and battle-tested AI models, we're making studio-quality voice synthesis accessible to everyone—from solo creators to enterprise teams.
+                We built FashionForge to change that. By leveraging cutting-edge AI models like FLUX Pro, we're making professional-quality fashion design accessible to everyone—from solo creators to enterprise design teams.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Our platform is powered by <span className="font-bold">Kokoro-82M</span> (56.7M+ production runs), <span className="font-bold">Minimax AI</span> (50+ languages), and <span className="font-bold">XTTS-v2</span> (multilingual cloning). These aren't experimental models—they're proven at massive scale.
+                Our platform transforms sketches into production-ready designs in seconds. Generate multiple style variations, explore color palettes, and export high-resolution files. This isn't experimental technology—it's proven AI powered by <span className="font-bold">FLUX Pro</span> and trusted by thousands of designers worldwide.
               </p>
             </div>
-            <div className="bg-black p-8 border-4 border-black brutalist-shadow-yellow">
+            <div className="bg-black p-8 border-4 border-black brutalist-shadow-purple">
               <div className="space-y-8">
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">56.7M+</div>
-                  <div className="text-sm font-bold text-white uppercase">Voice Generations</div>
+                  <div className="text-6xl font-bold text-purple-400 mb-2">1M+</div>
+                  <div className="text-sm font-bold text-white uppercase">Designs Generated</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">50+</div>
-                  <div className="text-sm font-bold text-white uppercase">Languages Supported</div>
+                  <div className="text-6xl font-bold text-purple-400 mb-2">5</div>
+                  <div className="text-sm font-bold text-white uppercase">Style Categories</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">300+</div>
-                  <div className="text-sm font-bold text-white uppercase">Voice Profiles</div>
+                  <div className="text-6xl font-bold text-purple-400 mb-2">100+</div>
+                  <div className="text-sm font-bold text-white uppercase">Color Palettes</div>
                 </div>
                 <div>
                   <div className="text-6xl font-bold text-purple-400 mb-2">99.9%</div>
@@ -209,7 +210,7 @@ export default function AboutPage() {
               POWERED BY THE BEST
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              We use only the most proven and popular AI models in production
+              We use only proven AI models and enterprise-grade infrastructure
             </p>
           </div>
 
@@ -225,7 +226,7 @@ export default function AboutPage() {
                 <div
                   key={index}
                   className={`p-8 ${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-yellow" : "brutalist-shadow"
+                    colorIndex === 1 ? "brutalist-shadow-purple" : "brutalist-shadow"
                   }`}
                 >
                   <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-purple-400" : "bg-black"} flex items-center justify-center mb-6`}>
@@ -255,7 +256,7 @@ export default function AboutPage() {
               OUR JOURNEY
             </h2>
             <p className="text-xl text-white max-w-3xl mx-auto">
-              From idea to platform serving thousands of users
+              From idea to platform serving thousands of designers
             </p>
           </div>
 
@@ -268,7 +269,7 @@ export default function AboutPage() {
                 <div className="flex-shrink-0 w-24 h-24 bg-purple-400 border-4 border-purple-400 flex items-center justify-center">
                   <span className="text-2xl font-bold text-black">{milestone.year}</span>
                 </div>
-                <div className="flex-1 p-6 bg-white border-4 border-white brutalist-shadow-yellow">
+                <div className="flex-1 p-6 bg-white border-4 border-white brutalist-shadow-purple">
                   <h3 className="text-xl font-bold uppercase mb-2">{milestone.title}</h3>
                   <p className="text-gray-700">{milestone.description}</p>
                 </div>
@@ -292,16 +293,16 @@ export default function AboutPage() {
                   <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
                   <div>
                     <h3 className="text-xl font-bold uppercase mb-2">
-                      PROVEN AT SCALE
+                      PROVEN TECHNOLOGY
                     </h3>
                     <p className="text-gray-700">
-                      Our primary model (Kokoro-82M) has over 56.7 million production runs. This isn't experimental technology—it's battle-tested at massive scale.
+                      Our platform is powered by FLUX Pro, a cutting-edge AI model trusted by thousands of designers. Over 1 million designs generated with consistently high quality.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <div className="flex items-start gap-4">
                   <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-400" />
                   <div>
@@ -323,7 +324,7 @@ export default function AboutPage() {
                       ENTERPRISE SECURITY
                     </h3>
                     <p className="text-gray-700">
-                      End-to-end encryption, GDPR compliance, SOC 2 Type II certification. Your voice data is protected with enterprise-grade security standards.
+                      End-to-end encryption, GDPR compliance, SOC 2 Type II certification. Your design data is protected with enterprise-grade security standards.
                     </p>
                   </div>
                 </div>
@@ -343,7 +344,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <div className="flex items-start gap-4">
                   <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-400" />
                   <div>
@@ -351,7 +352,7 @@ export default function AboutPage() {
                       CONSTANTLY IMPROVING
                     </h3>
                     <p className="text-white">
-                      We're always adding new models, features, and capabilities. Beta access to cutting-edge models for Pro and Enterprise users.
+                      We're always adding new models, features, and capabilities. Beta access to cutting-edge design technology for Pro and Enterprise users.
                     </p>
                   </div>
                 </div>
@@ -366,10 +367,10 @@ export default function AboutPage() {
         <Container maxWidth="xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              BUILT BY CREATORS, FOR CREATORS
+              BUILT BY DESIGNERS, FOR DESIGNERS
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Our team combines expertise in AI, audio engineering, and product design to build the best voice synthesis platform.
+              Our team combines expertise in AI, fashion technology, and product design to build the best fashion design platform.
             </p>
           </div>
 
@@ -380,27 +381,27 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold uppercase mb-2">AI ENGINEERS</h3>
               <p className="text-gray-700">
-                Deep expertise in machine learning, voice synthesis, and model optimization.
+                Deep expertise in machine learning, design generation, and model optimization.
               </p>
             </div>
 
             <div className="p-6 bg-purple-400 border-4 border-black brutalist-shadow text-center">
               <div className="w-24 h-24 bg-black border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiMicLine className="w-12 h-12 text-purple-400" />
+                <RiPaletteLine className="w-12 h-12 text-purple-400" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2">AUDIO EXPERTS</h3>
+              <h3 className="text-xl font-bold uppercase mb-2">FASHION EXPERTS</h3>
               <p className="text-gray-900">
-                Professional audio engineers ensuring studio-quality output.
+                Professional designers ensuring high-quality outputs and trend-aware aesthetics.
               </p>
             </div>
 
-            <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow text-center">
+            <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple text-center">
               <div className="w-24 h-24 bg-purple-400 border-4 border-black mx-auto mb-4 flex items-center justify-center">
                 <RiTeamLine className="w-12 h-12 text-black" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-2 text-purple-400">PRODUCT TEAM</h3>
               <p className="text-white">
-                Focused on building intuitive tools that creators actually want to use.
+                Focused on building intuitive tools that designers actually want to use.
               </p>
             </div>
           </div>
@@ -412,10 +413,10 @@ export default function AboutPage() {
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold uppercase mb-6">
-              JOIN THOUSANDS OF CREATORS
+              JOIN THOUSANDS OF DESIGNERS
             </h2>
             <p className="text-xl text-gray-700 mb-12">
-              Start creating professional voice content today. Free tier available—no credit card required.
+              Start creating professional fashion designs today. Free tier available—no credit card required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button

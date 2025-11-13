@@ -143,7 +143,7 @@ export default function CancellationPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                   <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">After Billing Period Ends</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
@@ -226,7 +226,7 @@ export default function CancellationPolicyPage() {
 
             {/* Data Retention */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   DATA RETENTION AFTER CANCELLATION
                 </h2>

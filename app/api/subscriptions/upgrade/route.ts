@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma"
 import { z } from "zod"
 import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
   apiVersion: "2025-08-27.basil",
 })
 
@@ -55,26 +55,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // If upgrading to Pro, create Stripe Checkout session
+    // If upgrading to Pro, create subscription
     if (plan === "pro") {
-      // For now, start a 14-day free trial (no payment required)
-      // In production, you would create a Stripe checkout session here
-
       const planLimits = {
         pro: {
-          monthlyCharacterLimit: 100000,
-          monthlyVoiceClones: 5,
-          allowCustomVoices: true,
+          monthlyDesignLimit: 30,
+          monthlyVariations: 5,
+          allowHDExport: true,
           allowCommercialUse: true,
-          trialDays: 14,
         },
       }
 
       const limits = planLimits[plan]
-      const now = new Date()
-      const trialEndsAt = new Date(
-        now.getTime() + limits.trialDays * 24 * 60 * 60 * 1000
-      )
 
       // Update or create subscription
       if (currentSubscription) {
@@ -82,12 +74,10 @@ export async function POST(request: NextRequest) {
           where: { id: currentSubscription.id },
           data: {
             plan,
-            status: "trialing",
-            isTrialing: true,
-            trialEndsAt,
-            monthlyCharacterLimit: limits.monthlyCharacterLimit,
-            monthlyVoiceClones: limits.monthlyVoiceClones,
-            allowCustomVoices: limits.allowCustomVoices,
+            status: "active",
+            monthlyDesignLimit: limits.monthlyDesignLimit,
+            monthlyVariations: limits.monthlyVariations,
+            allowHDExport: limits.allowHDExport,
             allowCommercialUse: limits.allowCommercialUse,
             cancelledAt: null,
           },
@@ -97,12 +87,10 @@ export async function POST(request: NextRequest) {
           data: {
             userId: user.id,
             plan,
-            status: "trialing",
-            isTrialing: true,
-            trialEndsAt,
-            monthlyCharacterLimit: limits.monthlyCharacterLimit,
-            monthlyVoiceClones: limits.monthlyVoiceClones,
-            allowCustomVoices: limits.allowCustomVoices,
+            status: "active",
+            monthlyDesignLimit: limits.monthlyDesignLimit,
+            monthlyVariations: limits.monthlyVariations,
+            allowHDExport: limits.allowHDExport,
             allowCommercialUse: limits.allowCommercialUse,
           },
         })
@@ -110,7 +98,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
-        message: "Successfully upgraded to Pro plan with 14-day free trial!",
+        message: "Successfully upgraded to Pro plan!",
       })
     }
 

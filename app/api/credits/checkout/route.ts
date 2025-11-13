@@ -4,7 +4,7 @@ import { requireAuth } from '@/lib/get-current-user';
 import Stripe from 'stripe';
 
 // Initialize Stripe
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
   apiVersion: '2025-08-27.basil',
 });
 
@@ -17,7 +17,7 @@ const CheckoutSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    const userId = await requireAuth();
+    const user = await requireAuth() as { id: string; email?: string | null; name?: string | null; image?: string | null };
 
     // Parse and validate request
     const body = await request.json();
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
       success_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/dashboard?payment=success&credits=${credits}`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/dashboard?payment=cancelled`,
       metadata: {
-        userId,
+        userId: user.id,
         packageId,
         credits: credits.toString(),
       },

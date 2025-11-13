@@ -1,45 +1,47 @@
-# VoiceCraft
+# FashionForge
 
-An AI-powered voice synthesis platform built with Next.js 16, featuring voice cloning, audio generation, and project management with expert assignment.
+An AI-powered fashion design platform built with Next.js 16, featuring sketch-to-design generation, style variations, and virtual try-on using cutting-edge AI models.
 
-## Features
+## 🎨 Features
 
-- **Audio Management**: Upload and organize audio files with Vercel Blob storage
-- **Voice Cloning**: Clone voices using Replicate's AI models
-- **Voice Generation**: Generate audio from text with cloned voices
-- **Project Management**: Kanban board for managing audio projects
-- **AI Estimation**: Get cost and time estimates for projects using OpenAI
-- **Expert Assignment**: Assign projects to audio experts
-- **Dashboard**: Real-time stats and recent activity
+- **Design Upload**: Upload fashion sketches with drag & drop support
+- **AI Design Generation**: Transform sketches into professional fashion designs using FLUX Pro
+- **Style Variations**: Generate multiple design variations (Modern, Retro, Minimalist, Bold, Elegant)
+- **Color Palette System**: Choose from preset palettes or create custom color schemes
+- **Design Categories**: Streetwear, High Fashion, Casual, Sportswear, Vintage
+- **Virtual Try-On**: Visualize designs on model mockups
+- **Design Library**: Organize and manage all your designs
+- **HD Export**: Download designs in high resolution
+- **Admin Dashboard**: Platform analytics and user management
 
-## Tech Stack
+## 🚀 Tech Stack
 
-- **Framework**: Next.js 16.0.1 with App Router
+- **Framework**: Next.js 16.0.1 with App Router & Turbopack
 - **Language**: TypeScript
-- **Database**: PostgreSQL with Prisma ORM
-- **Storage**: Vercel Blob for audio files
+- **Database**: PostgreSQL (Neon) with Prisma ORM
+- **Storage**: Vercel Blob for design files
 - **AI Services**:
-  - Replicate (voice cloning/generation)
-  - OpenAI (project estimation)
-- **UI**: Brutalist design with Shadcn components
-- **Styling**: Tailwind CSS
+  - Replicate FLUX Pro (fashion design generation)
+  - Stable Diffusion XL (design variations)
+- **UI**: Brutalist design system with custom components
+- **Styling**: Tailwind CSS 4.0
+- **Icons**: React Icons (Remix Icon)
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- PostgreSQL database
+- PostgreSQL database (Neon recommended)
 - Replicate API token
-- OpenAI API key
 - Vercel account (for Blob storage)
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd voicecraft
+git clone https://github.com/yourusername/fashionforge.git
+cd fashionforge
 ```
 
 2. Install dependencies:
@@ -54,11 +56,11 @@ cp .env.example .env
 
 Edit `.env` and add your API keys and database URL:
 ```env
-DATABASE_URL="postgresql://..."
+DATABASE_URL="postgresql://neondb_owner:password@host.neon.tech/neondb?sslmode=require"
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
-OPENAI_API_KEY="sk-..."
 BLOB_READ_WRITE_TOKEN="vercel_blob_..."
 REPLICATE_API_TOKEN="r8_..."
+NEXTAUTH_SECRET="your-secret-here"
 ```
 
 4. Set up the database:
@@ -74,36 +76,34 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-## Environment Variables
-
-See `.env.example` for all required and optional environment variables.
+## 🔐 Environment Variables
 
 ### Required Variables
 
-- `DATABASE_URL` - PostgreSQL connection string
+- `DATABASE_URL` - PostgreSQL connection string (Neon)
 - `NEXT_PUBLIC_APP_URL` - Your application URL
-- `OPENAI_API_KEY` - OpenAI API key for project estimation
 - `BLOB_READ_WRITE_TOKEN` - Vercel Blob storage token
-- `REPLICATE_API_TOKEN` - Replicate API token for voice AI
+- `REPLICATE_API_TOKEN` - Replicate API token for AI generation
+- `NEXTAUTH_SECRET` - Secret for NextAuth sessions
 
 ### Optional Variables
 
 - `STRIPE_SECRET_KEY` - For payment processing
-- `NEXTAUTH_URL` / `NEXTAUTH_SECRET` - For authentication
+- `NEXTAUTH_URL` - Full URL for NextAuth callbacks
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-voicecraft/
+fashionforge/
 ├── app/
 │   ├── api/              # API routes
-│   │   ├── audios/       # Audio management
-│   │   ├── voices/       # Voice management
+│   │   ├── designs/      # Design management & generation
+│   │   ├── variations/   # Design variation endpoints
 │   │   └── projects/     # Project management
 │   ├── dashboard/        # Dashboard pages
-│   │   ├── audios/       # Audio library
-│   │   ├── voices/       # Voice library
-│   │   └── projects/     # Project kanban
+│   │   ├── designs/      # Design library
+│   │   ├── variations/   # Variation browser
+│   │   └── create/       # Design creation workflow
 │   └── page.tsx          # Landing page
 ├── components/
 │   └── ui/               # Shadcn UI components

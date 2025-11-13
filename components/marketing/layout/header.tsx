@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
-import { RiMic2Fill } from "react-icons/ri"
+import { RiShirtLine } from "react-icons/ri"
 
 export interface NavLink {
   label: string
@@ -65,8 +65,8 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
             <a href="/" className="flex items-center gap-3">
               {logo || (
                 <>
-                  <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-yellow">
-                    <RiMic2Fill className="w-7 h-7 text-purple-400" />
+                  <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-purple">
+                    <RiShirtLine className="w-7 h-7 text-purple-400" />
                   </div>
                   <span className="text-xl font-bold uppercase tracking-tight">{logoText}</span>
                 </>

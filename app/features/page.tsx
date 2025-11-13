@@ -6,113 +6,113 @@ import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
 import {
   RiSparklingLine,
-  RiMicLine,
+  RiShirtLine,
   RiFlashlightLine,
   RiShieldCheckLine,
-  RiGlobalLine,
-  RiHeadphoneLine,
+  RiPaletteLine,
+  RiImageLine,
   RiSettings4Line,
-  RiVoiceprintLine,
+  RiLayoutLine,
   RiTimerLine,
   RiDatabase2Line,
   RiCodeLine,
   RiTeamLine,
   RiArrowRightLine,
   RiCheckDoubleLine,
-  RiSoundModuleLine,
+  RiPaintBrushLine,
 } from "react-icons/ri"
 
 export default function FeaturesPage() {
   const mainFeatures = [
     {
       icon: RiSparklingLine,
-      title: "Powered by Kokoro-82M",
-      subtitle: "56M+ RUNS - MOST POPULAR MODEL",
-      description: "Built on the world's most popular voice synthesis model. Battle-tested at massive scale with 56.7 million production runs. Proven reliability, exceptional quality, lightning-fast inference.",
+      title: "AI-Powered Design Generation",
+      subtitle: "FLUX PRO TECHNOLOGY",
+      description: "Built on cutting-edge AI fashion models. Transform sketches into professional apparel designs instantly. Battle-tested technology with proven reliability and exceptional quality.",
       features: [
-        "82M parameters based on StyleTTS2",
-        "Natural-sounding speech synthesis",
-        "Multiple voice profiles available",
-        "Automatic long text splitting",
-        "Speed control from 0.1x to 5.0x",
+        "FLUX Pro model for high-quality designs",
+        "Natural design flow and aesthetics",
+        "Multiple style profiles available",
+        "Automatic design enhancement",
+        "Fast generation (seconds, not minutes)",
         "Lightweight and efficient"
       ]
     },
     {
-      icon: RiMicLine,
-      title: "Advanced Voice Cloning",
-      subtitle: "MINIMAX TECHNOLOGY",
-      description: "Clone any voice with Minimax's cutting-edge voice cloning technology. Quick training from just 10 seconds to 5 minutes of audio. Create custom voice profiles that work across all our synthesis models.",
+      icon: RiShirtLine,
+      title: "Style Variations",
+      subtitle: "UNLIMITED CREATIVITY",
+      description: "Generate multiple design variations from a single sketch. Explore different styles: Modern, Retro, Minimalist, Bold, Elegant. Create unique fashion pieces that match your vision.",
       features: [
-        "300+ preset voices included",
-        "Custom voice training in minutes",
-        "Noise reduction & volume normalization",
-        "Works with Speech 2.6 Turbo & HD",
+        "5 style presets included",
+        "Custom style variations",
+        "Color palette customization",
+        "Pattern & texture control",
         "Quality validation built-in",
-        "Voice ID generation"
+        "Design version history"
       ]
     },
     {
       icon: RiFlashlightLine,
-      title: "Real-Time Synthesis",
+      title: "Real-Time Generation",
       subtitle: "LIGHTNING FAST PERFORMANCE",
-      description: "Generate professional voice content in seconds, not minutes. Minimax 2.6 Turbo optimized for real-time applications with minimal latency. Perfect for live applications, chatbots, and streaming.",
+      description: "Generate professional fashion designs in seconds, not minutes. Optimized for real-time applications with minimal latency. Perfect for design studios, brands, and creative teams.",
       features: [
-        "Sub-second response times",
-        "Real-time streaming support",
+        "Sub-30-second generation times",
+        "Real-time preview support",
         "Batch processing for efficiency",
         "Queue management for scale",
         "Concurrent request handling",
-        "CDN-optimized audio delivery"
+        "CDN-optimized image delivery"
       ]
     },
     {
-      icon: RiSettings4Line,
-      title: "Emotion & Expression Control",
-      subtitle: "NATURAL EMOTIONAL DELIVERY",
-      description: "Fine-tune every aspect of voice delivery. Control emotion, pitch, speed, and volume to create the perfect voice for your content. From happy and excited to calm and serious - full emotional range.",
+      icon: RiPaletteLine,
+      title: "Color & Pattern Control",
+      subtitle: "COMPLETE CUSTOMIZATION",
+      description: "Fine-tune every aspect of your design. Control colors, patterns, fabrics, and styles to create the perfect apparel. From vibrant streetwear to elegant haute couture.",
       features: [
-        "8 emotion presets (happy, sad, angry, etc.)",
-        "Automatic emotion detection",
-        "Pitch adjustment (-12 to +12 semitones)",
-        "Speed control (0.5x to 2.0x)",
-        "Volume control (0 to 10)",
-        "Temperature control for variance"
+        "Custom color palette selection",
+        "Pattern & texture options",
+        "Fabric type specification",
+        "Style intensity control",
+        "Seasonal trend suggestions",
+        "Brand color matching"
       ]
     },
     {
-      icon: RiGlobalLine,
-      title: "Multilingual Support",
-      subtitle: "50+ LANGUAGES",
-      description: "Generate voices in 50+ languages with native accents and natural intonation. Powered by Minimax and XTTS-v2 for global reach. Cross-language voice transfer supported.",
+      icon: RiLayoutLine,
+      title: "Category Support",
+      subtitle: "ALL APPAREL TYPES",
+      description: "Generate designs for any apparel category. Streetwear, high fashion, casual wear, sportswear, vintage styles. Full range of fashion categories supported.",
       features: [
-        "50+ languages (Minimax)",
-        "17 languages with voice cloning (XTTS-v2)",
-        "Native accent support",
-        "Natural cross-language intonation",
-        "Language-specific normalization",
-        "Automatic language detection"
+        "Streetwear designs",
+        "High fashion & haute couture",
+        "Casual & everyday wear",
+        "Sportswear & activewear",
+        "Vintage & retro styles",
+        "Accessories & details"
       ]
     },
     {
-      icon: RiHeadphoneLine,
-      title: "Studio Quality Audio",
+      icon: RiImageLine,
+      title: "High-Quality Exports",
       subtitle: "PROFESSIONAL OUTPUT",
-      description: "Professional-grade audio output at up to 48kHz sample rate. Multiple format support including MP3, WAV, FLAC, and PCM. Perfect for podcasts, audiobooks, videos, and commercial production.",
+      description: "Professional-grade design exports at high resolution. Multiple format support including PNG, SVG, and PSD. Perfect for production, presentations, and portfolios.",
       features: [
-        "48kHz sample rate (max)",
-        "MP3, WAV, FLAC, PCM formats",
-        "Configurable bitrates",
-        "Mono & stereo channel support",
-        "Subtitle export with timestamps",
-        "High-fidelity output"
+        "4K resolution exports",
+        "PNG, SVG, PSD formats",
+        "Transparent backgrounds",
+        "Print-ready files",
+        "Technical spec sheets",
+        "High-fidelity mockups"
       ]
     },
     {
       icon: RiShieldCheckLine,
       title: "Security & Privacy",
       subtitle: "ENTERPRISE-GRADE PROTECTION",
-      description: "Your voice data is encrypted end-to-end and never shared with third parties. Full GDPR compliance, SOC 2 Type II certified. Enterprise-grade security for peace of mind.",
+      description: "Your design data is encrypted end-to-end and never shared with third parties. Full GDPR compliance, SOC 2 Type II certified. Enterprise-grade security for peace of mind.",
       features: [
         "End-to-end encryption",
         "GDPR compliant",
@@ -123,44 +123,44 @@ export default function FeaturesPage() {
       ]
     },
     {
-      icon: RiVoiceprintLine,
-      title: "Voice Library Management",
-      subtitle: "ORGANIZE YOUR VOICES",
-      description: "Manage unlimited custom voice clones. Organize, preview, edit, and delete voice profiles. Search and filter your voice library. Track usage statistics for each voice.",
+      icon: RiPaintBrushLine,
+      title: "Design Library Management",
+      subtitle: "ORGANIZE YOUR DESIGNS",
+      description: "Manage unlimited custom design variations. Organize, preview, edit, and delete designs. Search and filter your design library. Track usage statistics for each design.",
       features: [
-        "Unlimited voice storage (Enterprise)",
-        "Voice preview & testing",
+        "Unlimited design storage (Enterprise)",
+        "Design preview & comparison",
         "Metadata & descriptions",
-        "Usage analytics per voice",
+        "Usage analytics per design",
         "Batch operations",
-        "Import/export voice profiles"
+        "Import/export design collections"
       ]
     },
     {
       icon: RiTimerLine,
-      title: "Advanced Text Processing",
-      subtitle: "INTELLIGENT TEXT HANDLING",
-      description: "Automatic text splitting for long content. Pause markers for timing control. Number and date normalization. SSML support for advanced control over pronunciation and delivery.",
+      title: "Smart Design Processing",
+      subtitle: "INTELLIGENT ENHANCEMENT",
+      description: "Automatic design enhancement and optimization. Smart fabric detection. Detail enhancement for production quality. AI-powered style suggestions based on trends.",
       features: [
-        "Automatic long text splitting",
-        "Pause markers (<#0.5#>)",
-        "Number & date normalization",
-        "Custom pronunciation dictionary",
-        "SSML markup support (coming soon)",
-        "Character limit: 10,000 per request"
+        "Automatic design enhancement",
+        "Smart fabric recognition",
+        "Detail optimization",
+        "Trend-based suggestions",
+        "Production readiness checks",
+        "Technical specification generation"
       ]
     },
     {
       icon: RiDatabase2Line,
       title: "Usage & Analytics",
-      subtitle: "TRACK YOUR USAGE",
-      description: "Comprehensive analytics dashboard showing character usage, voice generation history, model performance, and cost tracking. Export reports for accounting and billing.",
+      subtitle: "TRACK YOUR PROJECTS",
+      description: "Comprehensive analytics dashboard showing design generation history, style preferences, and project tracking. Export reports for client presentations and portfolios.",
       features: [
         "Real-time usage tracking",
-        "Character count analytics",
-        "Generation history",
-        "Cost estimation & tracking",
-        "Export reports (CSV, PDF)",
+        "Design generation analytics",
+        "Style trend insights",
+        "Project cost tracking",
+        "Export reports (PDF, CSV)",
         "Webhook notifications"
       ]
     },
@@ -168,10 +168,10 @@ export default function FeaturesPage() {
       icon: RiCodeLine,
       title: "Developer API",
       subtitle: "FULL API ACCESS",
-      description: "Complete REST API with comprehensive documentation. SDKs available for Node.js, Python, Go, and more. Webhook support for async operations. Rate limiting and authentication included.",
+      description: "Complete REST API with comprehensive documentation. SDKs available for Node.js, Python, and more. Webhook support for async operations. Rate limiting and authentication included.",
       features: [
         "RESTful API",
-        "Official SDKs (Node.js, Python, Go)",
+        "Official SDKs (Node.js, Python)",
         "Webhook support",
         "Rate limiting & quotas",
         "API key management",
@@ -182,11 +182,11 @@ export default function FeaturesPage() {
       icon: RiTeamLine,
       title: "Team Collaboration",
       subtitle: "WORK TOGETHER",
-      description: "Built for teams. Share voice clones across your organization. Role-based access control. Team analytics and usage tracking. Centralized billing and management.",
+      description: "Built for design teams. Share design libraries across your organization. Role-based access control. Team analytics and usage tracking. Centralized billing and management.",
       features: [
         "Unlimited team members (Enterprise)",
         "Role-based permissions",
-        "Shared voice library",
+        "Shared design library",
         "Team usage analytics",
         "Centralized billing",
         "SSO integration (Enterprise)"
@@ -219,10 +219,10 @@ export default function FeaturesPage() {
               <span className="text-sm font-bold uppercase tracking-wider">Features</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              EVERYTHING YOU NEED FOR PROFESSIONAL VOICE CONTENT
+              EVERYTHING YOU NEED FOR PROFESSIONAL FASHION DESIGN
             </h1>
             <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
-              Powered by the world's most popular voice models. Built for creators, businesses, and developers who demand the best.
+              Powered by cutting-edge AI models. Built for designers, brands, and creators who demand the best.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
@@ -249,20 +249,20 @@ export default function FeaturesPage() {
         <Container maxWidth="xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">56.7M+</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Kokoro Runs</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">1M+</div>
+              <div className="text-sm font-bold text-white uppercase tracking-wider">Designs Generated</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">50+</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Languages</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">5</div>
+              <div className="text-sm font-bold text-white uppercase tracking-wider">Style Categories</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">300+</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Voices</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">100+</div>
+              <div className="text-sm font-bold text-white uppercase tracking-wider">Color Palettes</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">48kHz</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Audio Quality</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">4K</div>
+              <div className="text-sm font-bold text-white uppercase tracking-wider">Export Quality</div>
             </div>
           </div>
         </Container>
@@ -283,7 +283,7 @@ export default function FeaturesPage() {
                 <div
                   key={index}
                   className={`p-8 ${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-yellow" : "brutalist-shadow"
+                    colorIndex === 1 ? "brutalist-shadow-purple" : "brutalist-shadow"
                   }`}
                 >
                   <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-purple-400" : "bg-black"} flex items-center justify-center mb-6`}>
@@ -319,26 +319,26 @@ export default function FeaturesPage() {
         </Container>
       </section>
 
-      {/* Model Comparison CTA */}
+      {/* Style Categories CTA */}
       <section className="py-24 bg-purple-400 border-y-8 border-black">
         <Container maxWidth="xl">
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-black border-4 border-black mb-8">
-              <RiSoundModuleLine className="w-6 h-6 text-purple-400" />
-              <span className="text-sm font-bold uppercase tracking-wider text-purple-400">Multiple Models</span>
+              <RiPaintBrushLine className="w-6 h-6 text-purple-400" />
+              <span className="text-sm font-bold uppercase tracking-wider text-purple-400">Multiple Styles</span>
             </div>
             <h2 className="text-5xl font-bold uppercase mb-6 text-black">
-              CHOOSE THE RIGHT MODEL FOR YOUR NEEDS
+              CHOOSE THE RIGHT STYLE FOR YOUR BRAND
             </h2>
             <p className="text-xl text-gray-900 mb-8">
-              We support multiple voice models: Kokoro-82M (simplest, most popular), Minimax 2.6 Turbo (advanced features), and XTTS-v2 (multilingual cloning).
+              We support multiple design styles: Modern (sleek & contemporary), Retro (vintage vibes), Minimalist (clean & simple), Bold (statement pieces), and Elegant (refined luxury).
             </p>
             <Button
               size="xl"
               className="gap-3 bg-black text-purple-400 border-4 border-black font-bold uppercase brutalist-shadow"
             >
               <RiArrowRightLine className="w-5 h-5" />
-              Compare Models
+              Explore Styles
             </Button>
           </div>
         </Container>
@@ -352,7 +352,7 @@ export default function FeaturesPage() {
               READY TO GET STARTED?
             </h2>
             <p className="text-xl text-white mb-12">
-              Join thousands of creators and businesses using FashionForge. Start your free trial today—no credit card required.
+              Join thousands of designers and brands using FashionForge. Start your free trial today—no credit card required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button

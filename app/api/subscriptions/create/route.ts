@@ -10,18 +10,14 @@ const CreateSubscriptionSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    const userId = await requireAuth()
+    const user = await requireAuth() as { id: string; email?: string | null; name?: string | null; image?: string | null }
 
     // Parse and validate request
     const body = await request.json()
     const { plan, startTrial } = CreateSubscriptionSchema.parse(body)
 
-    // Check if trial is available for this plan
-    const planConfig = PLANS[plan]
-    const canStartTrial = startTrial && planConfig.trialDays > 0
-
-    // Create subscription
-    const subscription = await createSubscription(userId, plan, canStartTrial)
+    // Create subscription (FashionForge doesn't have trials)
+    const subscription = await createSubscription(user.id, plan, false)
 
     return NextResponse.json({
       success: true,
@@ -29,11 +25,9 @@ export async function POST(request: NextRequest) {
         id: subscription.id,
         plan: subscription.plan,
         status: subscription.status,
-        isTrialing: subscription.isTrialing,
-        trialEndsAt: subscription.trialEndsAt,
-        monthlyCharacterLimit: subscription.monthlyCharacterLimit,
-        monthlyVoiceClones: subscription.monthlyVoiceClones,
-        allowCustomVoices: subscription.allowCustomVoices,
+        monthlyDesignLimit: subscription.monthlyDesignLimit,
+        monthlyVariations: subscription.monthlyVariations,
+        allowHDExport: subscription.allowHDExport,
         allowCommercialUse: subscription.allowCommercialUse,
       },
     })

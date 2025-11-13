@@ -12,8 +12,8 @@ import {
   RiQuestionLine,
   RiShieldCheckLine,
   RiFlashlightLine,
-  RiMicLine,
-  RiGlobalLine,
+  RiShirtLine,
+  RiPaletteLine,
 } from "react-icons/ri"
 
 export default function PricingPage() {
@@ -22,17 +22,17 @@ export default function PricingPage() {
       name: "Starter",
       price: "$0",
       period: "forever",
-      description: "Perfect for trying out FashionForge and small projects",
+      description: "Perfect for trying out FashionForge and small design projects",
       popular: false,
       features: [
-        { text: "5,000 characters/month", included: true },
-        { text: "Kokoro-82M voice model", included: true },
-        { text: "Basic voice presets", included: true },
-        { text: "MP3 audio format", included: true },
-        { text: "48kHz sample rate", included: true },
+        { text: "3 designs/month", included: true },
+        { text: "FLUX Pro AI model", included: true },
+        { text: "2 style variations per design", included: true },
+        { text: "Standard resolution exports", included: true },
+        { text: "5 style categories", included: true },
         { text: "Email support", included: true },
-        { text: "Voice cloning", included: false },
-        { text: "Advanced models", included: false },
+        { text: "HD exports (4K resolution)", included: false },
+        { text: "Commercial license", included: false },
         { text: "Team collaboration", included: false },
         { text: "Priority support", included: false },
       ],
@@ -40,37 +40,37 @@ export default function PricingPage() {
       ctaHref: "/signup",
     },
     {
-      name: "Pro",
-      price: "$29",
+      name: "Designer",
+      price: "$39",
       period: "per month",
-      description: "For creators and businesses that need powerful voice synthesis",
+      description: "For designers and brands that need powerful fashion design tools",
       popular: true,
       features: [
-        { text: "100,000 characters/month", included: true },
-        { text: "All voice models (Kokoro, Minimax, XTTS)", included: true },
-        { text: "5 custom voice clones", included: true },
-        { text: "Emotion control (8 emotions)", included: true },
-        { text: "Speed, pitch, volume control", included: true },
-        { text: "MP3, WAV, FLAC formats", included: true },
-        { text: "50+ languages", included: true },
+        { text: "30 designs/month", included: true },
+        { text: "FLUX Pro + advanced models", included: true },
+        { text: "5 style variations per design", included: true },
+        { text: "HD exports (4K resolution)", included: true },
+        { text: "PNG, SVG, PSD formats", included: true },
+        { text: "Color palette customization", included: true },
+        { text: "Commercial license", included: true },
         { text: "API access", included: true },
         { text: "Priority email support", included: true },
         { text: "Usage analytics", included: true },
       ],
       cta: "Start Free Trial",
-      ctaHref: "/signup?plan=pro",
+      ctaHref: "/signup?plan=designer",
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      period: "contact us",
-      description: "Advanced features, unlimited usage, and dedicated support",
+      name: "Studio",
+      price: "$149",
+      period: "per month",
+      description: "Unlimited designs, team collaboration, and dedicated support",
       popular: false,
       features: [
-        { text: "Unlimited characters", included: true },
-        { text: "All voice models + beta access", included: true },
-        { text: "Unlimited voice clones", included: true },
-        { text: "Custom voice model training", included: true },
+        { text: "200 designs/month", included: true },
+        { text: "All models + beta access", included: true },
+        { text: "Unlimited style variations", included: true },
+        { text: "Custom design training", included: true },
         { text: "Dedicated infrastructure", included: true },
         { text: "SLA guarantee (99.9% uptime)", included: true },
         { text: "Team collaboration (unlimited)", included: true },
@@ -87,48 +87,48 @@ export default function PricingPage() {
     {
       category: "USAGE LIMITS",
       features: [
-        { name: "Characters per month", starter: "5,000", pro: "100,000", enterprise: "Unlimited" },
-        { name: "Voice clones", starter: "0", pro: "5", enterprise: "Unlimited" },
-        { name: "API requests/min", starter: "10", pro: "60", enterprise: "Custom" },
-        { name: "Concurrent generations", starter: "1", pro: "3", enterprise: "Unlimited" },
+        { name: "Designs per month", starter: "3", designer: "30", studio: "200" },
+        { name: "Style variations", starter: "2", designer: "5", studio: "Unlimited" },
+        { name: "API requests/min", starter: "10", designer: "60", studio: "Custom" },
+        { name: "Concurrent generations", starter: "1", designer: "3", studio: "Unlimited" },
       ],
     },
     {
-      category: "VOICE MODELS",
+      category: "AI MODELS",
       features: [
-        { name: "Kokoro-82M (56M+ runs)", starter: true, pro: true, enterprise: true },
-        { name: "Minimax 2.6 Turbo", starter: false, pro: true, enterprise: true },
-        { name: "Minimax 2.6 HD", starter: false, pro: true, enterprise: true },
-        { name: "XTTS-v2 Multilingual", starter: false, pro: true, enterprise: true },
-        { name: "Beta model access", starter: false, pro: false, enterprise: true },
-        { name: "Custom model training", starter: false, pro: false, enterprise: true },
+        { name: "FLUX Pro (1M+ designs)", starter: true, designer: true, studio: true },
+        { name: "Style Intelligence", starter: false, designer: true, studio: true },
+        { name: "Advanced color matching", starter: false, designer: true, studio: true },
+        { name: "Pattern generation", starter: false, designer: true, studio: true },
+        { name: "Beta model access", starter: false, designer: false, studio: true },
+        { name: "Custom model training", starter: false, designer: false, studio: true },
       ],
     },
     {
       category: "FEATURES",
       features: [
-        { name: "Basic voice presets", starter: true, pro: true, enterprise: true },
-        { name: "Voice cloning (Minimax)", starter: false, pro: true, enterprise: true },
-        { name: "Emotion control (8 emotions)", starter: false, pro: true, enterprise: true },
-        { name: "Speed & pitch adjustment", starter: true, pro: true, enterprise: true },
-        { name: "Volume control", starter: true, pro: true, enterprise: true },
-        { name: "50+ languages", starter: false, pro: true, enterprise: true },
-        { name: "Audio formats (MP3, WAV, FLAC)", starter: "MP3", pro: true, enterprise: true },
-        { name: "Subtitle export", starter: false, pro: true, enterprise: true },
-        { name: "Batch processing", starter: false, pro: true, enterprise: true },
+        { name: "Basic style presets", starter: true, designer: true, studio: true },
+        { name: "Multi-style variations", starter: false, designer: true, studio: true },
+        { name: "Color palette control", starter: false, designer: true, studio: true },
+        { name: "Category selection (5 types)", starter: true, designer: true, studio: true },
+        { name: "Pattern customization", starter: true, designer: true, studio: true },
+        { name: "HD exports (4K)", starter: false, designer: true, studio: true },
+        { name: "File formats (PNG, SVG, PSD)", starter: "PNG", designer: true, studio: true },
+        { name: "Transparent backgrounds", starter: false, designer: true, studio: true },
+        { name: "Batch processing", starter: false, designer: true, studio: true },
       ],
     },
     {
       category: "SUPPORT & SECURITY",
       features: [
-        { name: "Email support", starter: true, pro: true, enterprise: true },
-        { name: "Priority support", starter: false, pro: true, enterprise: true },
-        { name: "24/7 support", starter: false, pro: false, enterprise: true },
-        { name: "Dedicated account manager", starter: false, pro: false, enterprise: true },
-        { name: "GDPR compliance", starter: true, pro: true, enterprise: true },
-        { name: "SOC 2 Type II", starter: true, pro: true, enterprise: true },
-        { name: "SLA guarantee", starter: false, pro: false, enterprise: "99.9%" },
-        { name: "SSO integration", starter: false, pro: false, enterprise: true },
+        { name: "Email support", starter: true, designer: true, studio: true },
+        { name: "Priority support", starter: false, designer: true, studio: true },
+        { name: "24/7 support", starter: false, designer: false, studio: true },
+        { name: "Dedicated account manager", starter: false, designer: false, studio: true },
+        { name: "GDPR compliance", starter: true, designer: true, studio: true },
+        { name: "SOC 2 Type II", starter: true, designer: true, studio: true },
+        { name: "SLA guarantee", starter: false, designer: false, studio: "99.9%" },
+        { name: "SSO integration", starter: false, designer: false, studio: true },
       ],
     },
   ]
@@ -136,35 +136,35 @@ export default function PricingPage() {
   const faqs = [
     {
       question: "How is usage calculated?",
-      answer: "Usage is calculated based on the number of characters in your input text. For example, 'Hello World' contains 11 characters (including the space). Characters are counted before text processing, so what you type is what you pay for.",
+      answer: "Usage is calculated based on the number of designs you generate per month. Each time you upload a sketch and generate variations, it counts as one design. Style variations are counted separately based on your plan limits.",
     },
     {
-      question: "What happens if I exceed my character limit?",
-      answer: "On the Starter plan, generation will be paused until the next month. On Pro, you can purchase additional character packs for $10 per 50,000 characters. Enterprise plans have unlimited characters.",
+      question: "What happens if I exceed my design limit?",
+      answer: "On the Starter plan, generation will be paused until the next month. On Designer plan, you can purchase additional design packs for $25 per 10 designs. Studio plans have generous limits of 200 designs/month.",
     },
     {
       question: "Can I cancel anytime?",
       answer: "Yes! All plans can be canceled at any time. If you cancel, you'll retain access until the end of your current billing period, and you won't be charged again.",
     },
     {
-      question: "What's the difference between the voice models?",
-      answer: "Kokoro-82M is the simplest and most popular (56M+ runs), great for most use cases. Minimax 2.6 Turbo offers advanced features like emotion control and 50+ languages. XTTS-v2 specializes in multilingual voice cloning. Pro plan includes all models.",
+      question: "What design categories are supported?",
+      answer: "FashionForge supports 5 major fashion categories: Streetwear, High Fashion/Haute Couture, Casual/Everyday Wear, Sportswear/Activewear, and Vintage/Retro styles. All categories work with all style variations (Modern, Retro, Minimalist, Bold, Elegant).",
     },
     {
-      question: "How does voice cloning work?",
-      answer: "Upload 10 seconds to 5 minutes of clear audio of the voice you want to clone. Our Minimax-powered technology will create a custom voice profile (voice_id) that you can use with all our synthesis models. The more audio you provide, the better the quality.",
+      question: "What are style variations?",
+      answer: "Style variations allow you to generate multiple design interpretations from a single sketch. Upload one design and get variations in Modern (contemporary), Retro (vintage), Minimalist (clean), Bold (statement), and Elegant (refined) styles. Designer plan includes 5 variations per design.",
     },
     {
-      question: "What audio formats are supported?",
-      answer: "Starter plan supports MP3. Pro and Enterprise support MP3, WAV, FLAC, and PCM. All formats can be exported at up to 48kHz sample rate for studio-quality audio.",
+      question: "What export formats are supported?",
+      answer: "Starter plan supports PNG. Designer and Studio plans support PNG, SVG (vector), and PSD (Adobe Photoshop) formats. All formats can be exported at up to 4K resolution for print-ready quality.",
     },
     {
-      question: "Is there a free trial for Pro?",
-      answer: "Yes! All new Pro subscribers get a 14-day free trial. No credit card required to start. Cancel anytime during the trial and you won't be charged.",
+      question: "Is there a free trial for Designer?",
+      answer: "Yes! All new Designer subscribers get a 14-day free trial. No credit card required to start. Cancel anytime during the trial and you won't be charged.",
     },
     {
-      question: "What languages are supported?",
-      answer: "Kokoro-82M supports multiple languages. Minimax models support 50+ languages including English, Spanish, French, German, Chinese, Japanese, and more. XTTS-v2 supports 17 languages with voice cloning capabilities.",
+      question: "What is the commercial license?",
+      answer: "Designer and Studio plans include a commercial license, allowing you to use generated designs for commercial purposes including selling products, client work, and brand campaigns. Starter plan is for personal use only.",
     },
     {
       question: "Do you offer discounts for non-profits or education?",
@@ -172,7 +172,7 @@ export default function PricingPage() {
     },
     {
       question: "How secure is my data?",
-      answer: "All voice data is encrypted end-to-end (AES-256). We're GDPR compliant and SOC 2 Type II certified. Your audio files and voice clones are never shared with third parties. Enterprise plans can opt for zero data retention.",
+      answer: "All design data is encrypted end-to-end (AES-256). We're GDPR compliant and SOC 2 Type II certified. Your sketches and generated designs are never shared with third parties. Studio plans can opt for zero data retention.",
     },
   ]
 
@@ -233,7 +233,7 @@ export default function PricingPage() {
                 key={index}
                 className={`relative p-8 border-4 border-black ${
                   tier.popular
-                    ? "bg-black text-white brutalist-shadow-yellow scale-105"
+                    ? "bg-black text-white brutalist-shadow-purple scale-105"
                     : "bg-white brutalist-shadow"
                 }`}
               >
@@ -351,10 +351,10 @@ export default function PricingPage() {
                         Starter
                       </th>
                       <th className="text-center p-4 font-bold uppercase text-sm border-l-4 border-black">
-                        Pro
+                        Designer
                       </th>
                       <th className="text-center p-4 font-bold uppercase text-sm border-l-4 border-black">
-                        Enterprise
+                        Studio
                       </th>
                     </tr>
                   </thead>
@@ -374,25 +374,25 @@ export default function PricingPage() {
                           )}
                         </td>
                         <td className="text-center p-4 border-l-4 border-black bg-purple-50">
-                          {typeof feature.pro === "boolean" ? (
-                            feature.pro ? (
+                          {typeof feature.designer === "boolean" ? (
+                            feature.designer ? (
                               <RiCheckLine className="w-6 h-6 text-black mx-auto" />
                             ) : (
                               <RiCloseLine className="w-6 h-6 text-gray-400 mx-auto" />
                             )
                           ) : (
-                            <span className="font-bold">{feature.pro}</span>
+                            <span className="font-bold">{feature.designer}</span>
                           )}
                         </td>
                         <td className="text-center p-4 border-l-4 border-black">
-                          {typeof feature.enterprise === "boolean" ? (
-                            feature.enterprise ? (
+                          {typeof feature.studio === "boolean" ? (
+                            feature.studio ? (
                               <RiCheckLine className="w-6 h-6 text-black mx-auto" />
                             ) : (
                               <RiCloseLine className="w-6 h-6 text-gray-400 mx-auto" />
                             )
                           ) : (
-                            <span className="font-bold">{feature.enterprise}</span>
+                            <span className="font-bold">{feature.studio}</span>
                           )}
                         </td>
                       </tr>
@@ -421,45 +421,45 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="p-6 bg-white border-4 border-black brutalist-shadow">
                 <div className="w-12 h-12 bg-purple-400 border-2 border-black flex items-center justify-center mb-4">
-                  <RiMicLine className="w-6 h-6" />
+                  <RiShirtLine className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold uppercase mb-2">KOKORO-82M</h3>
-                <div className="text-3xl font-bold mb-2">$0.05</div>
-                <p className="text-sm text-gray-600 mb-4">per 1,000 characters</p>
+                <h3 className="text-lg font-bold uppercase mb-2">FLUX PRO</h3>
+                <div className="text-3xl font-bold mb-2">$3.50</div>
+                <p className="text-sm text-gray-600 mb-4">per design</p>
                 <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Most economical</li>
-                  <li>• 56M+ production runs</li>
-                  <li>• Best for volume</li>
+                  <li>• Most reliable</li>
+                  <li>• 1M+ designs generated</li>
+                  <li>• Best for quality</li>
                 </ul>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <div className="w-12 h-12 bg-purple-400 border-2 border-black flex items-center justify-center mb-4">
                   <RiFlashlightLine className="w-6 h-6 text-black" />
                 </div>
                 <h3 className="text-lg font-bold uppercase mb-2 text-purple-400">
-                  MINIMAX 2.6 TURBO
+                  STYLE VARIATION
                 </h3>
-                <div className="text-3xl font-bold mb-2 text-purple-400">$0.10</div>
-                <p className="text-sm text-gray-300 mb-4">per 1,000 characters</p>
+                <div className="text-3xl font-bold mb-2 text-purple-400">$2.00</div>
+                <p className="text-sm text-gray-300 mb-4">per variation</p>
                 <ul className="text-sm text-gray-300 space-y-1">
-                  <li>• Real-time optimized</li>
-                  <li>• Emotion control</li>
-                  <li>• 50+ languages</li>
+                  <li>• Fast generation</li>
+                  <li>• 5 style options</li>
+                  <li>• Multiple outputs</li>
                 </ul>
               </div>
 
               <div className="p-6 bg-white border-4 border-black brutalist-shadow">
                 <div className="w-12 h-12 bg-purple-400 border-2 border-black flex items-center justify-center mb-4">
-                  <RiGlobalLine className="w-6 h-6" />
+                  <RiPaletteLine className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold uppercase mb-2">VOICE CLONING</h3>
-                <div className="text-3xl font-bold mb-2">$0.20</div>
-                <p className="text-sm text-gray-600 mb-4">per clone training</p>
+                <h3 className="text-lg font-bold uppercase mb-2">HD EXPORT</h3>
+                <div className="text-3xl font-bold mb-2">$1.00</div>
+                <p className="text-sm text-gray-600 mb-4">per 4K export</p>
                 <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• One-time cost</li>
-                  <li>• Use unlimited times</li>
-                  <li>• 10s-5min audio</li>
+                  <li>• 4K resolution</li>
+                  <li>• Print-ready</li>
+                  <li>• Multiple formats</li>
                 </ul>
               </div>
             </div>
@@ -468,20 +468,20 @@ export default function PricingPage() {
               <h3 className="text-2xl font-bold uppercase mb-4">EXAMPLE MONTHLY COSTS</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center pb-4 border-b-4 border-black">
-                  <span className="font-bold">Small Blog (10K chars/month)</span>
-                  <span className="text-2xl font-bold">$0.50 - $1.00</span>
+                  <span className="font-bold">Small Brand (5 designs/month)</span>
+                  <span className="text-2xl font-bold">$17.50 - $27.50</span>
                 </div>
                 <div className="flex justify-between items-center pb-4 border-b-4 border-black">
-                  <span className="font-bold">Medium Podcast (100K chars/month)</span>
-                  <span className="text-2xl font-bold">$5.00 - $10.00</span>
+                  <span className="font-bold">Growing Studio (20 designs/month)</span>
+                  <span className="text-2xl font-bold">$70.00 - $110.00</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-bold">Large Business (1M chars/month)</span>
-                  <span className="text-2xl font-bold">$50.00 - $100.00</span>
+                  <span className="font-bold">Design Agency (100 designs/month)</span>
+                  <span className="text-2xl font-bold">$350.00 - $550.00</span>
                 </div>
               </div>
               <p className="text-sm mt-6 font-medium">
-                * API costs only. Pro plan ($29/mo) includes 100K characters plus all premium features.
+                * API costs only. Designer plan ($39/mo) includes 30 designs plus all premium features.
               </p>
             </div>
           </div>
@@ -508,7 +508,7 @@ export default function PricingPage() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="p-6 bg-white border-4 border-white brutalist-shadow-yellow"
+                className="p-6 bg-white border-4 border-white brutalist-shadow-purple"
               >
                 <h3 className="text-lg font-bold uppercase mb-3">{faq.question}</h3>
                 <p className="text-gray-700 leading-relaxed">{faq.answer}</p>

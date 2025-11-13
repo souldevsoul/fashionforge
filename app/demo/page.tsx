@@ -86,7 +86,7 @@ export default function DemoPage() {
           </div>
 
           {/* Features List */}
-          <div className="mt-12 p-8 border-4 border-black bg-black text-white brutalist-shadow-yellow">
+          <div className="mt-12 p-8 border-4 border-black bg-black text-white brutalist-shadow-purple">
             <h2 className="text-3xl font-bold uppercase mb-6 text-purple-400">What You Can Do</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-3">

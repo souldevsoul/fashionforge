@@ -1,17 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAuth } from '@/lib/get-current-user'
-import { getUserSubscription, getUserPlan, isUserOnTrial, getTrialDaysRemaining } from '@/lib/subscriptions'
+import { getUserSubscription } from '@/lib/subscriptions'
 
 export async function GET(request: NextRequest) {
   try {
-    const userId = await requireAuth()
+    const user = await requireAuth() as { id: string; email?: string | null; name?: string | null; image?: string | null }
 
-    const [subscription, plan, onTrial, trialDaysRemaining] = await Promise.all([
-      getUserSubscription(userId),
-      getUserPlan(userId),
-      isUserOnTrial(userId),
-      getTrialDaysRemaining(userId),
-    ])
+    const subscription = await getUserSubscription(user.id)
 
     if (!subscription) {
       // User has no subscription, return starter plan defaults
@@ -20,11 +15,9 @@ export async function GET(request: NextRequest) {
         subscription: {
           plan: 'starter',
           status: 'active',
-          isTrialing: false,
-          trialDaysRemaining: 0,
-          monthlyCharacterLimit: 5000,
-          monthlyVoiceClones: 0,
-          allowCustomVoices: false,
+          monthlyDesignLimit: 3,
+          monthlyVariations: 2,
+          allowHDExport: false,
           allowCommercialUse: false,
         },
       })
@@ -36,12 +29,9 @@ export async function GET(request: NextRequest) {
         id: subscription.id,
         plan: subscription.plan,
         status: subscription.status,
-        isTrialing: onTrial,
-        trialEndsAt: subscription.trialEndsAt,
-        trialDaysRemaining,
-        monthlyCharacterLimit: subscription.monthlyCharacterLimit,
-        monthlyVoiceClones: subscription.monthlyVoiceClones,
-        allowCustomVoices: subscription.allowCustomVoices,
+        monthlyDesignLimit: subscription.monthlyDesignLimit,
+        monthlyVariations: subscription.monthlyVariations,
+        allowHDExport: subscription.allowHDExport,
         allowCommercialUse: subscription.allowCommercialUse,
         createdAt: subscription.createdAt,
       },

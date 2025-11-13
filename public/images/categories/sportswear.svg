@@ -1,0 +1,26 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#F3F4F6"/>
+  <rect x="50" y="50" width="300" height="300" fill="white" stroke="black" stroke-width="8"/>
+
+  <!-- Athletic top -->
+  <path d="M160 100 L140 120 L140 200 L260 200 L260 120 L240 100 Z" fill="#10B981" stroke="black" stroke-width="6"/>
+
+  <!-- Sleeveless cuts -->
+  <path d="M140 120 L120 140 L130 180 L140 170 Z" fill="#059669" stroke="black" stroke-width="5"/>
+  <path d="M260 120 L280 140 L270 180 L260 170 Z" fill="#059669" stroke="black" stroke-width="5"/>
+
+  <!-- Nike-style swoosh -->
+  <path d="M160 150 Q200 140 240 160" stroke="white" stroke-width="8" fill="none"/>
+
+  <!-- Athletic shorts -->
+  <rect x="150" y="200" width="100" height="80" fill="#065F46" stroke="black" stroke-width="6"/>
+  <line x1="150" y1="240" x2="250" y2="240" stroke="black" stroke-width="3"/>
+
+  <!-- Side stripes -->
+  <rect x="145" y="200" width="10" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="245" y="200" width="10" height="80" fill="white" stroke="black" stroke-width="2"/>
+
+  <!-- Text -->
+  <rect x="90" y="320" width="220" height="40" fill="black"/>
+  <text x="200" y="348" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#10B981">SPORTSWEAR</text>
+</svg>

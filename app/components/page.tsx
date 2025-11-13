@@ -142,7 +142,7 @@ export default function ComponentsPage() {
         <Container maxWidth="xl">
           <div className="py-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-black flex items-center justify-center brutalist-shadow-yellow">
+              <div className="w-16 h-16 bg-black flex items-center justify-center brutalist-shadow-purple">
                 <FiPackage className="w-8 h-8 text-purple-400" />
               </div>
               <Heading variant="h1" className="text-black">
@@ -205,7 +205,7 @@ export default function ComponentsPage() {
               </div>
 
               {/* Secondary Actions - White Background */}
-              <div className="p-10 bg-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-10 bg-white border-4 border-black brutalist-shadow-purple">
                 <Text variant="body-sm" className="text-black mb-6 font-bold uppercase tracking-wider flex items-center gap-2">
                   <div className="w-4 h-4 bg-black" />
                   Secondary Actions
@@ -266,7 +266,7 @@ export default function ComponentsPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {/* Minimal Card */}
-              <Card variant="default" padding="lg" className="group bg-white border-4 border-black hover:brutalist-shadow-yellow transition-all duration-200">
+              <Card variant="default" padding="lg" className="group bg-white border-4 border-black hover:brutalist-shadow-purple transition-all duration-200">
                 <div className="w-16 h-16 bg-black flex items-center justify-center mb-6 group-hover:bg-purple-400 transition-colors">
                   <TbBrandOpenai className="w-8 h-8 text-purple-400 group-hover:text-black" />
                 </div>
@@ -349,7 +349,7 @@ export default function ComponentsPage() {
           </div>
 
           {/* Typography Showcase */}
-          <div className="p-12 bg-white border-4 border-black brutalist-shadow-yellow">
+          <div className="p-12 bg-white border-4 border-black brutalist-shadow-purple">
             <div className="flex items-center gap-3 mb-10">
               <div className="w-2 h-2 bg-purple-400" />
               <Heading variant="h3" className="text-black uppercase">Typography Scale</Heading>
@@ -451,7 +451,7 @@ export default function ComponentsPage() {
         <section>
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-black flex items-center justify-center border-4 border-black brutalist-shadow-yellow">
+              <div className="w-12 h-12 bg-black flex items-center justify-center border-4 border-black brutalist-shadow-purple">
                 <TbMicrophone className="w-6 h-6 text-purple-400" />
               </div>
               <Heading variant="h2" className="text-black uppercase">Voice Components</Heading>
@@ -491,7 +491,7 @@ export default function ComponentsPage() {
           <div className="mb-20">
             <Heading variant="h3" className="mb-8 text-black uppercase">Audio Player</Heading>
             <div className="max-w-2xl">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-yellow">
+              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-purple">
                 <AudioPlayer
                   title="WELCOME MESSAGE"
                   subtitle="Generated with FashionForge"
@@ -516,7 +516,7 @@ export default function ComponentsPage() {
           {/* <div className="mb-20">
             <Heading variant="h3" className="mb-8 text-black uppercase">Generation Progress</Heading>
             <div className="max-w-2xl space-y-4">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-yellow">
+              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-purple">
                 <GenerationProgress
                   status="processing"
                   progress={65}
@@ -539,7 +539,7 @@ export default function ComponentsPage() {
           <div className="mb-20">
             <Heading variant="h3" className="mb-8 text-black uppercase">Voice Clone Uploader</Heading>
             <div className="max-w-2xl">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-yellow">
+              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-purple">
                 <VoiceCloneUploader
                   onFilesUpload={(files) => setUploadedFiles(files.map((file, index) => ({
                     id: `file-${index}`,
@@ -695,7 +695,7 @@ export default function ComponentsPage() {
           <div className="mb-20">
             <Heading variant="h3" className="mb-8 text-black uppercase">Bold Color System</Heading>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-8 bg-black border-4 border-black brutalist-shadow-yellow">
+              <div className="p-8 bg-black border-4 border-black brutalist-shadow-purple">
                 <Text variant="body-sm" className="text-purple-400 mb-6 font-bold uppercase tracking-wide">
                   Monochrome Base
                 </Text>
@@ -744,7 +744,7 @@ export default function ComponentsPage() {
                 <div className="space-y-4">
                   <div className="w-20 h-20 bg-purple-400 border-4 border-black brutalist-shadow" />
                   <Text variant="body-sm" className="font-bold uppercase">Brutalist Shadow</Text>
-                  <div className="w-20 h-20 bg-black border-4 border-black brutalist-shadow-yellow" />
+                  <div className="w-20 h-20 bg-black border-4 border-black brutalist-shadow-purple" />
                   <Text variant="body-sm" className="font-bold uppercase">Yellow Shadow</Text>
                 </div>
               </div>
@@ -752,7 +752,7 @@ export default function ComponentsPage() {
           </div>
 
           {/* Spacing System */}
-          <div className="p-10 bg-white border-4 border-black brutalist-shadow-yellow">
+          <div className="p-10 bg-white border-4 border-black brutalist-shadow-purple">
             <Heading variant="h3" className="mb-8 text-black uppercase">Spacing System (8pt Grid)</Heading>
             <div className="space-y-4">
               {[1, 2, 3, 4, 6, 8, 12, 16, 20].map(multiplier => (
@@ -787,7 +787,7 @@ export default function ComponentsPage() {
               Use these bold components to create powerful voice synthesis experiences
             </Text>
             <div className="flex flex-wrap gap-6 justify-center">
-              <Button variant="primary" size="xl" className="gap-3 bg-purple-400 text-black border-4 border-purple-400 font-bold uppercase brutalist-shadow-yellow">
+              <Button variant="primary" size="xl" className="gap-3 bg-purple-400 text-black border-4 border-purple-400 font-bold uppercase brutalist-shadow-purple">
                 <FiCode className="w-6 h-6" />
                 View Documentation
               </Button>

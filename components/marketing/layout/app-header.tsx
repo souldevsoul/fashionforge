@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { RiMic2Fill, RiUserLine, RiLogoutBoxLine, RiCoinLine } from "react-icons/ri"
+import { RiShirtLine, RiUserLine, RiLogoutBoxLine, RiCoinLine } from "react-icons/ri"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -30,8 +30,8 @@ export function AppHeader({ user }: AppHeaderProps) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-yellow">
-            <RiMic2Fill className="w-7 h-7 text-purple-400" />
+          <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-purple">
+            <RiShirtLine className="w-7 h-7 text-purple-400" />
           </div>
           <span className="text-xl font-bold uppercase tracking-tight">FASHIONFORGE</span>
         </Link>

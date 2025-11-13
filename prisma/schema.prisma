@@ -1,4 +1,4 @@
-// VoiceCraft - AI Voice Synthesis Platform
+// FashionForge - AI Fashion Design Platform
 // Prisma Schema
 
 generator client {
@@ -29,10 +29,8 @@ model User {
   accounts      Account[]
   sessions      Session[]
   subscriptions Subscription[]
-  voices        Voice[]
-  generations   VoiceGeneration[]
+  designs       Design[]
   usage         UsageLog[]
-  audios        Audio[]
   projects      Project[]
   expertProfile ExpertProfile?
   creditLedger  CreditLedger[]
@@ -40,90 +38,59 @@ model User {
   @@map("users")
 }
 
-// Voice model - user's uploaded/cloned voices
-model Voice {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+// Design model - user's uploaded fashion sketches/designs
+model Design {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  name        String
+  // Design source
+  filename String
+  sourceUrl String  // Sketch or reference image URL (Vercel Blob)
+  fileSize Int?
+
+  // Design details
+  category String  // "streetwear", "high-fashion", "casual", "sportswear", "vintage"
   description String?
-  language    String   @default("en-US")
-  accent      String?
-  gender      String?  // male, female, neutral
-  ageGroup    String?  // child, young adult, adult, senior
-  style       String?  // professional, conversational, dramatic, etc.
+  tags String[]
 
-  // Replicate voice ID from voice cloning
-  voiceId     String?  @unique // Voice ID returned by Replicate
-
-  // Audio sample for cloning
-  sampleAudioUrl String?
-
-  // Model used for cloning
-  model       String?  // minimax-2.6-turbo, kokoro-82m, xtts-v2
-
-  // Voice characteristics
-  isPublic    Boolean  @default(false)
-  isCloned    Boolean  @default(false)
-  isVerified  Boolean  @default(false)
-
-  status      String   @default("active") // active, processing, failed
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  generations VoiceGeneration[]
-  audios      Audio[]
+  status String @default("ready") // ready, processing, failed
+  variations DesignVariation[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([userId])
-  @@index([isPublic])
-  @@index([voiceId])
-  @@map("voices")
+  @@index([category])
+  @@index([createdAt])
+  @@map("designs")
 }
 
-// Voice Generation - tracks voice synthesis jobs
-model VoiceGeneration {
-  id              String   @id @default(cuid())
-  userId          String
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+// Design Variation - AI-generated design variations
+model DesignVariation {
+  id String @id @default(cuid())
+  designId String
+  design Design @relation(fields: [designId], references: [id], onDelete: Cascade)
 
-  voiceId         String
-  voice           Voice    @relation(fields: [voiceId], references: [id], onDelete: Cascade)
+  // Variation details
+  name String
+  style String  // "modern", "retro", "minimalist", "bold", "elegant"
+  colors String[]  // Color palette used
+  outputUrl String  // Generated design image URL
+  thumbnail String?
 
-  // Input
-  text            String   @db.Text
-  language        String   @default("en-US")
+  // Try-on mockup
+  mockupUrl String?  // Model wearing the design
 
-  // Output
-  audioUrl        String?
-  duration        Float?   // seconds
-  fileSize        Int?     // bytes
-  format          String   @default("mp3") // mp3, wav, ogg
+  // Stats
+  status String @default("processing") // processing, completed, failed
+  downloads Int @default(0)
 
-  // Settings used
-  speed           Float    @default(1.0)
-  pitch           Float    @default(1.0)
-  emotion         String?  // neutral, happy, sad, excited, etc.
-  emphasis        Json?    // word-level emphasis settings
+  createdAt DateTime @default(now())
 
-  // Status tracking
-  status          String   @default("pending") // pending, processing, completed, failed
-  errorMessage    String?
-
-  // Cost tracking
-  characterCount  Int
-  cost            Float?   // in credits or dollars
-
-  createdAt       DateTime @default(now())
-  completedAt     DateTime?
-
-  @@index([userId])
-  @@index([voiceId])
-  @@index([status])
+  @@index([designId])
+  @@index([style])
   @@index([createdAt])
-  @@map("voice_generations")
+  @@map("design_variations")
 }
 
 // Subscription model
@@ -143,9 +110,9 @@ model Subscription {
   stripeCurrentPeriodEnd DateTime?
 
   // Usage limits
-  monthlyCharacterLimit Int       @default(10000)
-  monthlyVoiceClones    Int       @default(1)
-  allowCustomVoices     Boolean   @default(false)
+  monthlyDesignLimit    Int       @default(3)
+  monthlyVariations     Int       @default(2)
+  allowHDExport         Boolean   @default(false)
   allowCommercialUse    Boolean   @default(false)
 
   createdAt         DateTime  @default(now())
@@ -164,8 +131,8 @@ model UsageLog {
   userId          String
   user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  action          String   // generate_voice, clone_voice, download_audio, etc.
-  characterCount  Int?
+  action          String   // generate_design, create_variation, generate_mockup, download_design, etc.
+  designCount     Int?     // Number of designs generated
   cost            Float?
 
   metadata        Json?    // flexible field for additional data
@@ -178,79 +145,8 @@ model UsageLog {
   @@map("usage_logs")
 }
 
-// Pre-built voice templates (system voices)
-model VoiceTemplate {
-  id          String   @id @default(cuid())
 
-  name        String
-  description String?
-  language    String
-  accent      String?
-  gender      String
-  ageGroup    String
-  style       String
-
-  // Audio sample
-  sampleAudioUrl String
-
-  // Featured on homepage
-  isFeatured  Boolean  @default(false)
-  isPremium   Boolean  @default(false)
-
-  // Usage stats
-  usageCount  Int      @default(0)
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([language])
-  @@index([isFeatured])
-  @@map("voice_templates")
-}
-
-// Audio model - generated or uploaded audio files
-model Audio {
-  id             String   @id @default(cuid())
-  userId         String
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  // Audio file details
-  filename       String
-  audioUrl       String   // Vercel Blob URL
-  duration       Float?   // seconds
-  fileSize       Int?     // bytes
-  format         String   @default("mp3") // mp3, wav, ogg
-
-  // Generation details (if generated)
-  voiceId        String?
-  voice          Voice?   @relation(fields: [voiceId], references: [id], onDelete: SetNull)
-  text           String?  @db.Text // Original text if generated
-  metadata       Json?    // Settings used for generation (speed, pitch, emotion, etc.)
-
-  // Upload details (if uploaded)
-  uploadSource   String?  // "upload", "generate", "import"
-
-  // Organization
-  tags           String[] // For categorization
-  description    String?
-
-  // Status
-  status         String   @default("ready") // ready, processing, failed
-
-  // Projects relationship
-  projectAudios  ProjectAudio[]
-
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-
-  @@index([userId])
-  @@index([voiceId])
-  @@index([status])
-  @@index([createdAt])
-  @@map("audios")
-}
-
-// Project model - audio projects for expert assignment
+// Project model - custom design projects for expert assignment
 model Project {
   id                String   @id @default(cuid())
   userId            String
@@ -270,7 +166,7 @@ model Project {
   estimationData    Json?    // Full estimation response from OpenAI
   actualCost        Float?   // Final actual cost after completion
 
-  // Expert assignment
+  // Expert assignment (fashion designer/illustrator)
   expertId          String?
   expert            ExpertProfile? @relation(fields: [expertId], references: [id], onDelete: SetNull)
   instructions      String?  @db.Text
@@ -287,9 +183,6 @@ model Project {
   priority          String   @default("medium") // low, medium, high, urgent
   tags              String[] // For categorization
 
-  // Audios in this project
-  projectAudios     ProjectAudio[]
-
   // Credit transactions
   creditLedger      CreditLedger[]
 
@@ -304,38 +197,14 @@ model Project {
   @@map("projects")
 }
 
-// ProjectAudio junction table - many-to-many relationship
-model ProjectAudio {
-  id         String   @id @default(cuid())
-  projectId  String
-  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
-
-  audioId    String
-  audio      Audio    @relation(fields: [audioId], references: [id], onDelete: Cascade)
-
-  // Order in project (for sequencing)
-  order      Int      @default(0)
-
-  // Status tracking for this specific audio in the project
-  status     String   @default("pending") // pending, in_progress, completed
-  notes      String?  @db.Text
-
-  createdAt  DateTime @default(now())
-
-  @@unique([projectId, audioId])
-  @@index([projectId])
-  @@index([audioId])
-  @@map("project_audios")
-}
-
-// ExpertProfile model - expert users who can be assigned projects
+// ExpertProfile model - fashion designers/illustrators who can be assigned projects
 model ExpertProfile {
   id             String   @id @default(cuid())
   userId         String   @unique
   user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   // Expert details
-  specialization String[] // voice-over, audio-editing, translation, etc.
+  specialization String[] // fashion-design, illustration, pattern-making, technical-drawing, etc.
   bio            String?  @db.Text
   hourlyRate     Float?   // in dollars
 

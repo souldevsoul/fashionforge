@@ -180,7 +180,7 @@ export default function BlogPage() {
             <h2 className="text-2xl font-bold uppercase">Featured Post</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 bg-black border-4 border-black brutalist-shadow-yellow p-8">
+          <div className="grid md:grid-cols-2 gap-8 bg-black border-4 border-black brutalist-shadow-purple p-8">
             <div className="bg-purple-400 border-4 border-black aspect-video flex items-center justify-center">
               <RiMicLine className="w-24 h-24 text-black" />
             </div>
@@ -255,7 +255,7 @@ export default function BlogPage() {
                 <div
                   key={index}
                   className={`${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-yellow" : "brutalist-shadow"
+                    colorIndex === 1 ? "brutalist-shadow-purple" : "brutalist-shadow"
                   } overflow-hidden flex flex-col`}
                 >
                   {/* Image Placeholder */}

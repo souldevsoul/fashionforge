@@ -23,7 +23,7 @@ export function Footer() {
               FashionForge
             </h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Professional AI voice synthesis platform powered by the world's most trusted models.
+              AI-powered fashion design platform. Transform sketches into professional apparel designs instantly.
             </p>
 
             {/* Payment Logos */}
@@ -48,7 +48,7 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a
-                href="https://twitter.com/voicecraft"
+                href="https://twitter.com/fashionforge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-purple-400 transition-colors"
@@ -57,7 +57,7 @@ export function Footer() {
                 <RiTwitterXFill className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/company/voicecraft"
+                href="https://linkedin.com/company/fashionforge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-purple-400 transition-colors"
@@ -66,7 +66,7 @@ export function Footer() {
                 <RiLinkedinBoxFill className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/voicecraft"
+                href="https://github.com/fashionforge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-purple-400 transition-colors"
@@ -192,7 +192,7 @@ export function Footer() {
                   <address className="text-white not-italic">
                     FashionForge, Inc.
                     <br />
-                    123 Voice Street, Suite 100
+                    123 Fashion Boulevard, Suite 100
                     <br />
                     San Francisco, CA 94105
                     <br />
@@ -225,7 +225,7 @@ export function Footer() {
                   <span className="font-bold">VAT Number:</span> US123456789
                 </p>
                 <p>
-                  <span className="font-bold">Registered Address:</span> 123 Voice Street, Suite 100, San Francisco, CA 94105, United States
+                  <span className="font-bold">Registered Address:</span> 123 Fashion Boulevard, Suite 100, San Francisco, CA 94105, United States
                 </p>
               </div>
             </div>

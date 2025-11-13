@@ -225,7 +225,7 @@ export default function DeliveryPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                   <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">Unplanned Outages</h3>
                   <p className="leading-relaxed mb-3">
                     In rare cases of unplanned service interruption:
@@ -285,7 +285,7 @@ export default function DeliveryPolicyPage() {
 
             {/* Failed Delivery */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   IF SERVICE DELIVERY FAILS
                 </h2>

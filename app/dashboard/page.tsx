@@ -1,8 +1,8 @@
 import { Suspense } from "react"
 import Link from "next/link"
 import {
-  RiVoiceprintLine,
-  RiSoundModuleLine,
+  RiShirtLine,
+  RiImageLine,
   RiFolder3Line,
   RiCoinLine,
   RiArrowRightLine,
@@ -14,16 +14,16 @@ import { Button } from "@/components/ui/button"
 import { DashboardQuickActions } from "@/components/dashboard/dashboard-quick-actions"
 
 type DashboardStats = {
-  totalAudios: number
-  totalVoices: number
+  totalDesigns: number
+  totalVariations: number
   totalProjects: number
   creditsRemaining: number
 }
 
-type RecentAudio = {
+type RecentDesign = {
   id: string
   filename: string
-  voiceName: string | null
+  category: string | null
   createdAt: string
   status: string
 }
@@ -33,86 +33,86 @@ async function getDashboardStats(): Promise<DashboardStats> {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 
     // Fetch all counts in parallel
-    const [audiosRes, voicesRes, projectsRes] = await Promise.all([
-      fetch(`${baseUrl}/api/audios?limit=1`, { cache: 'no-store' }),
-      fetch(`${baseUrl}/api/voices?limit=1`, { cache: 'no-store' }),
+    const [designsRes, variationsRes, projectsRes] = await Promise.all([
+      fetch(`${baseUrl}/api/designs?limit=1`, { cache: 'no-store' }),
+      fetch(`${baseUrl}/api/variations?limit=1`, { cache: 'no-store' }),
       fetch(`${baseUrl}/api/projects?limit=1`, { cache: 'no-store' }),
     ])
 
-    const [audiosData, voicesData, projectsData] = await Promise.all([
-      audiosRes.ok ? audiosRes.json() : { pagination: { total: 0 } },
-      voicesRes.ok ? voicesRes.json() : { pagination: { total: 0 } },
+    const [designsData, variationsData, projectsData] = await Promise.all([
+      designsRes.ok ? designsRes.json() : { pagination: { total: 0 } },
+      variationsRes.ok ? variationsRes.json() : { pagination: { total: 0 } },
       projectsRes.ok ? projectsRes.json() : { pagination: { total: 0 } },
     ])
 
     return {
-      totalAudios: audiosData.pagination?.total || 0,
-      totalVoices: voicesData.pagination?.total || 0,
+      totalDesigns: designsData.pagination?.total || 0,
+      totalVariations: variationsData.pagination?.total || 0,
       totalProjects: projectsData.pagination?.total || 0,
-      creditsRemaining: 1250, // TODO: Get from user subscription
+      creditsRemaining: 27, // TODO: Get from user subscription
     }
   } catch (error) {
     console.error('Error fetching dashboard stats:', error)
     return {
-      totalAudios: 0,
-      totalVoices: 0,
+      totalDesigns: 0,
+      totalVariations: 0,
       totalProjects: 0,
       creditsRemaining: 0,
     }
   }
 }
 
-async function getRecentAudios(): Promise<RecentAudio[]> {
+async function getRecentDesigns(): Promise<RecentDesign[]> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-    const response = await fetch(`${baseUrl}/api/audios?limit=5&sortBy=createdAt&sortOrder=desc`, {
+    const response = await fetch(`${baseUrl}/api/designs?limit=5&sortBy=createdAt&sortOrder=desc`, {
       cache: 'no-store',
     })
 
     if (!response.ok) {
-      console.error('Failed to fetch recent audios:', response.statusText)
+      console.error('Failed to fetch recent designs:', response.statusText)
       return []
     }
 
     const data = await response.json()
 
-    if (!data.success || !data.audios) {
+    if (!data.success || !data.designs) {
       console.error('Invalid API response:', data)
       return []
     }
 
-    // Map API response to RecentAudio type
-    return data.audios.map((audio: any) => ({
-      id: audio.id,
-      filename: audio.filename,
-      voiceName: audio.voice?.name || null,
-      createdAt: new Date(audio.createdAt).toISOString(),
-      status: audio.status,
+    // Map API response to RecentDesign type
+    return data.designs.map((design: any) => ({
+      id: design.id,
+      filename: design.filename,
+      category: design.category || null,
+      createdAt: new Date(design.createdAt).toISOString(),
+      status: design.status,
     }))
   } catch (error) {
-    console.error('Error fetching recent audios:', error)
+    console.error('Error fetching recent designs:', error)
     return []
   }
 }
 
 export default async function DashboardPage() {
   const stats = await getDashboardStats()
-  const recentAudios = await getRecentAudios()
+  const recentDesigns = await getRecentDesigns()
 
   const statCards = [
     {
-      title: "Total Audios",
-      value: stats.totalAudios,
-      icon: RiSoundModuleLine,
-      color: "bg-rose-400",
-      link: "/dashboard/audios",
+      title: "Total Designs",
+      value: stats.totalDesigns,
+      icon: RiShirtLine,
+      color: "bg-purple-400",
+      link: "/dashboard/designs",
     },
     {
-      title: "Cloned Voices",
-      value: stats.totalVoices,
-      icon: RiVoiceprintLine,
-      color: "bg-purple-400",
-      link: "/dashboard/voices",
+      title: "Design Variations",
+      value: stats.totalVariations,
+      icon: RiImageLine,
+      color: "bg-pink-500",
+      link: "/dashboard/variations",
     },
     {
       title: "Active Projects",
@@ -122,7 +122,7 @@ export default async function DashboardPage() {
       link: "/dashboard/projects",
     },
     {
-      title: "Credits",
+      title: "Designs Left",
       value: stats.creditsRemaining,
       icon: RiCoinLine,
       color: "bg-purple-400",
@@ -168,14 +168,14 @@ export default async function DashboardPage() {
           })}
         </div>
 
-        {/* Recent Audios */}
+        {/* Recent Designs */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
           <Card variant="outlined" className="col-span-4 p-6">
             <div className="flex items-center justify-between">
               <Heading variant="h3" className="uppercase">
-                Recent Audios
+                Recent Designs
               </Heading>
-              <Link href="/dashboard/audios">
+              <Link href="/dashboard/designs">
                 <Button variant="ghost" size="sm">
                   View All
                   <RiArrowRightLine className="ml-2 h-4 w-4" />
@@ -184,57 +184,57 @@ export default async function DashboardPage() {
             </div>
 
             <div className="mt-4 space-y-3">
-              {recentAudios.map((audio) => (
+              {recentDesigns.map((design) => (
                 <div
-                  key={audio.id}
+                  key={design.id}
                   className="flex items-center justify-between border-2 border-black p-4 hover:bg-purple-50 transition-colors"
                 >
                   <div className="flex items-center space-x-4">
                     <div className="flex h-10 w-10 items-center justify-center border-2 border-black bg-white">
-                      <RiSoundModuleLine className="h-5 w-5" />
+                      <RiShirtLine className="h-5 w-5" />
                     </div>
                     <div>
                       <Text variant="body" className="font-medium">
-                        {audio.filename}
+                        {design.filename}
                       </Text>
-                      <Text variant="caption" className="text-xs text-slate-600">
-                        {audio.voiceName || "No voice"}
+                      <Text variant="caption" className="text-xs text-slate-600 uppercase">
+                        {design.category || "No category"}
                       </Text>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Badge
-                      variant={audio.status === "ready" ? "success" : "warning"}
+                      variant={design.status === "ready" ? "success" : "warning"}
                       className="text-xs"
                     >
-                      {audio.status}
+                      {design.status}
                     </Badge>
                     <Text variant="caption" className="text-xs text-slate-500">
-                      {new Date(audio.createdAt).toLocaleTimeString()}
+                      {new Date(design.createdAt).toLocaleTimeString()}
                     </Text>
                   </div>
                 </div>
               ))}
 
-              {recentAudios.length === 0 && (
+              {recentDesigns.length === 0 && (
                 <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-black p-8">
-                  <RiSoundModuleLine className="h-12 w-12 text-slate-400" />
+                  <RiShirtLine className="h-12 w-12 text-slate-400" />
                   <Text variant="body" className="mt-2 text-slate-600">
-                    No recent audios
+                    No recent designs
                   </Text>
                 </div>
               )}
             </div>
           </Card>
 
-          {/* Credits Card */}
+          {/* Designs Left Card */}
           <Card variant="outlined" className="col-span-3 p-6">
             <div className="flex items-center justify-between">
               <Heading variant="h3" className="uppercase">
-                Credits
+                Designs Left
               </Heading>
               <Button variant="primary" size="sm">
-                Buy More
+                Upgrade
               </Button>
             </div>
 
@@ -246,7 +246,7 @@ export default async function DashboardPage() {
                       {stats.creditsRemaining}
                     </Heading>
                     <Text variant="caption" className="text-xs uppercase">
-                      Remaining
+                      This Month
                     </Text>
                   </div>
                 </div>
@@ -255,26 +255,26 @@ export default async function DashboardPage() {
               <div className="space-y-2 border-t-2 border-black pt-4">
                 <div className="flex items-center justify-between text-sm">
                   <Text variant="caption" className="text-slate-600">
-                    Voice Generation
+                    Design Upload
                   </Text>
                   <Text variant="body" className="font-medium">
-                    10 credits
+                    1 design
                   </Text>
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <Text variant="caption" className="text-slate-600">
-                    Voice Cloning
+                    Variation (each)
                   </Text>
                   <Text variant="body" className="font-medium">
-                    50 credits
+                    Free
                   </Text>
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <Text variant="caption" className="text-slate-600">
-                    AI Estimation
+                    HD Export
                   </Text>
                   <Text variant="body" className="font-medium">
-                    5 credits
+                    Pro Only
                   </Text>
                 </div>
               </div>

@@ -21,8 +21,8 @@ const inter = Inter({
 // Font will be loaded through globals.css
 
 export const metadata: Metadata = {
-  title: "FashionForge - AI-Powered Voice Synthesis",
-  description: "Create professional voice content in seconds with AI-powered voice synthesis and cloning.",
+  title: "FashionForge - AI Fashion Design Studio",
+  description: "Transform sketches into professional fashion designs with AI. Create apparel mockups, try-on visualizations, and export ready-to-produce designs.",
 };
 
 export default function RootLayout({

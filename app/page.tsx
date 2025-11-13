@@ -85,14 +85,14 @@ export default function Home() {
   // Pricing data
   const pricingPlans = [
     {
-      name: "STARTER",
+      name: "FREE",
       price: "$0",
       description: "Perfect for trying out FashionForge",
       features: [
-        { text: "10,000 characters/month", included: true },
-        { text: "5 preset voices", included: true },
-        { text: "MP3 downloads", included: true },
-        { text: "Voice cloning", included: false },
+        { text: "3 designs per month", included: true },
+        { text: "2 variations per design", included: true },
+        { text: "Standard resolution", included: true },
+        { text: "HD exports", included: false },
         { text: "Commercial use", included: false },
         { text: "Priority support", included: false },
       ],
@@ -100,15 +100,15 @@ export default function Home() {
       popular: false,
     },
     {
-      name: "PRO",
-      price: "$29",
-      description: "For professionals and content creators",
+      name: "DESIGNER",
+      price: "$39",
+      description: "For professional fashion designers",
       features: [
-        { text: "100,000 characters/month", included: true },
-        { text: "50+ preset voices", included: true },
-        { text: "WAV & MP3 downloads", included: true },
-        { text: "3 voice clones", included: true },
-        { text: "Commercial use", included: true },
+        { text: "30 designs per month", included: true },
+        { text: "5 variations per design", included: true },
+        { text: "HD resolution exports", included: true },
+        { text: "Virtual try-on mockups", included: true },
+        { text: "Commercial use license", included: true },
         { text: "Priority support", included: true },
         { text: "API access", included: false },
       ],
@@ -116,19 +116,19 @@ export default function Home() {
       popular: true,
     },
     {
-      name: "ENTERPRISE",
-      price: "CUSTOM",
-      description: "For teams and organizations",
+      name: "STUDIO",
+      price: "$149",
+      description: "For fashion brands and studios",
       features: [
-        { text: "Unlimited characters", included: true },
-        { text: "All preset voices", included: true },
-        { text: "All audio formats", included: true },
-        { text: "Unlimited voice clones", included: true },
-        { text: "Commercial use", included: true },
-        { text: "Dedicated support", included: true },
+        { text: "200 designs per month", included: true },
+        { text: "Unlimited variations", included: true },
+        { text: "4K resolution exports", included: true },
+        { text: "Advanced mockup editor", included: true },
+        { text: "Full commercial license", included: true },
+        { text: "Team collaboration", included: true },
         { text: "Full API access", included: true },
         { text: "Custom integrations", included: true },
-        { text: "SLA guarantee", included: true },
+        { text: "Dedicated support", included: true },
       ],
       ctaText: "CONTACT SALES",
       popular: false,
@@ -141,8 +141,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b-4 border-black bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-yellow">
-              <RiMic2Fill className="w-7 h-7 text-purple-400" />
+            <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-purple">
+              <RiShirtLine className="w-7 h-7 text-purple-400" />
             </div>
             <span className="text-xl font-bold uppercase tracking-tight">FASHIONFORGE</span>
           </div>
@@ -169,19 +169,19 @@ export default function Home() {
             {/* Badge */}
             <div className={`inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black brutalist-shadow transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
               <RiSparklingLine className="w-6 h-6" />
-              <Text variant="body-sm" className="font-bold uppercase tracking-wider">AI-POWERED VOICE SYNTHESIS</Text>
+              <Text variant="body-sm" className="font-bold uppercase tracking-wider">AI-POWERED FASHION DESIGN STUDIO</Text>
             </div>
 
             {/* Big Revealing Text */}
             <div className="space-y-6">
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none">
                 <span className={`block transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">YOUR</span>{" "}
-                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">VOICE</span>
+                  <span className="text-black">FROM</span>{" "}
+                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">SKETCH</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">YOUR</span>{" "}
-                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">STYLE</span>
+                  <span className="text-black">TO</span>{" "}
+                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">RUNWAY</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                   <span className="text-black">IN</span>{" "}
@@ -193,7 +193,7 @@ export default function Home() {
             {/* Subtitle */}
             <div className={`transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <Text variant="lead" className="text-gray-900 max-w-3xl mx-auto text-xl md:text-2xl font-medium">
-                Clone voices, generate speech, create content. Professional AI voice synthesis powered by cutting-edge machine learning.
+                Transform sketches into professional fashion designs. Create apparel mockups, try-on visualizations, and export ready-to-produce designs with AI.
               </Text>
             </div>
 
@@ -205,7 +205,7 @@ export default function Home() {
                 onClick={() => window.location.href = '/dashboard'}
               >
                 <RiArrowRightLine className="w-6 h-6" />
-                Start Free Now
+                Create Design Now
               </Button>
               <Button
                 size="xl"
@@ -213,8 +213,8 @@ export default function Home() {
                 className="gap-3 bg-white text-black hover:bg-gray-100 border-4 border-black font-bold uppercase text-lg px-12 py-8"
                 onClick={() => window.location.href = '/demo'}
               >
-                <RiMic2Fill className="w-6 h-6" />
-                Try Demo
+                <RiPlayCircleLine className="w-6 h-6" />
+                Watch Demo
               </Button>
             </div>
           </div>
@@ -283,7 +283,7 @@ export default function Home() {
             </div>
             <Heading variant="h2" className="mb-4 uppercase text-4xl md:text-5xl lg:text-6xl">EVERYTHING YOU NEED</Heading>
             <Text variant="body-lg" className="text-gray-600 max-w-3xl mx-auto">
-              Powerful features designed for creators, businesses, and developers
+              Powerful features designed for fashion designers, brands, and creative studios
             </Text>
           </div>
 
@@ -293,7 +293,7 @@ export default function Home() {
               const bgColors = ["bg-white", "bg-black", "bg-purple-400"]
               const textColors = ["text-black", "text-purple-400", "text-black"]
               const borderColors = ["border-black", "border-black", "border-black"]
-              const shadowColors = ["brutalist-shadow", "brutalist-shadow-yellow", "brutalist-shadow"]
+              const shadowColors = ["brutalist-shadow", "brutalist-shadow-purple", "brutalist-shadow"]
 
               const colorIndex = index % 3
 
@@ -324,7 +324,7 @@ export default function Home() {
             </div>
             <Heading variant="h2" className="mb-4 uppercase text-4xl md:text-5xl lg:text-6xl">CHOOSE YOUR PLAN</Heading>
             <Text variant="body-lg" className="text-gray-600 max-w-3xl mx-auto">
-              Start free, upgrade when you need more. All plans include our core features.
+              Start free, scale as you grow. All plans include AI design generation and virtual try-on.
             </Text>
           </div>
 
@@ -334,7 +334,7 @@ export default function Home() {
                 key={index}
                 className={`p-8 border-4 border-black ${
                   plan.popular
-                    ? "bg-black brutalist-shadow-yellow"
+                    ? "bg-black brutalist-shadow-purple"
                     : "bg-white brutalist-shadow"
                 }`}
               >
@@ -403,15 +403,15 @@ export default function Home() {
             <Text variant="body-sm" className="text-black font-bold uppercase tracking-wider">Ready to Start?</Text>
           </div>
           <Heading variant="h1" className="mb-6 text-purple-400 uppercase text-5xl md:text-6xl lg:text-7xl">
-            TRANSFORM YOUR VOICE CONTENT
+            DESIGN YOUR FASHION FUTURE
           </Heading>
           <Text variant="body-lg" className="text-white mb-12 max-w-2xl mx-auto">
-            Join thousands of creators and businesses using FashionForge to create professional voice content in seconds. Start your free trial today—no credit card required.
+            Join fashion designers and brands using FashionForge to create professional apparel designs in seconds. Start your free trial today—no credit card required.
           </Text>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="xl"
-              className="gap-3 bg-purple-400 text-black hover:bg-purple-300 border-4 border-purple-400 font-bold uppercase brutalist-shadow-yellow"
+              className="gap-3 bg-purple-400 text-black hover:bg-purple-300 border-4 border-purple-400 font-bold uppercase brutalist-shadow-purple"
               onClick={() => window.location.href = '/dashboard'}
             >
               <RiArrowRightLine className="w-5 h-5" />

@@ -132,7 +132,7 @@ export default function PaymentPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                   <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">No Minimum or Maximum Transaction Amounts</h3>
                   <p className="leading-relaxed">
                     In compliance with Visa and Mastercard regulations, we do not impose minimum or maximum transaction amounts for card payments. All subscription tiers are available regardless of payment amount.
@@ -245,7 +245,7 @@ export default function PaymentPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                   <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">Email Notifications</h3>
                   <p className="leading-relaxed">
                     We will email you immediately when a payment fails and before each retry attempt. Please update your payment information promptly to avoid service interruption.
@@ -272,7 +272,7 @@ export default function PaymentPolicyPage() {
 
             {/* Disputes */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
                 <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   PAYMENT DISPUTES & CHARGEBACKS
                 </h2>

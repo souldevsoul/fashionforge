@@ -138,7 +138,7 @@ export default function ContactPage() {
                   ? "bg-purple-400"
                   : "bg-white"
               const shadowClass =
-                method.color === "black" ? "brutalist-shadow-yellow" : "brutalist-shadow"
+                method.color === "black" ? "brutalist-shadow-purple" : "brutalist-shadow"
 
               return (
                 <div
@@ -343,7 +343,7 @@ export default function ContactPage() {
               <div
                 key={index}
                 className={`p-8 border-4 border-black ${
-                  index % 2 === 0 ? "bg-white brutalist-shadow" : "bg-black text-white brutalist-shadow-yellow"
+                  index % 2 === 0 ? "bg-white brutalist-shadow" : "bg-black text-white brutalist-shadow-purple"
                 }`}
               >
                 <h3
@@ -399,7 +399,7 @@ export default function ContactPage() {
 
             <a
               href="/demo"
-              className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow text-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(234,179,8,1)] transition-all"
+              className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple text-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(249,115,22,1)] transition-all"
             >
               <RiRocketLine className="w-12 h-12 text-purple-400 mx-auto mb-4" />
               <h3 className="text-lg font-bold uppercase mb-2 text-purple-400">Try Demo</h3>
@@ -432,7 +432,7 @@ export default function ContactPage() {
             <p className="text-xl text-white mb-8">
               Enterprise customers with SLA agreements have access to priority 24/7 support via dedicated channels.
             </p>
-            <div className="p-8 bg-white border-4 border-white brutalist-shadow-yellow">
+            <div className="p-8 bg-white border-4 border-white brutalist-shadow-purple">
               <h3 className="text-2xl font-bold uppercase mb-4">ENTERPRISE CUSTOMERS</h3>
               <p className="text-gray-700 mb-6">
                 If you have an active Enterprise plan with SLA guarantee, use your dedicated support channels for immediate assistance.
