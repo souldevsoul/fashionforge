@@ -17,134 +17,84 @@ import {
 } from "react-icons/ri"
 
 export default function PricingPage() {
-  const pricingTiers = [
+  const creditBundles = [
     {
-      name: "Starter",
-      price: "$0",
-      period: "forever",
-      description: "Perfect for trying out FashionForge and small design projects",
+      name: "STARTER",
+      credits: 100,
+      price: "$9",
+      pricePerCredit: "$0.09",
+      period: "one-time",
+      description: "Perfect for trying out FashionForge",
       popular: false,
+      savings: null,
       features: [
-        { text: "3 designs/month", included: true },
-        { text: "FLUX Pro AI model", included: true },
-        { text: "2 style variations per design", included: true },
-        { text: "Standard resolution exports", included: true },
-        { text: "5 style categories", included: true },
-        { text: "Email support", included: true },
-        { text: "HD exports (4K resolution)", included: false },
-        { text: "Commercial license", included: false },
-        { text: "Team collaboration", included: false },
-        { text: "Priority support", included: false },
+        "6 design generations (15 credits each)",
+        "20 design variations (5 credits each)",
+        "Never expires",
+        "Commercial use included",
+        "Email support",
       ],
-      cta: "Start Free",
-      ctaHref: "/signup",
+      cta: "Buy Now",
+      ctaHref: "/dashboard",
     },
     {
-      name: "Designer",
+      name: "PRO",
+      credits: 500,
       price: "$39",
-      period: "per month",
-      description: "For designers and brands that need powerful fashion design tools",
+      pricePerCredit: "$0.078",
+      period: "one-time",
+      description: "Best value for professional designers",
       popular: true,
+      savings: "Save 13%",
       features: [
-        { text: "30 designs/month", included: true },
-        { text: "FLUX Pro + advanced models", included: true },
-        { text: "5 style variations per design", included: true },
-        { text: "HD exports (4K resolution)", included: true },
-        { text: "PNG, SVG, PSD formats", included: true },
-        { text: "Color palette customization", included: true },
-        { text: "Commercial license", included: true },
-        { text: "API access", included: true },
-        { text: "Priority email support", included: true },
-        { text: "Usage analytics", included: true },
+        "33 design generations",
+        "100 design variations",
+        "50 mockup generations (10 credits)",
+        "50 tech pack exports (10 credits)",
+        "Never expires",
+        "Commercial use included",
+        "Priority email support",
       ],
-      cta: "Start Free Trial",
-      ctaHref: "/signup?plan=designer",
+      cta: "Buy Now",
+      ctaHref: "/dashboard",
     },
     {
-      name: "Studio",
+      name: "STUDIO",
+      credits: 2000,
       price: "$149",
-      period: "per month",
-      description: "Unlimited designs, team collaboration, and dedicated support",
+      pricePerCredit: "$0.0745",
+      period: "one-time",
+      description: "For fashion brands and design studios",
       popular: false,
+      savings: "Save 17%",
       features: [
-        { text: "200 designs/month", included: true },
-        { text: "All models + beta access", included: true },
-        { text: "Unlimited style variations", included: true },
-        { text: "Custom design training", included: true },
-        { text: "Dedicated infrastructure", included: true },
-        { text: "SLA guarantee (99.9% uptime)", included: true },
-        { text: "Team collaboration (unlimited)", included: true },
-        { text: "SSO integration", included: true },
-        { text: "Priority 24/7 support", included: true },
-        { text: "Custom integrations", included: true },
+        "133 design generations",
+        "400 design variations",
+        "200 mockup generations",
+        "200 tech pack exports",
+        "Priority processing",
+        "Never expires",
+        "Full commercial license",
+        "Dedicated support",
       ],
-      cta: "Contact Sales",
-      ctaHref: "/contact",
+      cta: "Buy Now",
+      ctaHref: "/dashboard",
     },
   ]
 
-  const comparisonFeatures = [
-    {
-      category: "USAGE LIMITS",
-      features: [
-        { name: "Designs per month", starter: "3", designer: "30", studio: "200" },
-        { name: "Style variations", starter: "2", designer: "5", studio: "Unlimited" },
-        { name: "API requests/min", starter: "10", designer: "60", studio: "Custom" },
-        { name: "Concurrent generations", starter: "1", designer: "3", studio: "Unlimited" },
-      ],
-    },
-    {
-      category: "AI MODELS",
-      features: [
-        { name: "FLUX Pro (1M+ designs)", starter: true, designer: true, studio: true },
-        { name: "Style Intelligence", starter: false, designer: true, studio: true },
-        { name: "Advanced color matching", starter: false, designer: true, studio: true },
-        { name: "Pattern generation", starter: false, designer: true, studio: true },
-        { name: "Beta model access", starter: false, designer: false, studio: true },
-        { name: "Custom model training", starter: false, designer: false, studio: true },
-      ],
-    },
-    {
-      category: "FEATURES",
-      features: [
-        { name: "Basic style presets", starter: true, designer: true, studio: true },
-        { name: "Multi-style variations", starter: false, designer: true, studio: true },
-        { name: "Color palette control", starter: false, designer: true, studio: true },
-        { name: "Category selection (5 types)", starter: true, designer: true, studio: true },
-        { name: "Pattern customization", starter: true, designer: true, studio: true },
-        { name: "HD exports (4K)", starter: false, designer: true, studio: true },
-        { name: "File formats (PNG, SVG, PSD)", starter: "PNG", designer: true, studio: true },
-        { name: "Transparent backgrounds", starter: false, designer: true, studio: true },
-        { name: "Batch processing", starter: false, designer: true, studio: true },
-      ],
-    },
-    {
-      category: "SUPPORT & SECURITY",
-      features: [
-        { name: "Email support", starter: true, designer: true, studio: true },
-        { name: "Priority support", starter: false, designer: true, studio: true },
-        { name: "24/7 support", starter: false, designer: false, studio: true },
-        { name: "Dedicated account manager", starter: false, designer: false, studio: true },
-        { name: "GDPR compliance", starter: true, designer: true, studio: true },
-        { name: "SOC 2 Type II", starter: true, designer: true, studio: true },
-        { name: "SLA guarantee", starter: false, designer: false, studio: "99.9%" },
-        { name: "SSO integration", starter: false, designer: false, studio: true },
-      ],
-    },
-  ]
 
   const faqs = [
     {
-      question: "How is usage calculated?",
-      answer: "Usage is calculated based on the number of designs you generate per month. Each time you upload a sketch and generate variations, it counts as one design. Style variations are counted separately based on your plan limits.",
+      question: "How do credits work?",
+      answer: "Credits are the currency you use to create designs in FashionForge. Each action costs a specific number of credits: Design generation (15 credits), Design variation (5 credits), Mockup generation (10 credits), and Tech pack creation (10 credits). Credits never expire once purchased.",
     },
     {
-      question: "What happens if I exceed my design limit?",
-      answer: "On the Starter plan, generation will be paused until the next month. On Designer plan, you can purchase additional design packs for $25 per 10 designs. Studio plans have generous limits of 200 designs/month.",
+      question: "Do credits expire?",
+      answer: "No! Credits never expire. Purchase once and use them whenever you need. There are no monthly limits or time restrictions. Use your credits at your own pace.",
     },
     {
-      question: "Can I cancel anytime?",
-      answer: "Yes! All plans can be canceled at any time. If you cancel, you'll retain access until the end of your current billing period, and you won't be charged again.",
+      question: "Can I get a refund on unused credits?",
+      answer: "Credits are non-refundable once purchased. However, since credits never expire, you can always use them in the future whenever you need to create designs.",
     },
     {
       question: "What design categories are supported?",
@@ -152,27 +102,27 @@ export default function PricingPage() {
     },
     {
       question: "What are style variations?",
-      answer: "Style variations allow you to generate multiple design interpretations from a single sketch. Upload one design and get variations in Modern (contemporary), Retro (vintage), Minimalist (clean), Bold (statement), and Elegant (refined) styles. Designer plan includes 5 variations per design.",
+      answer: "Style variations allow you to generate multiple design interpretations from a single base design. After creating an initial design (15 credits), you can create variations in different styles for only 5 credits each. Each variation explores different aesthetic directions while maintaining the core concept.",
     },
     {
       question: "What export formats are supported?",
-      answer: "Starter plan supports PNG. Designer and Studio plans support PNG, SVG (vector), and PSD (Adobe Photoshop) formats. All formats can be exported at up to 4K resolution for print-ready quality.",
+      answer: "All generated designs can be downloaded as high-resolution PNG files. Designs include full commercial usage rights, allowing you to use them for products, portfolios, client presentations, and manufacturing.",
     },
     {
-      question: "Is there a free trial for Designer?",
-      answer: "Yes! All new Designer subscribers get a 14-day free trial. No credit card required to start. Cancel anytime during the trial and you won't be charged.",
+      question: "How do I buy more credits?",
+      answer: "You can purchase additional credits anytime from your dashboard. Simply select a credit bundle (Starter, Pro, or Studio) and complete the checkout. Credits are added to your account instantly after payment.",
     },
     {
       question: "What is the commercial license?",
-      answer: "Designer and Studio plans include a commercial license, allowing you to use generated designs for commercial purposes including selling products, client work, and brand campaigns. Starter plan is for personal use only.",
+      answer: "All credit bundles include full commercial usage rights. You can use generated designs for selling products, client work, brand campaigns, manufacturing, and any commercial purpose without additional licensing fees.",
     },
     {
-      question: "Do you offer discounts for non-profits or education?",
-      answer: "Yes! We offer 50% discounts for qualified non-profit organizations and educational institutions. Contact us at sales@fashionforge.ai with your organization details.",
+      question: "Do you offer bulk discounts?",
+      answer: "Yes! Larger credit bundles offer better per-credit pricing. The Pro bundle (500 credits) saves 13%, and the Studio bundle (2000 credits) saves 17% compared to the Starter bundle. For enterprise needs beyond 2000 credits, contact us for custom pricing.",
     },
     {
       question: "How secure is my data?",
-      answer: "All design data is encrypted end-to-end (AES-256). We're GDPR compliant and SOC 2 Type II certified. Your sketches and generated designs are never shared with third parties. Studio plans can opt for zero data retention.",
+      answer: "All design data is encrypted end-to-end (AES-256). We're GDPR compliant and SOC 2 Type II certified. Your sketches and generated designs are never shared with third parties or used to train AI models without your explicit consent.",
     },
   ]
 
@@ -193,31 +143,31 @@ export default function PricingPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
-              <RiSparklingLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Pricing</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-8">
+              <RiSparklingLine className="w-5 h-5 text-purple-600" />
+              <span className="text-sm font-semibold text-purple-800">Simple Pricing</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              SIMPLE, TRANSPARENT PRICING
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Buy Credits, Use Anytime
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              Start free, scale as you grow. No hidden fees, no surprises. Cancel anytime.
+            <p className="text-xl text-gray-600 mb-8">
+              Pay only for what you use. Credits never expire. No subscriptions, no hidden fees.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2">
-                <RiShieldCheckLine className="w-5 h-5 text-black" />
-                <span className="font-bold uppercase">14-day free trial</span>
+                <RiShieldCheckLine className="w-5 h-5 text-purple-600" />
+                <span className="font-semibold text-gray-700">Commercial use included</span>
               </div>
               <div className="flex items-center gap-2">
-                <RiFlashlightLine className="w-5 h-5 text-black" />
-                <span className="font-bold uppercase">No credit card required</span>
+                <RiFlashlightLine className="w-5 h-5 text-purple-600" />
+                <span className="font-semibold text-gray-700">Credits never expire</span>
               </div>
               <div className="flex items-center gap-2">
-                <RiCheckLine className="w-5 h-5 text-black" />
-                <span className="font-bold uppercase">Cancel anytime</span>
+                <RiCheckLine className="w-5 h-5 text-purple-600" />
+                <span className="font-semibold text-gray-700">Instant activation</span>
               </div>
             </div>
           </div>
@@ -225,96 +175,76 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="grid md:grid-cols-3 gap-8">
-            {pricingTiers.map((tier, index) => (
+            {creditBundles.map((bundle, index) => (
               <div
                 key={index}
-                className={`relative p-8 border-4 border-black ${
-                  tier.popular
-                    ? "bg-black text-white brutalist-shadow-purple scale-105"
-                    : "bg-white brutalist-shadow"
+                className={`relative p-8 border-2 rounded-2xl ${
+                  bundle.popular
+                    ? "border-purple-500 bg-gradient-to-b from-purple-50 to-white shadow-xl scale-105"
+                    : "border-gray-200 bg-white hover:shadow-lg transition-all"
                 }`}
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-purple-400 border-4 border-black">
-                    <span className="text-sm font-bold uppercase text-black">Most Popular</span>
+                {bundle.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <div className="px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold rounded-full shadow-md">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+                {bundle.savings && (
+                  <div className="absolute -top-4 right-4">
+                    <div className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full shadow-md">
+                      {bundle.savings}
+                    </div>
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3
-                    className={`text-2xl font-bold uppercase mb-2 ${
-                      tier.popular ? "text-purple-400" : "text-black"
-                    }`}
-                  >
-                    {tier.name}
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                    {bundle.name}
                   </h3>
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span
-                      className={`text-5xl font-bold ${
-                        tier.popular ? "text-purple-400" : "text-black"
-                      }`}
-                    >
-                      {tier.price}
+                    <span className="text-4xl font-bold text-gray-900">
+                      {bundle.price}
                     </span>
-                    <span
-                      className={`text-sm font-bold uppercase ${
-                        tier.popular ? "text-white" : "text-gray-600"
-                      }`}
-                    >
-                      {tier.period}
+                    <span className="text-sm text-gray-500">
+                      {bundle.period}
                     </span>
                   </div>
-                  <p className={`text-sm ${tier.popular ? "text-white" : "text-gray-600"}`}>
-                    {tier.description}
+                  <div className="flex items-center gap-2 text-sm mb-3">
+                    <span className="font-bold text-purple-600">{bundle.credits} credits</span>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-gray-500">{bundle.pricePerCredit}/credit</span>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    {bundle.description}
                   </p>
                 </div>
 
                 <Button
                   size="lg"
-                  className={`w-full mb-8 border-4 font-bold uppercase ${
-                    tier.popular
-                      ? "bg-purple-400 text-black border-purple-400 hover:bg-purple-300"
-                      : "bg-black text-purple-400 border-black hover:bg-gray-900"
+                  className={`w-full mb-8 gap-2 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all ${
+                    bundle.popular
+                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0"
+                      : "bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300"
                   }`}
                   asChild
                 >
-                  <a href={tier.ctaHref}>
-                    {tier.cta}
-                    <RiArrowRightLine className="w-5 h-5 ml-2" />
+                  <a href={bundle.ctaHref}>
+                    {bundle.cta}
+                    <RiArrowRightLine className="w-5 h-5" />
                   </a>
                 </Button>
 
                 <ul className="space-y-3">
-                  {tier.features.map((feature, i) => (
+                  {bundle.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      {feature.included ? (
-                        <RiCheckLine
-                          className={`w-5 h-5 flex-shrink-0 ${
-                            tier.popular ? "text-purple-400" : "text-black"
-                          }`}
-                        />
-                      ) : (
-                        <RiCloseLine
-                          className={`w-5 h-5 flex-shrink-0 ${
-                            tier.popular ? "text-gray-500" : "text-gray-400"
-                          }`}
-                        />
-                      )}
-                      <span
-                        className={`text-sm ${
-                          feature.included
-                            ? tier.popular
-                              ? "text-white"
-                              : "text-gray-900"
-                            : tier.popular
-                            ? "text-gray-500 line-through"
-                            : "text-gray-400 line-through"
-                        }`}
-                      >
-                        {feature.text}
+                      <RiCheckLine className="w-5 h-5 flex-shrink-0 text-purple-600 mt-0.5" />
+                      <span className="text-sm text-gray-700">
+                        {feature}
                       </span>
                     </li>
                   ))}
@@ -322,185 +252,46 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
-        </Container>
-      </section>
 
-      {/* Detailed Comparison Table */}
-      <section className="py-24 bg-gray-50 border-y-8 border-black">
-        <Container maxWidth="xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              DETAILED FEATURE COMPARISON
-            </h2>
-            <p className="text-xl text-gray-600">
-              See exactly what's included in each plan
-            </p>
-          </div>
-
-          {comparisonFeatures.map((category, catIndex) => (
-            <div key={catIndex} className="mb-8 bg-white border-4 border-black brutalist-shadow">
-              <div className="bg-black text-purple-400 px-6 py-4 border-b-4 border-black">
-                <h3 className="text-xl font-bold uppercase">{category.category}</h3>
+          {/* Credit costs info */}
+          <div className="mt-16 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-2xl">
+            <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">How Credits Work</h3>
+            <div className="grid md:grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">15</div>
+                <div className="text-sm text-gray-600">credits per design generation</div>
               </div>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b-4 border-black bg-purple-400">
-                      <th className="text-left p-4 font-bold uppercase text-sm">Feature</th>
-                      <th className="text-center p-4 font-bold uppercase text-sm border-l-4 border-black">
-                        Starter
-                      </th>
-                      <th className="text-center p-4 font-bold uppercase text-sm border-l-4 border-black">
-                        Designer
-                      </th>
-                      <th className="text-center p-4 font-bold uppercase text-sm border-l-4 border-black">
-                        Studio
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {category.features.map((feature, featIndex) => (
-                      <tr key={featIndex} className="border-b-2 border-gray-200 last:border-0">
-                        <td className="p-4 font-medium">{feature.name}</td>
-                        <td className="text-center p-4 border-l-4 border-black">
-                          {typeof feature.starter === "boolean" ? (
-                            feature.starter ? (
-                              <RiCheckLine className="w-6 h-6 text-black mx-auto" />
-                            ) : (
-                              <RiCloseLine className="w-6 h-6 text-gray-400 mx-auto" />
-                            )
-                          ) : (
-                            <span className="font-bold">{feature.starter}</span>
-                          )}
-                        </td>
-                        <td className="text-center p-4 border-l-4 border-black bg-purple-50">
-                          {typeof feature.designer === "boolean" ? (
-                            feature.designer ? (
-                              <RiCheckLine className="w-6 h-6 text-black mx-auto" />
-                            ) : (
-                              <RiCloseLine className="w-6 h-6 text-gray-400 mx-auto" />
-                            )
-                          ) : (
-                            <span className="font-bold">{feature.designer}</span>
-                          )}
-                        </td>
-                        <td className="text-center p-4 border-l-4 border-black">
-                          {typeof feature.studio === "boolean" ? (
-                            feature.studio ? (
-                              <RiCheckLine className="w-6 h-6 text-black mx-auto" />
-                            ) : (
-                              <RiCloseLine className="w-6 h-6 text-gray-400 mx-auto" />
-                            )
-                          ) : (
-                            <span className="font-bold">{feature.studio}</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">5</div>
+                <div className="text-sm text-gray-600">credits per design variation</div>
               </div>
-            </div>
-          ))}
-        </Container>
-      </section>
-
-      {/* Cost Calculator */}
-      <section className="py-24">
-        <Container maxWidth="xl">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-                TRANSPARENT PRICING MODEL
-              </h2>
-              <p className="text-xl text-gray-600">
-                Based on Replicate API costs with our markup
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                <div className="w-12 h-12 bg-purple-400 border-2 border-black flex items-center justify-center mb-4">
-                  <RiShirtLine className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold uppercase mb-2">FLUX PRO</h3>
-                <div className="text-3xl font-bold mb-2">$3.50</div>
-                <p className="text-sm text-gray-600 mb-4">per design</p>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Most reliable</li>
-                  <li>• 1M+ designs generated</li>
-                  <li>• Best for quality</li>
-                </ul>
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">10</div>
+                <div className="text-sm text-gray-600">credits per mockup generation</div>
               </div>
-
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
-                <div className="w-12 h-12 bg-purple-400 border-2 border-black flex items-center justify-center mb-4">
-                  <RiFlashlightLine className="w-6 h-6 text-black" />
-                </div>
-                <h3 className="text-lg font-bold uppercase mb-2 text-purple-400">
-                  STYLE VARIATION
-                </h3>
-                <div className="text-3xl font-bold mb-2 text-purple-400">$2.00</div>
-                <p className="text-sm text-gray-300 mb-4">per variation</p>
-                <ul className="text-sm text-gray-300 space-y-1">
-                  <li>• Fast generation</li>
-                  <li>• 5 style options</li>
-                  <li>• Multiple outputs</li>
-                </ul>
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">10</div>
+                <div className="text-sm text-gray-600">credits per tech pack</div>
               </div>
-
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                <div className="w-12 h-12 bg-purple-400 border-2 border-black flex items-center justify-center mb-4">
-                  <RiPaletteLine className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold uppercase mb-2">HD EXPORT</h3>
-                <div className="text-3xl font-bold mb-2">$1.00</div>
-                <p className="text-sm text-gray-600 mb-4">per 4K export</p>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• 4K resolution</li>
-                  <li>• Print-ready</li>
-                  <li>• Multiple formats</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="p-8 bg-purple-400 border-4 border-black brutalist-shadow">
-              <h3 className="text-2xl font-bold uppercase mb-4">EXAMPLE MONTHLY COSTS</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center pb-4 border-b-4 border-black">
-                  <span className="font-bold">Small Brand (5 designs/month)</span>
-                  <span className="text-2xl font-bold">$17.50 - $27.50</span>
-                </div>
-                <div className="flex justify-between items-center pb-4 border-b-4 border-black">
-                  <span className="font-bold">Growing Studio (20 designs/month)</span>
-                  <span className="text-2xl font-bold">$70.00 - $110.00</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-bold">Design Agency (100 designs/month)</span>
-                  <span className="text-2xl font-bold">$350.00 - $550.00</span>
-                </div>
-              </div>
-              <p className="text-sm mt-6 font-medium">
-                * API costs only. Designer plan ($39/mo) includes 30 designs plus all premium features.
-              </p>
             </div>
           </div>
         </Container>
       </section>
+
 
       {/* FAQ Section */}
-      <section className="py-24 bg-black border-y-8 border-purple-400">
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-purple-400 mb-8">
-              <RiQuestionLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">FAQ</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8">
+              <RiQuestionLine className="w-5 h-5 text-purple-200" />
+              <span className="text-sm font-semibold text-purple-100">FAQ</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4 text-purple-400">
-              FREQUENTLY ASKED QUESTIONS
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Frequently Asked Questions
             </h2>
-            <p className="text-xl text-white">
-              Everything you need to know about pricing and plans
+            <p className="text-xl text-purple-100">
+              Everything you need to know about credit-based pricing
             </p>
           </div>
 
@@ -508,10 +299,10 @@ export default function PricingPage() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="p-6 bg-white border-4 border-white brutalist-shadow-purple"
+                className="p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl hover:bg-white/15 transition-all"
               >
-                <h3 className="text-lg font-bold uppercase mb-3">{faq.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                <h3 className="text-lg font-bold mb-3 text-white">{faq.question}</h3>
+                <p className="text-purple-100 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -519,30 +310,30 @@ export default function PricingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold uppercase mb-6">
-              READY TO GET STARTED?
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Start Designing?
             </h2>
-            <p className="text-xl text-gray-700 mb-12">
-              Start with our free Starter plan. Upgrade anytime as you grow. No credit card required.
+            <p className="text-xl text-gray-600 mb-12">
+              Buy credits once, use them forever. Start with just $9 and create professional fashion designs instantly.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="xl"
-                className="gap-3 bg-purple-400 text-black border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
                 asChild
               >
-                <a href="/signup">
+                <a href="/dashboard">
                   <RiArrowRightLine className="w-5 h-5" />
-                  Start Free Trial
+                  Buy Credits Now
                 </a>
               </Button>
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-white text-black border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
                 asChild
               >
                 <a href="/demo">Try Demo</a>
@@ -550,7 +341,7 @@ export default function PricingPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-black text-purple-400 border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
                 asChild
               >
                 <a href="/contact">Contact Sales</a>
