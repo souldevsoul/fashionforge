@@ -40,7 +40,7 @@ export function CreditBalanceCard({
         <CardContent className="p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className={`rounded-md border-4 border-black p-2 ${isCritical ? "bg-red-100" : isLow ? "bg-orange-100" : "bg-purple-100"}`}>
+              <div className={`rounded-md border-4 border-black p-2 ${isCritical ? "bg-rose-100" : isLow ? "bg-rose-100" : "bg-purple-100"}`}>
                 <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-rose-600" : isLow ? "text-rose-600" : "text-purple-600"}`} />
               </div>
               <div>
@@ -88,7 +88,7 @@ export function CreditBalanceCard({
           <RiCoinsLine className="h-6 w-6" />
           CREDIT BALANCE
         </CardTitle>
-        <CardDescription className={isCritical ? "text-red-900" : isLow ? "text-orange-900" : "text-black/80"}>
+        <CardDescription className={isCritical ? "text-rose-900" : isLow ? "text-rose-900" : "text-black/80"}>
           Your available credits for project reservations
         </CardDescription>
       </CardHeader>
@@ -108,14 +108,14 @@ export function CreditBalanceCard({
 
         {/* Warning */}
         {(isLow || isCritical) && (
-          <div className={`rounded-md border-4 p-4 ${isCritical ? "border-red-500 bg-red-100" : "border-rose-500 bg-orange-100"}`}>
+          <div className={`rounded-md border-4 p-4 ${isCritical ? "border-red-500 bg-rose-100" : "border-rose-500 bg-rose-100"}`}>
             <div className="flex items-start gap-3">
               <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-rose-600" : "text-rose-600"}`} />
               <div className="flex-1">
-                <Heading variant="h3" className={`text-sm font-bold ${isCritical ? "text-red-900" : "text-orange-900"}`}>
+                <Heading variant="h3" className={`text-sm font-bold ${isCritical ? "text-rose-900" : "text-rose-900"}`}>
                   {isCritical ? "CRITICAL BALANCE" : "LOW BALANCE"}
                 </Heading>
-                <Text variant="body" className={`mt-1 text-sm ${isCritical ? "text-rose-800" : "text-orange-800"}`}>
+                <Text variant="body" className={`mt-1 text-sm ${isCritical ? "text-rose-800" : "text-rose-800"}`}>
                   {isCritical
                     ? "Your credit balance is critically low. Add credits to accept project estimates."
                     : "Your credit balance is running low. Consider adding more credits soon."}

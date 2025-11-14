@@ -67,11 +67,11 @@ export function RefundDialog({
       <AlertDialogContent className="border-4 border-red-500 sm:max-w-[600px]">
         <AlertDialogHeader>
           <div className="flex items-center gap-3">
-            <div className="rounded-md border-4 border-red-500 bg-red-100 p-2">
+            <div className="rounded-md border-4 border-red-500 bg-rose-100 p-2">
               <RiRefund2Line className="h-6 w-6 text-rose-600" />
             </div>
             <div>
-              <AlertDialogTitle className="text-red-900">REFUND PROJECT</AlertDialogTitle>
+              <AlertDialogTitle className="text-rose-900">REFUND PROJECT</AlertDialogTitle>
               <AlertDialogDescription className="text-rose-800">
                 This action will cancel the project and refund credits to the client
               </AlertDialogDescription>
@@ -162,7 +162,7 @@ export function RefundDialog({
           <AlertDialogAction
             onClick={handleRefund}
             disabled={reason.length < 20 || loading}
-            className="bg-rose-500 text-white border-4 border-black hover:bg-red-600"
+            className="bg-rose-500 text-white border-4 border-black hover:bg-rose-600"
           >
             {loading ? "PROCESSING REFUND..." : "CONFIRM REFUND"}
           </AlertDialogAction>

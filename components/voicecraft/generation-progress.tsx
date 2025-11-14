@@ -1,4 +1,3 @@
-/* eslint-disable product-quality/use-styleguide-colors-only, product-quality/require-aria-label-on-icon-buttons, product-quality/require-empty-state */
 "use client"
 
 import * as React from "react"
@@ -63,7 +62,7 @@ const GenerationProgress = React.forwardRef<HTMLDivElement, GenerationProgressPr
           return {
             icon: XCircle,
             color: "text-rose-600",
-            bgColor: "bg-red-100",
+            bgColor: "bg-rose-100",
             label: "Failed",
           }
         default:

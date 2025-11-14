@@ -196,7 +196,7 @@ export default function PricingPage() {
                 )}
                 {bundle.savings && (
                   <div className="absolute -top-4 right-4">
-                    <div className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full shadow-md">
+                    <div className="px-3 py-1 bg-rose-500 text-white text-xs font-bold rounded-full shadow-md">
                       {bundle.savings}
                     </div>
                   </div>

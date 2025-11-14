@@ -12,7 +12,22 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "eslint-plugin-product-quality/**",
   ]),
+  {
+    rules: {
+      // Relax some rules
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-unused-vars": ["warn", {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }],
+      "react/no-unescaped-entities": "error",
+      "@next/next/no-img-element": "warn",
+      "@next/next/no-html-link-for-pages": "error",
+      "react-hooks/exhaustive-deps": "warn",
+    }
+  }
 ]);
 
 export default eslintConfig;

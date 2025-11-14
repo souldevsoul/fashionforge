@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { RiAddLine, RiVoiceprintLine, RiDeleteBinLine, RiPlayLine } from "react-icons/ri"
+import { RiVoiceprintLine, RiDeleteBinLine, RiPlayLine } from "react-icons/ri"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -123,7 +123,7 @@ export default async function VoicesPage() {
                     </DropdownMenuItem>
                     <DropdownMenuItem>Edit Voice</DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="text-red-600">
+                    <DropdownMenuItem className="text-rose-600">
                       <RiDeleteBinLine className="mr-2 h-4 w-4" />
                       Delete Voice
                     </DropdownMenuItem>

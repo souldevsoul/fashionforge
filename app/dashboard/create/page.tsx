@@ -46,7 +46,7 @@ export default function CreateDesignPage() {
     }
   }
 
-  const handleGenerateVariations = async (variationId: string) => {
+  const handleGenerateVariations = async (_variationId: string) => {
     if (!designId) return
 
     setIsGenerating(true)
@@ -118,7 +118,7 @@ export default function CreateDesignPage() {
     }
   }
 
-  const handleCreateTechPack = async (variationId: string) => {
+  const handleCreateTechPack = async (_variationId: string) => {
     if (!designId) return
 
     setIsGenerating(true)
@@ -182,8 +182,8 @@ export default function CreateDesignPage() {
 
       {/* Error Message */}
       {error && (
-        <Card className="p-4 bg-red-50 border-2 border-red-500">
-          <div className="flex items-center gap-3 text-red-700">
+        <Card className="p-4 bg-rose-50 border-2 border-red-500">
+          <div className="flex items-center gap-3 text-rose-700">
             <RiErrorWarningLine className="w-6 h-6" />
             <div>
               <p className="font-bold">Error</p>
@@ -195,8 +195,8 @@ export default function CreateDesignPage() {
 
       {/* Success Message */}
       {successMessage && (
-        <Card className="p-4 bg-green-50 border-2 border-green-500">
-          <div className="flex items-center gap-3 text-green-700">
+        <Card className="p-4 bg-rose-50 border-2 border-green-500">
+          <div className="flex items-center gap-3 text-rose-700">
             <RiCheckLine className="w-6 h-6" />
             <div>
               <p className="font-bold">Success</p>

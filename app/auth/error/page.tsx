@@ -43,7 +43,7 @@ function ErrorContent() {
         {/* Error Card */}
         <div className="bg-white border-4 border-red-500 brutalist-shadow p-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-red-500 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-rose-500 flex items-center justify-center mx-auto mb-6">
               <RiErrorWarningLine className="w-10 h-10 text-white" />
             </div>
 

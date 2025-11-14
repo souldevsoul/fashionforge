@@ -19,7 +19,6 @@ import {
   Waveform,
   AudioPlayer,
   VoiceSelector,
-  GenerationProgress,
   VoiceCloneUploader,
   type Voice,
   type GenerationStep,
@@ -29,7 +28,6 @@ import {
   Sparkles,
   Zap,
   Shield,
-  Globe,
   Star,
   TrendingUp,
   Users,
@@ -39,7 +37,6 @@ import {
 import {
   RiRocketLine,
   RiFlashlightLine,
-  RiSparklingLine,
   RiSave3Line,
   RiDeleteBin6Line,
   RiExternalLinkLine,
@@ -59,13 +56,9 @@ import {
   TbMicrophone
 } from "react-icons/tb"
 import {
-  HiOutlineSparkles,
-  HiOutlineCube,
-  HiOutlineBeaker,
-  HiOutlinePuzzlePiece
+  HiOutlineSparkles
 } from "react-icons/hi2"
 import {
-  FiLayout,
   FiCode,
   FiPackage,
   FiBox
@@ -106,13 +99,13 @@ export default function ComponentsPage() {
     },
   ]
 
-  const sampleGenerationSteps: GenerationStep[] = [
+  const _sampleGenerationSteps: GenerationStep[] = [
     { id: "1", label: "Text Analysis", status: "completed", progress: 100 },
     { id: "2", label: "Voice Synthesis", status: "processing", progress: 65 },
     { id: "3", label: "Audio Rendering", status: "queued", progress: 0 },
   ]
 
-  const handleFilesUpload = (files: File[]) => {
+  const _handleFilesUpload = (files: File[]) => {
     const newFiles: UploadedFile[] = files.map((file, index) => ({
       id: `file-${Date.now()}-${index}`,
       file,
@@ -132,7 +125,7 @@ export default function ComponentsPage() {
     }, 2000)
   }
 
-  const handleFileRemove = (fileId: string) => {
+  const _handleFileRemove = (fileId: string) => {
     setUploadedFiles(prev => prev.filter(f => f.id !== fileId))
   }
 
@@ -224,7 +217,7 @@ export default function ComponentsPage() {
                     <RiArrowRightLine className="w-5 h-5" />
                     More
                   </Button>
-                  <Button variant="destructive" className="gap-2 bg-white text-black hover:bg-red-500 hover:text-white border-4 border-black font-bold uppercase">
+                  <Button variant="destructive" className="gap-2 bg-white text-black hover:bg-rose-500 hover:text-white border-4 border-black font-bold uppercase">
                     <RiDeleteBin6Line className="w-5 h-5" />
                     Delete
                   </Button>

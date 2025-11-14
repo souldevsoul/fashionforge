@@ -124,7 +124,7 @@ export function ColorPalettePicker({ selectedColors, onChange, maxColors = 5 }: 
                 <span className="text-xs font-mono">{color}</span>
                 <button
                   onClick={() => toggleColor(color)}
-                  className="ml-1 text-gray-400 hover:text-red-500 font-bold"
+                  className="ml-1 text-gray-400 hover:text-rose-500 font-bold"
                 >
                   ×
                 </button>

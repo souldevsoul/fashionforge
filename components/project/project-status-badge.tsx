@@ -66,7 +66,7 @@ const STATUS_CONFIG: Record<ProjectStatus, StatusConfig> = {
     variant: "warning",
     icon: RiUserAddLine,
     description: "Estimate accepted. Waiting for admin to assign an expert.",
-    color: "bg-orange-100 text-orange-900 border-rose-500",
+    color: "bg-rose-100 text-rose-900 border-rose-500",
   },
   assigned: {
     label: "IN PROGRESS",
@@ -94,7 +94,7 @@ const STATUS_CONFIG: Record<ProjectStatus, StatusConfig> = {
     variant: "danger",
     icon: RiRefund2Line,
     description: "Project was cancelled and credits were refunded.",
-    color: "bg-red-100 text-red-900 border-red-500",
+    color: "bg-rose-100 text-rose-900 border-red-500",
   },
   cancelled: {
     label: "CANCELLED",

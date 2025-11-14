@@ -11,7 +11,6 @@ import {
   RiShieldCheckLine,
   RiPaletteLine,
   RiImageLine,
-  RiSettings4Line,
   RiLayoutLine,
   RiTimerLine,
   RiDatabase2Line,

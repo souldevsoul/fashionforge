@@ -1,4 +1,3 @@
-/* eslint-disable product-quality/use-styleguide-colors-only, product-quality/require-aria-label-on-icon-buttons, product-quality/require-empty-state */
 "use client"
 
 import { useState } from "react"

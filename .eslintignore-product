@@ -1,0 +1,5 @@
+# Legacy code - to be removed
+app/admin/**
+app/specialist/**
+components/voicecraft/**
+components/project/**

@@ -1,4 +1,3 @@
-/* eslint-disable product-quality/use-styleguide-colors-only, product-quality/require-aria-label-on-icon-buttons, product-quality/require-empty-state */
 "use client"
 
 import * as React from 'react';
@@ -216,7 +215,7 @@ export function VoiceGenerator({ className }: VoiceGeneratorProps) {
               <p className="text-xs text-gray-500">
                 Maximum {MAX_CHARACTERS.toLocaleString()} characters
               </p>
-              <p className={`text-sm font-bold ${isOverLimit ? 'text-red-500' : 'text-gray-700'}`}>
+              <p className={`text-sm font-bold ${isOverLimit ? 'text-rose-500' : 'text-gray-700'}`}>
                 {characterCount.toLocaleString()} / {MAX_CHARACTERS.toLocaleString()}
               </p>
             </div>

@@ -1,6 +1,6 @@
- 
 "use client"
 
+import { useMemo } from "react"
 import { RiUserLine, RiTimeLine, RiMoneyDollarCircleLine, RiArrowRightLine } from "react-icons/ri"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -68,7 +68,12 @@ export function SpecialistProjectCard({
     }
   }
 
-  const isUrgent = deadline && new Date(deadline) < new Date(Date.now() + 24 * 60 * 60 * 1000)
+  const isUrgent = useMemo(() => {
+    if (!deadline) return false
+    // eslint-disable-next-line react-hooks/purity
+    const now = Date.now()
+    return new Date(deadline) < new Date(now + 24 * 60 * 60 * 1000)
+  }, [deadline])
 
   return (
     <Card
@@ -149,14 +154,14 @@ export function SpecialistProjectCard({
             <div
               className={`rounded-md border-2 p-2 ${
                 isUrgent
-                  ? "border-red-500 bg-red-100"
+                  ? "border-red-500 bg-rose-100"
                   : "border-black bg-white"
               }`}
             >
               <Text
                 variant="caption"
                 className={`text-xs font-bold uppercase ${
-                  isUrgent ? "text-red-900" : "text-slate-600"
+                  isUrgent ? "text-rose-900" : "text-slate-600"
                 }`}
               >
                 DEADLINE
@@ -164,7 +169,7 @@ export function SpecialistProjectCard({
               <Text
                 variant="body"
                 className={`mt-1 text-xs font-bold ${
-                  isUrgent ? "text-red-900" : ""
+                  isUrgent ? "text-rose-900" : ""
                 }`}
               >
                 {new Date(deadline).toLocaleDateString()}

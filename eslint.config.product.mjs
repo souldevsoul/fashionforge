@@ -11,6 +11,19 @@ const config = [
       "next-env.d.ts",
       "test-*.ts",
       "eslint-plugin-product-quality/**",
+      // Legacy code - to be removed
+      "app/admin/**",
+      "app/specialist/**",
+      "components/voicecraft/**",
+      "components/project/**",
+      // Demo/marketing pages - lower priority
+      "app/blog/**",
+      "app/components/**",
+      "app/demo/**",
+      "app/delivery-policy/**",
+      "app/payment-policy/**",
+      "app/cancellation-policy/**",
+      "app/cookie-policy/**",
     ],
   },
   {

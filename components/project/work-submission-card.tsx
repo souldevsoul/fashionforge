@@ -282,7 +282,7 @@ export function WorkSubmissionCard({
                             variant="ghost"
                             size="sm"
                             onClick={() => handleRemoveUploadedAudio(audio.id)}
-                            className="text-rose-600 hover:text-red-700"
+                            className="text-rose-600 hover:text-rose-700"
                           >
                             <RiDeleteBinLine className="h-4 w-4" />
                           </Button>

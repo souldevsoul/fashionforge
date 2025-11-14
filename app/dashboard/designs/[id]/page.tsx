@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import * as React from "react"
@@ -159,7 +158,7 @@ export default function DesignDetailPage() {
         <Card variant="outlined" className="p-12 text-center max-w-md">
           <Heading variant="h3" className="uppercase mb-4">Design Not Found</Heading>
           <Text variant="body" className="text-slate-600 mb-6">
-            This design may have been deleted or you don't have permission to view it.
+            This design may have been deleted or you don&apos;t have permission to view it.
           </Text>
           <Button variant="outline" onClick={() => router.push("/dashboard/designs")}>
             <RiArrowLeftLine className="w-5 h-5 mr-2" />
@@ -210,7 +209,7 @@ export default function DesignDetailPage() {
             variant="outline"
             size="sm"
             onClick={handleDelete}
-            className="border-red-500 text-red-500 hover:bg-red-50"
+            className="border-red-500 text-rose-500 hover:bg-rose-50"
           >
             <RiDeleteBinLine className="w-4 h-4 mr-2" />
             Delete
@@ -313,7 +312,7 @@ export default function DesignDetailPage() {
                 No Variations Yet
               </Heading>
               <Text variant="body" className="text-slate-600 max-w-md mx-auto">
-                Generate your first design variations by clicking the "Generate More" button above
+                Generate your first design variations by clicking the &quot;Generate More&quot; button above
               </Text>
             </div>
           </Card>

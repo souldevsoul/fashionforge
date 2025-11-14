@@ -90,7 +90,7 @@ export function ReEstimateDialog({
                   This will generate a new estimate
                 </Text>
                 <Text variant="caption" className="mt-1 text-xs text-purple-800">
-                  The project will return to "waiting_for_estimate_accept" status. If credits were reserved,
+                  The project will return to &quot;waiting_for_estimate_accept&quot; status. If credits were reserved,
                   they will be refunded first, and the client will need to accept the new estimate.
                 </Text>
               </div>

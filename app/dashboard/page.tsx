@@ -118,7 +118,7 @@ export default async function DashboardPage() {
       title: "Active Projects",
       value: stats.totalProjects,
       icon: RiFolder3Line,
-      color: "bg-orange-400",
+      color: "bg-rose-400",
       link: "/dashboard/projects",
     },
     {

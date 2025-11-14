@@ -31,7 +31,7 @@ const styles = [
     id: "bold",
     name: "Bold",
     description: "Statement, dramatic, eye-catching",
-    color: "bg-orange-500",
+    color: "bg-rose-500",
   },
   {
     id: "elegant",

@@ -1,4 +1,3 @@
-/* eslint-disable product-quality/use-styleguide-colors-only, product-quality/require-aria-label-on-icon-buttons, product-quality/require-empty-state */
 // FashionForge Components - AI Voice Synthesis Interactive Components
 export { Waveform, type WaveformProps } from "./waveform"
 export { AudioPlayer, type AudioPlayerProps } from "./audio-player"

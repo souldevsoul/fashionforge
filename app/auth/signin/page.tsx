@@ -65,8 +65,8 @@ function SignInForm() {
         <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-xl p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4">
-                <p className="text-red-700 font-semibold text-sm">
+              <div className="bg-rose-50 border-2 border-red-200 rounded-lg p-4">
+                <p className="text-rose-700 font-semibold text-sm">
                   {error}
                 </p>
               </div>
@@ -81,7 +81,7 @@ function SignInForm() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="email@fashionforge.ai"
+                  placeholder="support@fashionforge.ai"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

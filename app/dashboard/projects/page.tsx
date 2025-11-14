@@ -16,7 +16,6 @@ import { Separator } from "@/components/ui/separator"
 import {
   ProjectStatusBadge,
   EstimateCard,
-  CreditBalanceCard,
   WorkReviewCard,
   getStatusColor,
   type ProjectStatus,
@@ -162,7 +161,7 @@ export default function ProjectsPage() {
     return projects.filter((project) => project.status === status)
   }
 
-  const getPriorityVariant = (priority: string) => {
+  const _getPriorityVariant = (priority: string) => {
     switch (priority) {
       case "high":
       case "urgent":

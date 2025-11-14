@@ -61,7 +61,7 @@ export default function RefundPolicyPage() {
                 <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Digital Service</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    FashionForge is a digital service platform. Once voice generation or voice cloning services are rendered, they cannot be "returned" in the traditional sense as they are immediately consumed digital services.
+                    FashionForge is a digital service platform. Once voice generation or voice cloning services are rendered, they cannot be &quot;returned&quot; in the traditional sense as they are immediately consumed digital services.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     However, we stand behind the quality of our service and offer refunds under specific circumstances outlined below.
@@ -199,7 +199,7 @@ export default function RefundPolicyPage() {
                     <a href="mailto:support@fashionforge.ai" className="font-bold underline hover:no-underline">
                       support@fashionforge.ai
                     </a>{" "}
-                    with the subject line "Refund Request"
+                    with the subject line &quot;Refund Request&quot;
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     Include: Your account email, reason for refund request, order/transaction ID, and any supporting documentation (screenshots, error messages, etc.)

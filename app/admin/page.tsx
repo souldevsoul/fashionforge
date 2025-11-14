@@ -139,19 +139,19 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Design Variations */}
-        <Card variant="outlined" className="border-4 border-orange-500 bg-orange-50">
+        <Card variant="outlined" className="border-4 border-rose-500 bg-rose-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-bold uppercase text-orange-900">
+            <CardTitle className="text-sm font-bold uppercase text-rose-900">
               VARIATIONS
             </CardTitle>
-            <RiImageLine className="h-6 w-6 text-orange-600" />
+            <RiImageLine className="h-6 w-6 text-rose-600" />
           </CardHeader>
           <CardContent>
-            <h2 className="text-3xl font-bold text-orange-900">
+            <h2 className="text-3xl font-bold text-rose-900">
               {stats.totalVariations}
             </h2>
             <div className="mt-2 flex items-center gap-2">
-              <Text variant="caption" className="text-xs text-orange-800">
+              <Text variant="caption" className="text-xs text-rose-800">
                 Total generated
               </Text>
             </div>
@@ -225,7 +225,7 @@ export default function AdminDashboard() {
 
           <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiLineChartLine className="h-12 w-12 text-orange-600" />
+              <RiLineChartLine className="h-12 w-12 text-rose-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 ANALYTICS
               </h3>

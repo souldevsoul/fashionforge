@@ -14,9 +14,9 @@ const badgeVariants = cva(
         success:
           "bg-purple-400 text-black hover:bg-purple-500",
         warning:
-          "bg-orange-400 text-black hover:bg-rose-500",
+          "bg-rose-400 text-black hover:bg-rose-500",
         danger:
-          "bg-red-400 text-black hover:bg-rose-500",
+          "bg-rose-400 text-black hover:bg-rose-500",
         outline:
           "bg-transparent text-black",
       },

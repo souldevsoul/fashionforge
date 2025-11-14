@@ -4,7 +4,7 @@ import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { RiShirtLine, RiArrowRightLine, RiAddLine } from "react-icons/ri"
+import { RiShirtLine, RiAddLine } from "react-icons/ri"
 
 type Design = {
   id: string

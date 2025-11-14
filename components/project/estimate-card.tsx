@@ -256,7 +256,7 @@ export function EstimateCard({
                   <div className="flex items-start gap-3">
                     <RiAlertLine className="h-5 w-5 flex-shrink-0 text-rose-600" />
                     <div className="flex-1">
-                      <Heading variant="h3" className="text-sm font-bold text-red-900">
+                      <Heading variant="h3" className="text-sm font-bold text-rose-900">
                         INSUFFICIENT CREDITS
                       </Heading>
                       <Text variant="body" className="mt-1 text-sm text-rose-800">
@@ -320,7 +320,7 @@ export function EstimateCard({
               </AlertDialogCancel>
               <AlertDialogAction
                 onClick={handleRejectEstimate}
-                className="bg-red-400 text-black border-4 border-black hover:bg-rose-500"
+                className="bg-rose-400 text-black border-4 border-black hover:bg-rose-500"
               >
                 REJECT ESTIMATE
               </AlertDialogAction>

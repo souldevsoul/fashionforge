@@ -307,7 +307,7 @@ export function WorkReviewCard({
             <AlertDialogAction
               onClick={handleRequestChanges}
               disabled={changeRequest.length < 10 || loading}
-              className="bg-orange-400 text-black border-4 border-black hover:bg-rose-500"
+              className="bg-rose-400 text-black border-4 border-black hover:bg-rose-500"
             >
               {loading ? "SENDING..." : "SEND FEEDBACK"}
             </AlertDialogAction>
