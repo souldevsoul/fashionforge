@@ -2,278 +2,244 @@
 
 import * as React from "react"
 import { Heading, Text } from "@/components/ui/typography"
-import { Button } from "@/components/ui/button"
+import { DesignForm, type DesignFormData } from "@/components/fashionforge/design-form"
+import { DesignGallery, type DesignVariation } from "@/components/fashionforge/design-gallery"
 import { Card } from "@/components/ui/card"
-import { DesignUploader } from "@/components/fashionforge/design-uploader"
-import { CategorySelector } from "@/components/fashionforge/category-selector"
-import { StyleSelector } from "@/components/fashionforge/style-selector"
-import { ColorPalettePicker } from "@/components/fashionforge/color-palette-picker"
-import { VariationGrid } from "@/components/fashionforge/variation-grid"
-import { RiArrowRightLine, RiSparklingLine } from "react-icons/ri"
-
-type Design = {
-  id: string
-  filename: string
-  sourceUrl: string
-  category: string
-}
-
-type Variation = {
-  id: string
-  name: string
-  style: string
-  outputUrl: string
-  thumbnail?: string
-  downloads: number
-  colors: string[]
-}
+import { RiSparklingLine, RiCheckLine, RiErrorWarningLine } from "react-icons/ri"
 
 export default function CreateDesignPage() {
-  const [currentStep, setCurrentStep] = React.useState<"upload" | "customize" | "generate" | "results">("upload")
-  const [uploadedDesign, setUploadedDesign] = React.useState<Design | null>(null)
-  const [category, setCategory] = React.useState("streetwear")
-  const [style, setStyle] = React.useState("modern")
-  const [colors, setColors] = React.useState<string[]>([])
-  const [variations, setVariations] = React.useState<Variation[]>([])
+  const [variations, setVariations] = React.useState<DesignVariation[]>([])
+  const [designId, setDesignId] = React.useState<string | null>(null)
   const [isGenerating, setIsGenerating] = React.useState(false)
+  const [error, setError] = React.useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = React.useState<string | null>(null)
 
-  const handleUploadComplete = (designId: string, sourceUrl: string) => {
-    setUploadedDesign({
-      id: designId,
-      filename: "uploaded-design",
-      sourceUrl,
-      category,
-    })
-    setCurrentStep("customize")
-  }
-
-  const handleGenerate = async () => {
-    if (!uploadedDesign) return
-
+  const handleSubmit = async (formData: DesignFormData) => {
     setIsGenerating(true)
-    setCurrentStep("generate")
+    setError(null)
+    setSuccessMessage(null)
 
     try {
-      const response = await fetch(`/api/designs/${uploadedDesign.id}/generate`, {
+      const response = await fetch("/api/designs/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          style,
-          colors,
-          variationCount: 4,
-        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (!response.ok) {
-        throw new Error("Failed to generate variations")
+        throw new Error(data.error || "Failed to generate design")
       }
 
-      const data = await response.json()
+      // Set design ID and variations
+      setDesignId(data.design.id)
       setVariations(data.variations || [])
-      setCurrentStep("results")
-    } catch {
-      console.error("Generation error:", error)
-      alert("Failed to generate design variations. Please try again.")
-      setCurrentStep("customize")
+      setSuccessMessage(`Successfully generated ${data.variations?.length || 0} design variations!`)
+    } catch (err) {
+      console.error("Generation error:", err)
+      setError(err instanceof Error ? err.message : "Failed to generate design")
     } finally {
       setIsGenerating(false)
     }
   }
 
-  const handleDownload = async (variationId: string) => {
-    try {
-      const response = await fetch(`/api/variations/${variationId}/download`)
-      if (!response.ok) throw new Error("Download failed")
+  const handleGenerateVariations = async (variationId: string) => {
+    if (!designId) return
 
-      const blob = await response.blob()
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement("a")
-      a.href = url
-      a.download = `design-${variationId}.png`
-      document.body.appendChild(a)
-      a.click()
-      document.body.removeChild(a)
-      window.URL.revokeObjectURL(url)
-    } catch {
-      console.error("Download error:", error)
-      alert("Failed to download design. Please try again.")
+    setIsGenerating(true)
+    setError(null)
+
+    try {
+      const response = await fetch(`/api/designs/${designId}/variations`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          colors: ["#FF6B9D", "#C44569"],
+          style: "modern",
+          numVariations: 3,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to generate variations")
+      }
+
+      // Add new variations to the list
+      setVariations(prev => [...prev, ...data.variations])
+      setSuccessMessage(`Generated ${data.variations.length} new variations!`)
+    } catch (err) {
+      console.error("Variation error:", err)
+      setError(err instanceof Error ? err.message : "Failed to generate variations")
+    } finally {
+      setIsGenerating(false)
     }
   }
 
-  const handleStartOver = () => {
-    setUploadedDesign(null)
-    setCurrentStep("upload")
-    setVariations([])
-    setColors([])
+  const handleGenerateMockup = async (variationId: string) => {
+    if (!designId) return
+
+    setIsGenerating(true)
+    setError(null)
+
+    try {
+      const response = await fetch("/api/mockups/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          designId,
+          variationId,
+          type: "model",
+          modelType: "female",
+          pose: "standing",
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to generate mockup")
+      }
+
+      setSuccessMessage("Mockup generated successfully!")
+    } catch (err) {
+      console.error("Mockup error:", err)
+      setError(err instanceof Error ? err.message : "Failed to generate mockup")
+    } finally {
+      setIsGenerating(false)
+    }
+  }
+
+  const handleCreateTechPack = async (variationId: string) => {
+    if (!designId) return
+
+    setIsGenerating(true)
+    setError(null)
+
+    try {
+      const response = await fetch("/api/techpacks/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          designId,
+          measurements: {
+            sizes: ["XS", "S", "M", "L", "XL"],
+            chest: { XS: 86, S: 91, M: 96, L: 101, XL: 106 },
+            waist: { XS: 66, S: 71, M: 76, L: 81, XL: 86 },
+            hips: { XS: 91, S: 96, M: 101, L: 106, XL: 111 },
+          },
+          materials: {
+            fabric: "100% Cotton Jersey",
+            weight: "180 GSM",
+            finish: "Pre-washed, soft hand",
+          },
+          construction: {
+            seams: "Double-needle stitching",
+            hem: "Ribbed hem and cuffs",
+            collar: "Crew neck",
+          },
+          notes: "Sample tech pack for design",
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to create tech pack")
+      }
+
+      setSuccessMessage("Tech pack created successfully!")
+    } catch (err) {
+      console.error("Tech pack error:", err)
+      setError(err instanceof Error ? err.message : "Failed to create tech pack")
+    } finally {
+      setIsGenerating(false)
+    }
   }
 
   return (
     <div className="flex-1 space-y-6 p-8 pt-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <Heading variant="h1" className="uppercase">
-            Create Design
-          </Heading>
-          <Text variant="body" className="text-slate-600 mt-2">
-            Upload a sketch and generate professional fashion designs with AI
-          </Text>
-        </div>
-        {currentStep === "results" && (
-          <Button variant="outline" onClick={handleStartOver}>
-            Start New Design
-          </Button>
-        )}
+      <div>
+        <Heading variant="h1" className="uppercase flex items-center gap-3">
+          <RiSparklingLine className="w-10 h-10 text-purple-600" />
+          Create Fashion Design
+        </Heading>
+        <Text variant="body" className="text-slate-600 mt-2">
+          Generate professional fashion designs with AI - from concept to production
+        </Text>
       </div>
 
-      {/* Progress Steps */}
-      <Card variant="outlined" className="p-6">
-        <div className="flex items-center justify-between">
-          {["Upload", "Customize", "Generate", "Results"].map((label, index) => {
-            const stepNames = ["upload", "customize", "generate", "results"]
-            const currentIndex = stepNames.indexOf(currentStep)
-            const isActive = index === currentIndex
-            const isCompleted = index < currentIndex
-
-            return (
-              <React.Fragment key={label}>
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-10 h-10 border-4 border-black flex items-center justify-center font-bold ${
-                      isActive
-                        ? "bg-purple-400 text-black"
-                        : isCompleted
-                        ? "bg-black text-purple-400"
-                        : "bg-white text-black"
-                    }`}
-                  >
-                    {index + 1}
-                  </div>
-                  <Text
-                    variant="body-sm"
-                    className={`font-bold uppercase ${
-                      isActive ? "text-black" : "text-slate-400"
-                    }`}
-                  >
-                    {label}
-                  </Text>
-                </div>
-                {index < 3 && (
-                  <div className="flex-1 h-1 bg-slate-200 mx-4">
-                    <div
-                      className={`h-full ${isCompleted ? "bg-black" : "bg-slate-200"}`}
-                    ></div>
-                  </div>
-                )}
-              </React.Fragment>
-            )
-          })}
-        </div>
-      </Card>
-
-      {/* Step Content */}
-      {currentStep === "upload" && (
-        <Card variant="outlined" className="p-8">
-          <DesignUploader
-            onUploadComplete={handleUploadComplete}
-            category={category}
-            userId="user_temp" // TODO: Get from auth session
-          />
+      {/* Error Message */}
+      {error && (
+        <Card className="p-4 bg-red-50 border-2 border-red-500">
+          <div className="flex items-center gap-3 text-red-700">
+            <RiErrorWarningLine className="w-6 h-6" />
+            <div>
+              <p className="font-bold">Error</p>
+              <p className="text-sm">{error}</p>
+            </div>
+          </div>
         </Card>
       )}
 
-      {currentStep === "customize" && uploadedDesign && (
-        <div className="space-y-6">
-          {/* Preview */}
-          <Card variant="outlined" className="p-6">
-            <Heading variant="h3" className="uppercase mb-4">
-              Uploaded Design
-            </Heading>
-            <div className="aspect-square max-w-md mx-auto border-4 border-black bg-gray-100">
-              <img
-                src={uploadedDesign.sourceUrl}
-                alt={uploadedDesign.filename}
-                className="w-full h-full object-cover"
-              />
+      {/* Success Message */}
+      {successMessage && (
+        <Card className="p-4 bg-green-50 border-2 border-green-500">
+          <div className="flex items-center gap-3 text-green-700">
+            <RiCheckLine className="w-6 h-6" />
+            <div>
+              <p className="font-bold">Success</p>
+              <p className="text-sm">{successMessage}</p>
             </div>
-          </Card>
-
-          {/* Category Selection */}
-          <Card variant="outlined" className="p-6">
-            <CategorySelector value={category} onChange={setCategory} />
-          </Card>
-
-          {/* Style Selection */}
-          <Card variant="outlined" className="p-6">
-            <StyleSelector value={style} onChange={setStyle} />
-          </Card>
-
-          {/* Color Palette */}
-          <Card variant="outlined" className="p-6">
-            <ColorPalettePicker value={colors} onChange={setColors} maxColors={5} />
-          </Card>
-
-          {/* Generate Button */}
-          <div className="flex justify-center">
-            <Button
-              size="xl"
-              onClick={handleGenerate}
-              disabled={colors.length === 0}
-              className="gap-3 bg-black text-purple-400 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow"
-            >
-              <RiSparklingLine className="w-6 h-6" />
-              Generate Variations
-              <RiArrowRightLine className="w-6 h-6" />
-            </Button>
           </div>
-        </div>
+        </Card>
       )}
 
-      {currentStep === "generate" && (
-        <Card variant="outlined" className="p-12 text-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center justify-center w-24 h-24 border-4 border-black bg-purple-400 animate-pulse">
-              <RiSparklingLine className="w-12 h-12" />
-            </div>
+      {/* Design Form */}
+      <DesignForm onSubmit={handleSubmit} loading={isGenerating} />
+
+      {/* Results */}
+      {variations.length > 0 && (
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
             <Heading variant="h2" className="uppercase">
-              Generating Your Designs
+              Generated Designs ({variations.length})
             </Heading>
-            <Text variant="body-lg" className="text-slate-600 max-w-2xl mx-auto">
-              Our AI is creating {4} unique design variations based on your preferences.
-              This usually takes 30-60 seconds.
-            </Text>
-            <div className="flex justify-center gap-2 mt-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-3 h-3 bg-black animate-bounce"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                ></div>
-              ))}
-            </div>
           </div>
-        </Card>
-      )}
 
-      {currentStep === "results" && (
-        <div className="space-y-6">
-          <Card variant="outlined" className="p-6 bg-black text-white">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <RiSparklingLine className="w-8 h-8 text-purple-400" />
-              <Heading variant="h2" className="uppercase text-purple-400">
-                Your Designs Are Ready!
-              </Heading>
-            </div>
-            <Text variant="body" className="text-center">
-              {variations.length} variations generated successfully. Click to preview or download.
-            </Text>
-          </Card>
-
-          <VariationGrid
+          <DesignGallery
             variations={variations}
-            onDownload={handleDownload}
+            onGenerateVariations={handleGenerateVariations}
+            onGenerateMockup={handleGenerateMockup}
+            onCreateTechPack={handleCreateTechPack}
+            loading={isGenerating}
           />
         </div>
+      )}
+
+      {/* Empty State */}
+      {!isGenerating && variations.length === 0 && (
+        <Card className="p-12 text-center border-2 border-dashed border-gray-300">
+          <div className="text-gray-400 text-6xl mb-4">✨</div>
+          <Heading variant="h3" className="text-gray-700 mb-2">
+            Ready to Create?
+          </Heading>
+          <Text variant="body" className="text-gray-500 max-w-md mx-auto">
+            Fill out the form above to generate your first AI-powered fashion design.
+            Each generation costs 15 credits and creates 4 unique variations.
+          </Text>
+        </Card>
       )}
     </div>
   )
