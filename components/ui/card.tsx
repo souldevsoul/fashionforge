@@ -151,7 +151,17 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-const CardSection = MantineCardSection
+const CardSection = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("p-6", className)}
+    {...props}
+  />
+))
+CardSection.displayName = "CardSection"
 
 export {
   Card,
