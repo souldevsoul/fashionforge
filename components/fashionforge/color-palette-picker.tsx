@@ -4,7 +4,7 @@ import * as React from "react"
 import { RiCheckLine } from "react-icons/ri"
 
 interface ColorPalettePickerProps {
-  value: string[]
+  selectedColors: string[]
   onChange: (colors: string[]) => void
   maxColors?: number
 }
@@ -20,59 +20,53 @@ const colorPalettes = [
   { name: "Forest", colors: ["#228B22", "#32CD32", "#90EE90"] },
 ]
 
-export function ColorPalettePicker({ value, onChange, maxColors = 5 }: ColorPalettePickerProps) {
+export function ColorPalettePicker({ selectedColors, onChange, maxColors = 5 }: ColorPalettePickerProps) {
   const [customColor, setCustomColor] = React.useState("#000000")
 
   const toggleColor = (color: string) => {
-    if (value.includes(color)) {
-      onChange(value.filter(c => c !== color))
+    if (selectedColors.includes(color)) {
+      onChange(selectedColors.filter(c => c !== color))
     } else {
-      if (value.length < maxColors) {
-        onChange([...value, color])
+      if (selectedColors.length < maxColors) {
+        onChange([...selectedColors, color])
       }
     }
   }
 
   const addCustomColor = () => {
-    if (!value.includes(customColor) && value.length < maxColors) {
-      onChange([...value, customColor])
+    if (!selectedColors.includes(customColor) && selectedColors.length < maxColors) {
+      onChange([...selectedColors, customColor])
     }
   }
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="font-bold uppercase text-lg mb-2">Color Palette</h3>
-        <p className="text-sm text-gray-600">
-          Select up to {maxColors} colors for your design ({value.length}/{maxColors} selected)
-        </p>
-      </div>
-
+    <div className="space-y-4">
       {/* Preset Palettes */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         {colorPalettes.map((palette) => (
           <div
             key={palette.name}
-            className="p-4 border-4 border-black bg-white hover:bg-gray-50 transition-colors"
+            className="p-3 border-2 border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors"
           >
             <div className="flex items-center justify-between">
-              <span className="font-bold uppercase text-sm">{palette.name}</span>
+              <span className="font-semibold text-sm">{palette.name}</span>
               <div className="flex gap-2">
                 {palette.colors.map((color) => {
-                  const isSelected = value.includes(color)
+                  const isSelected = selectedColors.includes(color)
                   return (
                     <button
                       key={color}
                       onClick={() => toggleColor(color)}
                       className={`
-                        w-10 h-10 border-4 border-black relative transition-transform
-                        ${isSelected ? "scale-110" : ""}
+                        w-8 h-8 border-2 rounded relative transition-all
+                        ${isSelected ? "border-purple-500 scale-110 shadow-lg" : "border-gray-300"}
                       `}
                       style={{ backgroundColor: color }}
+                      title={color}
                     >
                       {isSelected && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <RiCheckLine className="w-6 h-6 text-white drop-shadow-lg" />
+                          <RiCheckLine className="w-5 h-5 text-white drop-shadow-lg" />
                         </div>
                       )}
                     </button>
@@ -85,49 +79,52 @@ export function ColorPalettePicker({ value, onChange, maxColors = 5 }: ColorPale
       </div>
 
       {/* Custom Color */}
-      <div className="p-4 border-4 border-black bg-white">
+      <div className="p-3 border-2 border-gray-300 rounded-lg bg-white">
         <div className="flex items-center gap-3">
-          <label className="font-bold uppercase text-sm">Custom Color:</label>
+          <label className="font-semibold text-sm">Custom:</label>
           <input
             type="color"
             value={customColor}
             onChange={(e) => setCustomColor(e.target.value)}
-            className="w-16 h-12 border-4 border-black cursor-pointer"
+            className="w-12 h-10 border-2 border-gray-300 rounded cursor-pointer"
           />
           <button
             onClick={addCustomColor}
-            disabled={value.length >= maxColors}
+            disabled={selectedColors.length >= maxColors}
             className={`
-              px-4 py-2 font-bold uppercase text-sm border-4 border-black
-              ${value.length >= maxColors
-                ? "bg-gray-300 cursor-not-allowed"
-                : "bg-purple-400 hover:bg-purple-500"
+              px-4 py-2 font-semibold text-sm border-2 rounded transition-all
+              ${selectedColors.length >= maxColors
+                ? "bg-gray-200 border-gray-300 cursor-not-allowed text-gray-500"
+                : "bg-purple-500 hover:bg-purple-600 border-purple-500 text-white"
               }
             `}
           >
-            Add Color
+            Add
           </button>
+          <span className="text-xs text-gray-500 ml-auto">
+            {selectedColors.length}/{maxColors} selected
+          </span>
         </div>
       </div>
 
       {/* Selected Colors */}
-      {value.length > 0 && (
-        <div className="p-4 border-4 border-black bg-black text-white">
-          <h4 className="font-bold uppercase text-sm mb-3">Selected Colors</h4>
+      {selectedColors.length > 0 && (
+        <div className="p-3 border-2 border-purple-500 rounded-lg bg-purple-50">
+          <h4 className="font-semibold text-sm mb-2">Selected Colors</h4>
           <div className="flex flex-wrap gap-2">
-            {value.map((color) => (
+            {selectedColors.map((color) => (
               <div
                 key={color}
-                className="flex items-center gap-2 px-3 py-2 bg-white text-black"
+                className="flex items-center gap-2 px-2 py-1 bg-white rounded border border-gray-300"
               >
                 <div
-                  className="w-6 h-6 border-2 border-black"
+                  className="w-5 h-5 rounded border border-gray-300"
                   style={{ backgroundColor: color }}
                 ></div>
                 <span className="text-xs font-mono">{color}</span>
                 <button
                   onClick={() => toggleColor(color)}
-                  className="ml-1 text-black hover:text-red-500"
+                  className="ml-1 text-gray-400 hover:text-red-500 font-bold"
                 >
                   ×
                 </button>

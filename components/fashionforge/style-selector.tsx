@@ -43,40 +43,33 @@ const styles = [
 
 export function StyleSelector({ value, onChange }: StyleSelectorProps) {
   return (
-    <div className="space-y-4">
-      <div>
-        <h3 className="font-bold uppercase text-lg mb-2">Choose Style</h3>
-        <p className="text-sm text-gray-600">Select the design aesthetic for variations</p>
-      </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      {styles.map((style) => {
+        const isSelected = value === style.id
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-        {styles.map((style) => {
-          const isSelected = value === style.id
-
-          return (
-            <button
-              key={style.id}
-              onClick={() => onChange(style.id)}
-              className={`
-                p-4 border-4 border-black text-center transition-all
-                ${isSelected
-                  ? "bg-black text-white scale-105"
-                  : "bg-white hover:bg-gray-50"
-                }
-              `}
-            >
-              <div className={`
-                w-12 h-12 mx-auto mb-3 ${style.color}
-                ${isSelected ? "border-4 border-white" : ""}
-              `}></div>
-              <h4 className="font-bold uppercase text-sm mb-1">{style.name}</h4>
-              <p className={`text-xs ${isSelected ? "text-gray-300" : "text-gray-600"}`}>
-                {style.description}
-              </p>
-            </button>
-          )
-        })}
-      </div>
+        return (
+          <button
+            key={style.id}
+            onClick={() => onChange(style.id)}
+            className={`
+              p-4 border-2 rounded-lg text-center transition-all
+              ${isSelected
+                ? "border-purple-500 bg-purple-50 shadow-lg"
+                : "border-gray-300 hover:border-purple-300 bg-white"
+              }
+            `}
+          >
+            <div className={`
+              w-12 h-12 mx-auto mb-3 rounded ${style.color}
+              ${isSelected ? "ring-4 ring-purple-500 ring-offset-2" : ""}
+            `}></div>
+            <h4 className="font-semibold text-sm mb-1">{style.name}</h4>
+            <p className="text-xs text-gray-500">
+              {style.description}
+            </p>
+          </button>
+        )
+      })}
     </div>
   )
 }
