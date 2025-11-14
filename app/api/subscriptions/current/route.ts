@@ -43,7 +43,7 @@ export async function GET() {
       {
         success: false,
         error: 'Failed to get subscription',
-        details: error instanceof Error ? error.message : "Unknown error" || 'Unknown error',
+        details: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     )

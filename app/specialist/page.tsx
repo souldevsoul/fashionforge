@@ -71,7 +71,7 @@ export default function SpecialistDashboard() {
       })
 
       setRecentProjects(recentProjectsList)
-    } catch {
+    } catch (error: unknown) {
       console.error("Error fetching dashboard data:", error)
     } finally {
       setLoading(false)

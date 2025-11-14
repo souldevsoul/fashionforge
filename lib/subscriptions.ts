@@ -150,5 +150,5 @@ export async function upgradeSubscription(
   }
 
   // Create new subscription
-  return createSubscription(userId, newPlan, startTrial)
+  return createSubscription(userId, newPlan)
 }

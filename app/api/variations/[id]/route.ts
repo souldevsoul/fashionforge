@@ -30,7 +30,7 @@ export async function GET(
     }
 
     return NextResponse.json({ variation })
-  } catch {
+  } catch (error: unknown) {
     console.error("Get variation error:", error)
     return NextResponse.json(
       { error: "Failed to get variation" },

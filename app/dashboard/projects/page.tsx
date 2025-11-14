@@ -99,7 +99,7 @@ export default function ProjectsPage() {
           })
         }
       }
-    } catch {
+    } catch (error: unknown) {
       console.error('Error fetching user data:', error)
     }
   }
@@ -150,7 +150,7 @@ export default function ProjectsPage() {
       }))
 
       setProjects(mappedProjects)
-    } catch {
+    } catch (error: unknown) {
       console.error('Error fetching projects:', error)
       setProjects([])
     } finally {
@@ -195,7 +195,7 @@ export default function ProjectsPage() {
       await fetchProjects()
       setSelectedProject(null)
       alert('Estimate generated successfully!')
-    } catch {
+    } catch (error: unknown) {
       console.error('Error getting estimate:', error)
       alert('Failed to get estimate')
     } finally {
@@ -224,7 +224,7 @@ export default function ProjectsPage() {
       await fetchProjects()
       setSelectedProject(null)
       alert('Estimate accepted and credits reserved!')
-    } catch {
+    } catch (error: unknown) {
       console.error('Error accepting estimate:', error)
       alert('Failed to accept estimate')
     } finally {
@@ -250,7 +250,7 @@ export default function ProjectsPage() {
       await fetchProjects()
       setSelectedProject(null)
       alert('Estimate rejected')
-    } catch {
+    } catch (error: unknown) {
       console.error('Error rejecting estimate:', error)
       alert('Failed to reject estimate')
     } finally {
@@ -277,7 +277,7 @@ export default function ProjectsPage() {
       await fetchProjects()
       setSelectedProject(null)
       alert('Work approved and project completed!')
-    } catch {
+    } catch (error: unknown) {
       console.error('Error approving work:', error)
       alert('Failed to approve work')
     } finally {
@@ -303,7 +303,7 @@ export default function ProjectsPage() {
       await fetchProjects()
       setSelectedProject(null)
       alert('Changes requested. Expert will be notified.')
-    } catch {
+    } catch (error: unknown) {
       console.error('Error requesting changes:', error)
       alert('Failed to request changes')
     } finally {

@@ -39,7 +39,7 @@ export function DesignPreview({
       a.click()
       document.body.removeChild(a)
       window.URL.revokeObjectURL(url)
-    } catch {
+    } catch (error: unknown) {
       console.error("Download failed:", error)
     }
   }

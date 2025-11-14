@@ -242,7 +242,7 @@ async function runCompleteTest() {
     console.log('\n✨ Integration is fully working!\n');
 
   } catch (error: unknown) {
-    console.error('\n❌ Test failed:', error.message);
+    console.error('\n❌ Test failed:', error instanceof Error ? error.message : String(error));
     console.error(error);
     process.exit(1);
   }

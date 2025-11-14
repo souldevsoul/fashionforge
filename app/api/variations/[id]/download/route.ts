@@ -44,7 +44,7 @@ export async function GET(
         "Content-Disposition": `attachment; filename="${variation.name.replace(/\s+/g, "-")}.png"`,
       },
     })
-  } catch {
+  } catch (error: unknown) {
     console.error("Download error:", error)
     return NextResponse.json(
       { error: "Failed to download variation" },

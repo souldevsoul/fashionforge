@@ -78,7 +78,7 @@ export default function SpecialistProjectDetailPage({
         clientName: data.project.user?.name || "Client",
         clientEmail: data.project.user?.email || "",
       })
-    } catch {
+    } catch (error: unknown) {
       console.error('Error fetching project:', error)
     } finally {
       setLoading(false)
@@ -102,7 +102,7 @@ export default function SpecialistProjectDetailPage({
 
       await fetchProject()
       alert('Work submitted successfully!')
-    } catch {
+    } catch (error: unknown) {
       console.error('Error submitting work:', error)
       alert('Failed to submit work')
     } finally {

@@ -64,7 +64,7 @@ export default function DesignDetailPage() {
 
       const data = await response.json()
       setDesign(data.design)
-    } catch {
+    } catch (error: unknown) {
       console.error("Error fetching design:", error)
       alert("Failed to load design. Please try again.")
     } finally {
@@ -93,7 +93,7 @@ export default function DesignDetailPage() {
       await fetchDesign() // Refresh design data
       setShowGeneratePanel(false)
       setSelectedColors([])
-    } catch {
+    } catch (error: unknown) {
       console.error("Generation error:", error)
       alert("Failed to generate variations. Please try again.")
     } finally {
@@ -115,7 +115,7 @@ export default function DesignDetailPage() {
       a.click()
       document.body.removeChild(a)
       window.URL.revokeObjectURL(url)
-    } catch {
+    } catch (error: unknown) {
       console.error("Download error:", error)
       alert("Failed to download design. Please try again.")
     }
@@ -133,7 +133,7 @@ export default function DesignDetailPage() {
 
       alert("Design deleted successfully")
       router.push("/dashboard/designs")
-    } catch {
+    } catch (error: unknown) {
       console.error("Delete error:", error)
       alert("Failed to delete design. Please try again.")
     }
@@ -260,7 +260,7 @@ export default function DesignDetailPage() {
               <StyleSelector value={selectedStyle} onChange={setSelectedStyle} />
 
               <ColorPalettePicker
-                value={selectedColors}
+                selectedColors={selectedColors}
                 onChange={setSelectedColors}
                 maxColors={5}
               />

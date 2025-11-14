@@ -110,7 +110,7 @@ export function WorkSubmissionCard({
         // Auto-select newly uploaded audio
         setSelectedAudioIds(prev => [...prev, data.audio.id])
       }
-    } catch {
+    } catch (error: unknown) {
       console.error("Upload error:", error)
       alert("Failed to upload audio files")
     } finally {

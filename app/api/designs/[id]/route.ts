@@ -25,7 +25,7 @@ export async function GET(
     }
 
     return NextResponse.json({ design })
-  } catch {
+  } catch (error: unknown) {
     console.error("Get design error:", error)
     return NextResponse.json(
       { error: "Failed to get design" },

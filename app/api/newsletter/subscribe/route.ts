@@ -67,12 +67,12 @@ export async function POST(request: NextRequest) {
       success: true,
       message: 'Successfully subscribed to newsletter',
     })
-  } catch {
+  } catch (error: unknown) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         {
           error: 'Invalid email address',
-          details: error.issues.map((issue) => ({
+          details: error.issues.map((issue: z.ZodIssue) => ({
             field: issue.path.join('.'),
             message: issue.message,
           })),

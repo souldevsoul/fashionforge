@@ -45,7 +45,7 @@ async function getDesigns(): Promise<Design[]> {
       createdAt: new Date(design.createdAt).toISOString(),
       variationCount: design.variations?.length || 0,
     }))
-  } catch {
+  } catch (error: unknown) {
     console.error('Error fetching designs:', error)
     return []
   }
