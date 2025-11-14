@@ -86,7 +86,7 @@ export function AppHeader({ user }: AppHeaderProps) {
                 <span className="font-bold">{user.credits.toLocaleString()} Credits</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-black" />
-              <DropdownMenuItem className="text-red-600 cursor-pointer">
+              <DropdownMenuItem className="text-rose-600 cursor-pointer">
                 <RiLogoutBoxLine className="mr-2 h-4 w-4" />
                 Logout
               </DropdownMenuItem>

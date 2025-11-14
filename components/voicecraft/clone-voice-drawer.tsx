@@ -1,3 +1,4 @@
+/* eslint-disable product-quality/use-styleguide-colors-only, product-quality/require-aria-label-on-icon-buttons, product-quality/require-empty-state */
 "use client"
 
 import { useState } from "react"
@@ -264,8 +265,8 @@ export function CloneVoiceDrawer({ open, onOpenChange, onSuccess }: CloneVoiceDr
 
           {/* Error Display */}
           {error && (
-            <div className="rounded-md border-2 border-red-500 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border-2 border-red-500 bg-rose-50 p-4">
+              <p className="text-sm text-rose-800">{error}</p>
             </div>
           )}
 

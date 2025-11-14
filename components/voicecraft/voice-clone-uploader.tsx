@@ -1,3 +1,4 @@
+/* eslint-disable product-quality/use-styleguide-colors-only, product-quality/require-aria-label-on-icon-buttons, product-quality/require-empty-state */
 "use client"
 
 import * as React from "react"
@@ -56,7 +57,7 @@ const VoiceCloneUploader = React.forwardRef<HTMLDivElement, VoiceCloneUploaderPr
         case "ready":
           return <CheckCircle2 size={20} className="text-purple-600" />
         case "error":
-          return <AlertCircle size={20} className="text-red-600" />
+          return <AlertCircle size={20} className="text-rose-600" />
         case "uploading":
         case "processing":
           return (

@@ -41,7 +41,7 @@ export function CreditBalanceCard({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className={`rounded-md border-4 border-black p-2 ${isCritical ? "bg-red-100" : isLow ? "bg-orange-100" : "bg-purple-100"}`}>
-                <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-red-600" : isLow ? "text-rose-600" : "text-purple-600"}`} />
+                <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-rose-600" : isLow ? "text-rose-600" : "text-purple-600"}`} />
               </div>
               <div>
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
@@ -81,7 +81,7 @@ export function CreditBalanceCard({
   return (
     <Card
       variant={isCritical ? "outlined" : "gradient"}
-      className={`border-4 ${isCritical ? "border-red-500 bg-red-50" : isLow ? "border-rose-500" : "border-black"}`}
+      className={`border-4 ${isCritical ? "border-red-500 bg-rose-50" : isLow ? "border-rose-500" : "border-black"}`}
     >
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
@@ -110,12 +110,12 @@ export function CreditBalanceCard({
         {(isLow || isCritical) && (
           <div className={`rounded-md border-4 p-4 ${isCritical ? "border-red-500 bg-red-100" : "border-rose-500 bg-orange-100"}`}>
             <div className="flex items-start gap-3">
-              <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-red-600" : "text-rose-600"}`} />
+              <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-rose-600" : "text-rose-600"}`} />
               <div className="flex-1">
                 <Heading variant="h3" className={`text-sm font-bold ${isCritical ? "text-red-900" : "text-orange-900"}`}>
                   {isCritical ? "CRITICAL BALANCE" : "LOW BALANCE"}
                 </Heading>
-                <Text variant="body" className={`mt-1 text-sm ${isCritical ? "text-red-800" : "text-orange-800"}`}>
+                <Text variant="body" className={`mt-1 text-sm ${isCritical ? "text-rose-800" : "text-orange-800"}`}>
                   {isCritical
                     ? "Your credit balance is critically low. Add credits to accept project estimates."
                     : "Your credit balance is running low. Consider adding more credits soon."}

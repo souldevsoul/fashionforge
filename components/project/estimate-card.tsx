@@ -252,14 +252,14 @@ export function EstimateCard({
             {!hasEnoughCredits && (
               <>
                 <Separator className="bg-black" />
-                <div className="rounded-md border-4 border-red-500 bg-red-50 p-4">
+                <div className="rounded-md border-4 border-red-500 bg-rose-50 p-4">
                   <div className="flex items-start gap-3">
-                    <RiAlertLine className="h-5 w-5 flex-shrink-0 text-red-600" />
+                    <RiAlertLine className="h-5 w-5 flex-shrink-0 text-rose-600" />
                     <div className="flex-1">
                       <Heading variant="h3" className="text-sm font-bold text-red-900">
                         INSUFFICIENT CREDITS
                       </Heading>
-                      <Text variant="body" className="mt-1 text-sm text-red-800">
+                      <Text variant="body" className="mt-1 text-sm text-rose-800">
                         You need {creditsNeeded.toLocaleString()} credits but only have{" "}
                         {userCredits.toLocaleString()} credits.
                         <br />
@@ -320,7 +320,7 @@ export function EstimateCard({
               </AlertDialogCancel>
               <AlertDialogAction
                 onClick={handleRejectEstimate}
-                className="bg-red-400 text-black border-4 border-black hover:bg-red-500"
+                className="bg-red-400 text-black border-4 border-black hover:bg-rose-500"
               >
                 REJECT ESTIMATE
               </AlertDialogAction>

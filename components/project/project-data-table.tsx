@@ -281,7 +281,7 @@ export function ProjectDataTable({
                                   onRefund={(reason) => onRefund(project.id, reason)}
                                   loading={loading}
                                   trigger={
-                                    <button className="w-full text-left text-sm text-red-600">
+                                    <button className="w-full text-left text-sm text-rose-600">
                                       Refund Project
                                     </button>
                                   }

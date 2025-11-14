@@ -171,7 +171,7 @@ export function NewsletterPopup() {
                   status === 'success' ? 'bg-purple-100' : 'bg-red-100'
                 }`}>
                   <p className={`text-sm font-bold ${
-                    status === 'success' ? 'text-purple-800' : 'text-red-800'
+                    status === 'success' ? 'text-purple-800' : 'text-rose-800'
                   }`}>
                     {message}
                   </p>

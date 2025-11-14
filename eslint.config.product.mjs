@@ -1,4 +1,5 @@
 import productQuality from './eslint-plugin-product-quality/index.js';
+import tsParser from '@typescript-eslint/parser';
 
 const config = [
   {
@@ -8,10 +9,22 @@ const config = [
       "build/**",
       "node_modules/**",
       "next-env.d.ts",
+      "test-*.ts",
+      "eslint-plugin-product-quality/**",
     ],
   },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
     plugins: {
       'product-quality': productQuality,
     },

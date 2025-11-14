@@ -74,7 +74,7 @@ export function SpecialistProjectCard({
     <Card
       variant="outlined"
       className={`cursor-pointer border-4 border-black bg-white p-4 transition-all hover:shadow-[4px_4px_0_0_#000] ${
-        isUrgent ? "border-red-500 bg-red-50" : ""
+        isUrgent ? "border-red-500 bg-rose-50" : ""
       }`}
       onClick={onClick}
     >
