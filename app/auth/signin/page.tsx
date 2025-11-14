@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { RiArrowRightLine, RiLockLine, RiMailLine } from "react-icons/ri"
+import { RiArrowRightLine, RiLockLine, RiMailLine, RiShirtLine } from "react-icons/ri"
 
 function SignInForm() {
   const router = useRouter()
@@ -46,31 +46,34 @@ function SignInForm() {
   }
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
         {/* Logo/Brand */}
         <div className="text-center mb-8">
-          <Link href="/">
-            <h1 className="text-4xl font-black uppercase">
-              FASHION<span className="text-purple-400">FORGE</span>
+          <Link href="/" className="inline-flex flex-col items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <RiShirtLine className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold">
+              Fashion<span className="text-purple-600">Forge</span>
             </h1>
           </Link>
           <p className="text-gray-600 mt-2">Sign in to your account</p>
         </div>
 
         {/* Sign In Form */}
-        <div className="bg-white border-4 border-black brutalist-shadow p-8">
+        <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-xl p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="bg-red-100 border-4 border-red-500 p-4">
-                <p className="text-red-700 font-bold uppercase text-sm">
+              <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4">
+                <p className="text-red-700 font-semibold text-sm">
                   {error}
                 </p>
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-bold uppercase text-sm">
+              <Label htmlFor="email" className="font-semibold text-sm text-gray-700">
                 Email Address
               </Label>
               <div className="relative">
@@ -82,14 +85,14 @@ function SignInForm() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-gray-300 rounded-lg h-12 text-base focus:border-purple-600 focus:ring-2 focus:ring-purple-600"
                   disabled={isLoading}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="font-bold uppercase text-sm">
+              <Label htmlFor="password" className="font-semibold text-sm text-gray-700">
                 Password
               </Label>
               <div className="relative">
@@ -101,7 +104,7 @@ function SignInForm() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-gray-300 rounded-lg h-12 text-base focus:border-purple-600 focus:ring-2 focus:ring-purple-600"
                   disabled={isLoading}
                 />
               </div>
@@ -109,7 +112,7 @@ function SignInForm() {
 
             <Button
               type="submit"
-              className="w-full h-14 text-lg gap-3 bg-black text-purple-400 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow"
+              className="w-full h-12 text-base gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               disabled={isLoading}
             >
               {isLoading ? "Signing In..." : "Sign In"}
@@ -120,10 +123,10 @@ function SignInForm() {
           {/* Divider */}
           <div className="relative my-8">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t-4 border-black"></div>
+              <div className="w-full border-t border-gray-200"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white px-4 text-sm font-bold uppercase">
+              <span className="bg-white px-4 text-sm font-semibold text-gray-500">
                 Or
               </span>
             </div>
@@ -131,11 +134,11 @@ function SignInForm() {
 
           {/* Sign Up Link */}
           <div className="text-center">
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm">
               Don&apos;t have an account?{" "}
               <Link
                 href="/auth/signup"
-                className="font-bold text-black hover:text-purple-400 underline"
+                className="font-semibold text-purple-600 hover:text-purple-700 underline"
               >
                 Sign Up
               </Link>
@@ -145,7 +148,7 @@ function SignInForm() {
 
         {/* Back to Home */}
         <div className="text-center mt-6">
-          <Link href="/" className="text-gray-600 hover:text-black font-medium">
+          <Link href="/" className="text-gray-600 hover:text-purple-600 font-medium text-sm transition-colors">
             ← Back to Home
           </Link>
         </div>
@@ -158,12 +161,12 @@ export default function SignInPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4 animate-pulse">
-              <RiLockLine className="w-10 h-10 text-purple-400" />
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 animate-pulse shadow-lg">
+              <RiLockLine className="w-10 h-10 text-white" />
             </div>
-            <p className="text-gray-600 font-bold uppercase">Loading...</p>
+            <p className="text-gray-600 font-semibold">Loading...</p>
           </div>
         </div>
       }
