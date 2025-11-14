@@ -1,15 +1,20 @@
 import { NextRequest, NextResponse } from "next/server"
 import { put } from "@vercel/blob"
 import { prisma } from "@/lib/prisma"
+import { requireAuth } from "@/lib/get-current-user"
 
 // POST /api/designs/upload - Upload fashion sketch/reference image
 export async function POST(req: NextRequest) {
   try {
+    const user = await requireAuth() as { id: string }
+
     const formData = await req.formData()
     const file = formData.get("file") as File
+    const type = formData.get("type") as string  // clothing, accessory, footwear, pattern, full-outfit
     const category = formData.get("category") as string
+    const style = formData.get("style") as string | null
     const description = formData.get("description") as string | null
-    const userId = formData.get("userId") as string // TODO: Get from session
+    const collectionId = formData.get("collectionId") as string | null
 
     if (!file) {
       return NextResponse.json(
@@ -18,9 +23,9 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    if (!category) {
+    if (!type || !category) {
       return NextResponse.json(
-        { error: "Category is required" },
+        { error: "Type and category are required" },
         { status: 400 }
       )
     }
@@ -52,11 +57,14 @@ export async function POST(req: NextRequest) {
     // Create Design record in database
     const design = await prisma.design.create({
       data: {
-        userId,
+        userId: user.id,
+        collectionId: collectionId || undefined,
         filename: file.name,
         sourceUrl: blob.url,
         fileSize: file.size,
+        type,
         category,
+        style: style || undefined,
         description: description || null,
         tags: [],
         status: "ready",
@@ -72,7 +80,7 @@ export async function POST(req: NextRequest) {
         createdAt: design.createdAt,
       },
     })
-  } catch {
+  } catch (error: unknown) {
     console.error("Upload error:", error)
     return NextResponse.json(
       { error: "Failed to upload design" },
