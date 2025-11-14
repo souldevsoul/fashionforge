@@ -55,18 +55,18 @@ export default async function DesignsPage() {
   const designs = await getDesigns()
 
   return (
-    <div className="flex-1 space-y-4 p-8 pt-6">
-      <div className="flex items-center justify-between space-y-2">
+    <div className="flex-1 space-y-6 p-8 pt-6">
+      <div className="flex items-center justify-between">
         <div>
-          <Heading as="h1" className="text-2xl font-bold uppercase tracking-tight">
+          <Heading as="h1" className="text-3xl font-bold tracking-tight">
             Design Library
           </Heading>
-          <Text variant="body" className="text-slate-600">
+          <Text variant="body" className="text-gray-600 mt-1">
             View and manage your uploaded fashion designs
           </Text>
         </div>
         <Link href="/dashboard/create">
-          <Button variant="primary" className="gap-2">
+          <Button variant="primary" className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
             <RiAddLine className="w-5 h-5" />
             New Design
           </Button>
@@ -75,19 +75,19 @@ export default async function DesignsPage() {
 
       <Suspense fallback={<div>Loading...</div>}>
         {designs.length === 0 ? (
-          <Card variant="outlined" className="p-12 text-center">
+          <Card variant="outlined" className="p-12 text-center border-2 border-gray-200 rounded-2xl shadow-lg">
             <div className="flex flex-col items-center justify-center space-y-4">
-              <div className="w-24 h-24 border-4 border-black bg-purple-100 flex items-center justify-center">
-                <RiShirtLine className="w-12 h-12 text-purple-400" />
+              <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                <RiShirtLine className="w-12 h-12 text-white" />
               </div>
-              <Heading variant="h3" className="uppercase">
+              <Heading variant="h3" className="text-2xl font-bold">
                 No Designs Yet
               </Heading>
-              <Text variant="body" className="text-slate-600 max-w-md">
+              <Text variant="body" className="text-gray-600 max-w-md">
                 Upload your first fashion sketch to start generating professional designs with AI
               </Text>
               <Link href="/dashboard/create">
-                <Button variant="primary" size="lg" className="gap-2 mt-4">
+                <Button variant="primary" size="lg" className="gap-2 mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
                   <RiAddLine className="w-5 h-5" />
                   Create Your First Design
                 </Button>
@@ -98,7 +98,7 @@ export default async function DesignsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {designs.map((design) => (
               <Link key={design.id} href={`/dashboard/designs/${design.id}`}>
-                <Card variant="outlined" className="overflow-hidden hover:shadow-[8px_8px_0_0_#000] transition-all cursor-pointer">
+                <Card variant="outlined" className="overflow-hidden hover:shadow-xl transition-all cursor-pointer border-2 border-gray-200 rounded-2xl shadow-lg">
                   <div className="aspect-square bg-gray-100">
                     <img
                       src={design.sourceUrl}
@@ -106,26 +106,26 @@ export default async function DesignsPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-4 border-t-4 border-black">
+                  <div className="p-4">
                     <div className="flex items-start justify-between mb-2">
-                      <Heading variant="h4" className="uppercase flex-1 truncate">
+                      <Heading variant="h4" className="font-bold flex-1 truncate">
                         {design.filename}
                       </Heading>
                       <Badge
                         variant={design.status === "ready" ? "success" : "warning"}
-                        className="ml-2"
+                        className="ml-2 rounded-full"
                       >
                         {design.status}
                       </Badge>
                     </div>
-                    <Text variant="caption" className="text-slate-600 uppercase block mb-3">
+                    <Text variant="caption" className="text-gray-600 font-semibold block mb-3">
                       {design.category}
                     </Text>
                     <div className="flex items-center justify-between text-sm">
-                      <Text variant="caption" className="text-slate-500">
+                      <Text variant="caption" className="text-gray-500">
                         {design.variationCount} variations
                       </Text>
-                      <Text variant="caption" className="text-slate-500">
+                      <Text variant="caption" className="text-gray-500">
                         {new Date(design.createdAt).toLocaleDateString()}
                       </Text>
                     </div>
