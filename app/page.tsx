@@ -82,79 +82,84 @@ export default function Home() {
     },
   ]
 
-  // Pricing data
-  const pricingPlans = [
+  // Credit bundles data (1 credit = $0.01)
+  const creditBundles = [
     {
-      name: "FREE",
-      price: "$0",
+      name: "STARTER",
+      credits: 100,
+      price: "$9",
+      pricePerCredit: "$0.09",
       description: "Perfect for trying out FashionForge",
       features: [
-        { text: "3 designs per month", included: true },
-        { text: "2 variations per design", included: true },
-        { text: "Standard resolution", included: true },
-        { text: "HD exports", included: false },
-        { text: "Commercial use", included: false },
-        { text: "Priority support", included: false },
+        "6 design generations (15 credits each)",
+        "20 design variations (5 credits each)",
+        "Never expires",
+        "Commercial use included",
       ],
-      ctaText: "GET STARTED FREE",
+      ctaText: "BUY NOW",
       popular: false,
+      savings: null,
     },
     {
-      name: "DESIGNER",
+      name: "PRO",
+      credits: 500,
       price: "$39",
-      description: "For professional fashion designers",
+      pricePerCredit: "$0.078",
+      description: "Best value for designers",
       features: [
-        { text: "30 designs per month", included: true },
-        { text: "5 variations per design", included: true },
-        { text: "HD resolution exports", included: true },
-        { text: "Virtual try-on mockups", included: true },
-        { text: "Commercial use license", included: true },
-        { text: "Priority support", included: true },
-        { text: "API access", included: false },
+        "33 design generations",
+        "100 design variations",
+        "50 mockup generations (10 credits)",
+        "50 tech pack exports (10 credits)",
+        "Never expires",
+        "Commercial use included",
       ],
-      ctaText: "START FREE TRIAL",
+      ctaText: "BUY NOW",
       popular: true,
+      savings: "Save 13%",
     },
     {
       name: "STUDIO",
+      credits: 2000,
       price: "$149",
+      pricePerCredit: "$0.0745",
       description: "For fashion brands and studios",
       features: [
-        { text: "200 designs per month", included: true },
-        { text: "Unlimited variations", included: true },
-        { text: "4K resolution exports", included: true },
-        { text: "Advanced mockup editor", included: true },
-        { text: "Full commercial license", included: true },
-        { text: "Team collaboration", included: true },
-        { text: "Full API access", included: true },
-        { text: "Custom integrations", included: true },
-        { text: "Dedicated support", included: true },
+        "133 design generations",
+        "400 design variations",
+        "200 mockup generations",
+        "200 tech pack exports",
+        "Priority processing",
+        "Never expires",
+        "Full commercial license",
+        "Dedicated support",
       ],
-      ctaText: "CONTACT SALES",
+      ctaText: "BUY NOW",
       popular: false,
+      savings: "Save 17%",
     },
   ]
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b-4 border-black bg-white">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-purple">
-              <RiShirtLine className="w-7 h-7 text-purple-400" />
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-md">
+              <RiShirtLine className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold uppercase tracking-tight">FASHIONFORGE</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">FashionForge</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-bold uppercase tracking-wider hover:text-purple-400 transition-colors">Features</a>
-            <a href="#pricing" className="text-sm font-bold uppercase tracking-wider hover:text-purple-400 transition-colors">Pricing</a>
-            <a href="/about" className="text-sm font-bold uppercase tracking-wider hover:text-purple-400 transition-colors">About</a>
-            <a href="/contact" className="text-sm font-bold uppercase tracking-wider hover:text-purple-400 transition-colors">Contact</a>
+            <a href="#features" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">Features</a>
+            <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">Pricing</a>
+            <a href="/about" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">About</a>
+            <a href="/contact" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">Contact</a>
           </nav>
           <Button
             size="md"
-            className="bg-purple-400 text-black hover:bg-purple-300 border-4 border-black font-bold uppercase"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-md"
             onClick={() => window.location.href = '/dashboard'}
           >
             Get Started
@@ -163,57 +168,57 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-purple-50 to-white border-b-8 border-black min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50 min-h-[90vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-          <div className="text-center space-y-12">
+          <div className="text-center space-y-8">
             {/* Badge */}
-            <div className={`inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black brutalist-shadow transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-              <RiSparklingLine className="w-6 h-6" />
-              <Text variant="body-sm" className="font-bold uppercase tracking-wider">AI-POWERED FASHION DESIGN STUDIO</Text>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+              <RiSparklingLine className="w-5 h-5 text-purple-600" />
+              <Text variant="body-sm" className="font-semibold text-purple-800">AI-Powered Fashion Design Studio</Text>
             </div>
 
             {/* Big Revealing Text */}
-            <div className="space-y-6">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none">
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
                 <span className={`block transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">FROM</span>{" "}
-                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">SKETCH</span>
+                  <span className="text-gray-900">From</span>{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Sketch</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">TO</span>{" "}
-                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">RUNWAY</span>
+                  <span className="text-gray-900">to</span>{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Runway</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">IN</span>{" "}
-                  <span className="text-purple-400 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">SECONDS</span>
+                  <span className="text-gray-900">in</span>{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Seconds</span>
                 </span>
               </h1>
             </div>
 
             {/* Subtitle */}
             <div className={`transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <Text variant="lead" className="text-gray-900 max-w-3xl mx-auto text-xl md:text-2xl font-medium">
+              <Text variant="lead" className="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl">
                 Transform sketches into professional fashion designs. Create apparel mockups, try-on visualizations, and export ready-to-produce designs with AI.
               </Text>
             </div>
 
             {/* CTA Buttons */}
-            <div className={`flex flex-wrap justify-center gap-6 pt-4 transition-all duration-700 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`flex flex-wrap justify-center gap-4 pt-4 transition-all duration-700 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <Button
                 size="xl"
-                className="gap-3 bg-black text-purple-400 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow text-lg px-12 py-8"
+                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
                 onClick={() => window.location.href = '/dashboard'}
               >
-                <RiArrowRightLine className="w-6 h-6" />
-                Create Design Now
+                <RiArrowRightLine className="w-5 h-5" />
+                Start Designing Free
               </Button>
               <Button
                 size="xl"
                 variant="secondary"
-                className="gap-3 bg-white text-black hover:bg-gray-100 border-4 border-black font-bold uppercase text-lg px-12 py-8"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
                 onClick={() => window.location.href = '/demo'}
               >
-                <RiPlayCircleLine className="w-6 h-6" />
+                <RiPlayCircleLine className="w-5 h-5" />
                 Watch Demo
               </Button>
             </div>
@@ -222,16 +227,16 @@ export default function Home() {
       </section>
 
       {/* Fashion Examples Carousel */}
-      <section className="relative bg-white py-20 border-b-8 border-black">
+      <section className="relative bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black uppercase mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Fashion That Inspires
             </h2>
-            <p className="text-gray-700 text-lg font-medium">See the styles our AI can create</p>
+            <p className="text-gray-600 text-lg">See the styles our AI can create</p>
           </div>
 
-          <div className="relative h-96 rounded-2xl overflow-hidden border-4 border-black brutalist-shadow">
+          <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
             {fashionExamples.map((example, index) => (
               <div
                 key={index}
@@ -246,12 +251,12 @@ export default function Home() {
                   className="object-cover"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-center justify-center">
                   <div className="text-center text-white space-y-4">
-                    <div className="inline-block px-4 py-2 bg-purple-400/90 border-4 border-black mb-4">
-                      <span className="text-sm font-bold uppercase tracking-wider text-black">{example.style}</span>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/90 to-pink-500/90 backdrop-blur-sm rounded-full mb-4">
+                      <span className="text-sm font-semibold tracking-wide">{example.style}</span>
                     </div>
-                    <h3 className="text-5xl font-black uppercase">{example.title}</h3>
+                    <h3 className="text-4xl md:text-5xl font-bold">{example.title}</h3>
                   </div>
                 </div>
               </div>
@@ -263,8 +268,10 @@ export default function Home() {
                 <button
                   key={index}
                   onClick={() => setCurrentFashion(index)}
-                  className={`w-3 h-3 border-2 border-black transition-all ${
-                    index === currentFashion ? 'w-8 bg-purple-400' : 'bg-white'
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentFashion
+                      ? 'w-8 bg-gradient-to-r from-purple-500 to-pink-500'
+                      : 'w-2 bg-white/50 hover:bg-white/80'
                   }`}
                 />
               ))}
@@ -274,38 +281,32 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 bg-white">
+      <section id="features" className="py-24 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-black border-4 border-black mb-6">
-              <RiSparklingLine className="w-6 h-6 text-purple-400" />
-              <Text variant="body-sm" className="text-purple-400 font-bold uppercase tracking-wider">Features</Text>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-6">
+              <RiSparklingLine className="w-5 h-5 text-purple-600" />
+              <Text variant="body-sm" className="text-purple-800 font-semibold">Features</Text>
             </div>
-            <Heading variant="h2" className="mb-4 uppercase text-4xl md:text-5xl lg:text-6xl">EVERYTHING YOU NEED</Heading>
+            <Heading variant="h2" className="mb-4 text-4xl md:text-5xl font-bold">Everything You Need</Heading>
             <Text variant="body-lg" className="text-gray-600 max-w-3xl mx-auto">
               Powerful features designed for fashion designers, brands, and creative studios
             </Text>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon
-              const bgColors = ["bg-white", "bg-black", "bg-purple-400"]
-              const textColors = ["text-black", "text-purple-400", "text-black"]
-              const borderColors = ["border-black", "border-black", "border-black"]
-              const shadowColors = ["brutalist-shadow", "brutalist-shadow-purple", "brutalist-shadow"]
-
-              const colorIndex = index % 3
 
               return (
-                <div key={index} className={`p-8 ${bgColors[colorIndex]} border-4 ${borderColors[colorIndex]} ${shadowColors[colorIndex]}`}>
-                  <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-purple-400" : "bg-black"} flex items-center justify-center mb-6`}>
-                    <Icon className={`w-8 h-8 ${colorIndex === 1 ? "text-black" : "text-purple-400"}`} />
+                <div key={index} className="p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <Heading variant="h4" className={`mb-4 ${textColors[colorIndex]} uppercase`}>
+                  <Heading variant="h4" className="mb-3 text-xl font-bold text-gray-900">
                     {feature.title}
                   </Heading>
-                  <Text variant="body" className={colorIndex === 1 ? "text-white" : "text-gray-600"}>
+                  <Text variant="body" className="text-gray-600 leading-relaxed">
                     {feature.description}
                   </Text>
                 </div>
@@ -319,108 +320,132 @@ export default function Home() {
       <section id="pricing" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-6">
-              <Text variant="body-sm" className="text-black font-bold uppercase tracking-wider">Pricing</Text>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-6">
+              <Text variant="body-sm" className="text-purple-800 font-semibold">Simple Pricing</Text>
             </div>
-            <Heading variant="h2" className="mb-4 uppercase text-4xl md:text-5xl lg:text-6xl">CHOOSE YOUR PLAN</Heading>
+            <Heading variant="h2" className="mb-4 text-4xl md:text-5xl font-bold">Buy Credits, Use Anytime</Heading>
             <Text variant="body-lg" className="text-gray-600 max-w-3xl mx-auto">
-              Start free, scale as you grow. All plans include AI design generation and virtual try-on.
+              Pay only for what you use. Credits never expire. All bundles include commercial use.
             </Text>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
+            {creditBundles.map((bundle, index) => (
               <div
                 key={index}
-                className={`p-8 border-4 border-black ${
-                  plan.popular
-                    ? "bg-black brutalist-shadow-purple"
-                    : "bg-white brutalist-shadow"
+                className={`p-8 border-2 rounded-2xl relative ${
+                  bundle.popular
+                    ? "border-purple-500 bg-gradient-to-b from-purple-50 to-white shadow-xl scale-105"
+                    : "border-gray-200 bg-white hover:shadow-lg transition-all"
                 }`}
               >
-                {plan.popular && (
-                  <div className="inline-flex items-center px-4 py-2 bg-purple-400 border-4 border-purple-400 mb-6">
-                    <Text variant="caption" className="text-black font-bold uppercase tracking-wider">Most Popular</Text>
+                {bundle.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <div className="px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold rounded-full shadow-md">
+                      Most Popular
+                    </div>
                   </div>
                 )}
-                <Heading variant="h3" className={`mb-2 uppercase ${plan.popular ? "text-purple-400" : "text-black"}`}>
-                  {plan.name}
-                </Heading>
+                {bundle.savings && (
+                  <div className="absolute -top-4 right-4">
+                    <div className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full shadow-md">
+                      {bundle.savings}
+                    </div>
+                  </div>
+                )}
                 <div className="mb-6">
-                  <span className={`text-5xl font-bold uppercase ${plan.popular ? "text-purple-400" : "text-black"}`}>
-                    {plan.price}
-                  </span>
-                  {plan.price !== "CUSTOM" && (
-                    <span className={`text-lg font-bold uppercase ${plan.popular ? "text-white" : "text-gray-600"}`}>/mo</span>
-                  )}
+                  <Heading variant="h3" className="mb-2 text-2xl font-bold text-gray-900">
+                    {bundle.name}
+                  </Heading>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-4xl font-bold text-gray-900">{bundle.price}</span>
+                    <span className="text-gray-500">one-time</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <span className="font-bold text-purple-600">{bundle.credits} credits</span>
+                    <span className="text-gray-500">•</span>
+                    <span className="text-gray-500">{bundle.pricePerCredit}/credit</span>
+                  </div>
                 </div>
-                <Text variant="body" className={`mb-8 ${plan.popular ? "text-white" : "text-gray-600"}`}>
-                  {plan.description}
+                <Text variant="body" className="mb-6 text-gray-600">
+                  {bundle.description}
                 </Text>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, i) => (
+                <ul className="space-y-3 mb-8">
+                  {bundle.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      {feature.included ? (
-                        <RiCheckLine className={`w-5 h-5 flex-shrink-0 ${plan.popular ? "text-purple-400" : "text-black"}`} />
-                      ) : (
-                        <RiCloseLine className={`w-5 h-5 flex-shrink-0 ${plan.popular ? "text-gray-600" : "text-gray-400"}`} />
-                      )}
-                      <Text
-                        variant="body-sm"
-                        className={`${
-                          feature.included
-                            ? plan.popular ? "text-white" : "text-black"
-                            : plan.popular ? "text-gray-600" : "text-gray-400"
-                        } font-medium`}
-                      >
-                        {feature.text}
+                      <RiCheckLine className="w-5 h-5 flex-shrink-0 text-purple-600 mt-0.5" />
+                      <Text variant="body-sm" className="text-gray-700">
+                        {feature}
                       </Text>
                     </li>
                   ))}
                 </ul>
                 <Button
                   size="lg"
-                  className={`w-full gap-3 border-4 border-black font-bold uppercase ${
-                    plan.popular
-                      ? "bg-purple-400 text-black hover:bg-purple-300"
-                      : "bg-black text-purple-400 hover:bg-gray-900"
+                  className={`w-full gap-2 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all ${
+                    bundle.popular
+                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0"
+                      : "bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300"
                   }`}
                 >
-                  {plan.ctaText}
+                  {bundle.ctaText}
                   <RiArrowRightLine className="w-5 h-5" />
                 </Button>
               </div>
             ))}
           </div>
+
+          {/* Credit costs info */}
+          <div className="mt-16 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-2xl">
+            <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">How Credits Work</h3>
+            <div className="grid md:grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">15</div>
+                <div className="text-sm text-gray-600">credits per design generation</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">5</div>
+                <div className="text-sm text-gray-600">credits per design variation</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">10</div>
+                <div className="text-sm text-gray-600">credits per mockup generation</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">10</div>
+                <div className="text-sm text-gray-600">credits per tech pack</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-black border-t-8 border-purple-400">
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-purple-400 mb-8">
-            <RiSparklingLine className="w-6 h-6 text-black" />
-            <Text variant="body-sm" className="text-black font-bold uppercase tracking-wider">Ready to Start?</Text>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8">
+            <RiSparklingLine className="w-5 h-5 text-purple-200" />
+            <Text variant="body-sm" className="text-purple-100 font-semibold">Ready to Start?</Text>
           </div>
-          <Heading variant="h1" className="mb-6 text-purple-400 uppercase text-5xl md:text-6xl lg:text-7xl">
-            DESIGN YOUR FASHION FUTURE
+          <Heading variant="h1" className="mb-6 text-white text-4xl md:text-5xl lg:text-6xl font-bold">
+            Design Your Fashion Future
           </Heading>
-          <Text variant="body-lg" className="text-white mb-12 max-w-2xl mx-auto">
-            Join fashion designers and brands using FashionForge to create professional apparel designs in seconds. Start your free trial today—no credit card required.
+          <Text variant="body-lg" className="text-purple-100 mb-12 max-w-2xl mx-auto text-lg">
+            Join fashion designers and brands using FashionForge to create professional apparel designs in seconds. Get started with free credits—no card required.
           </Text>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="xl"
-              className="gap-3 bg-purple-400 text-black hover:bg-purple-300 border-4 border-purple-400 font-bold uppercase brutalist-shadow-purple"
+              className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all px-8 py-6"
               onClick={() => window.location.href = '/dashboard'}
             >
               <RiArrowRightLine className="w-5 h-5" />
-              Start Free Trial
+              Start Designing Free
             </Button>
             <Button
               size="xl"
               variant="secondary"
-              className="gap-3 bg-white text-black hover:bg-gray-100 border-4 border-white font-bold uppercase"
+              className="gap-2 bg-transparent text-white hover:bg-white/10 border-2 border-white font-semibold rounded-lg backdrop-blur-sm px-8 py-6"
               onClick={() => window.location.href = '/contact'}
             >
               Schedule a Demo
