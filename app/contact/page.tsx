@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { Container } from "@/components/ui/container"
@@ -30,7 +29,7 @@ export default function ContactPage() {
       icon: RiRocketLine,
       title: "Sales & Enterprise",
       description: "Interested in Enterprise plan, custom pricing, or volume discounts",
-      email: "sales@fashionforge.ai",
+      email: "support@fashionforge.ai",
       responseTime: "4 hours",
       color: "black",
     },
@@ -38,7 +37,7 @@ export default function ContactPage() {
       icon: RiTeamLine,
       title: "Partnerships",
       description: "Integration partnerships, affiliate programs, or collaboration opportunities",
-      email: "partners@fashionforge.ai",
+      email: "support@fashionforge.ai",
       responseTime: "48 hours",
       color: "yellow",
     },
@@ -91,11 +90,11 @@ export default function ContactPage() {
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
-          { label: "Demo", href: "/demo" },
+          { label: "About", href: "/about" },
         ]}
         ctaButton={{
-          text: "Get Started",
-          href: "/signup",
+          text: "Start Designing",
+          href: "/dashboard",
         }}
       />
 
@@ -391,7 +390,7 @@ export default function ContactPage() {
                 className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
                 asChild
               >
-                <a href="mailto:studio@fashionforge.ai">
+                <a href="mailto:support@fashionforge.ai">
                   Contact Studio Support
                   <RiArrowRightLine className="w-5 h-5" />
                 </a>

@@ -74,7 +74,7 @@ export default function PrivacyPage() {
         },
         {
           subtitle: "AI Model Providers",
-          text: "Your text descriptions and design requests are sent to Replicate's infrastructure to run AI models (FLUX Pro, Stable Diffusion). Replicate's privacy policy governs their data handling. We have data processing agreements in place with all AI providers to ensure your designs remain confidential.",
+          text: "Your text descriptions and design requests are sent to Replicate's infrastructure to run AI models (Flux Pro, Stable Diffusion). Replicate's privacy policy governs their data handling. We have data processing agreements in place with all AI providers to ensure your designs remain confidential.",
         },
         {
           subtitle: "Legal Requirements",
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
         },
         {
           subtitle: "Data Isolation",
-          text: "Each customer's data is logically isolated. Voice clones are associated only with your account. No cross-customer data sharing or access.",
+          text: "Each customer's data is logically isolated. Design files are associated only with your account. No cross-customer data sharing or access.",
         },
       ],
     },
@@ -113,12 +113,12 @@ export default function PrivacyPage() {
       icon: RiLockLine,
       content: [
         {
-          subtitle: "Generated Audio",
-          text: "Generated design files are automatically deleted 1 hour after generation. If you download design, we do not retain copies on our servers. Text inputs are retained for up to 30 days for analytics.",
+          subtitle: "Generated Designs",
+          text: "Generated design files are retained in your account until you delete them. If you download designs, we do not retain copies on our servers after account deletion. Text inputs are retained for up to 30 days for analytics.",
         },
         {
-          subtitle: "Voice Clones",
-          text: "Voice clones (training design and resulting models) are retained until you delete them or close your account. Original training design is deleted after design variation creation. Only the voice model is retained.",
+          subtitle: "Design Variations",
+          text: "Design variations (uploaded sketches and resulting designs) are retained until you delete them or close your account. Original training sketches are available for re-generation. All variations remain accessible in your library.",
         },
         {
           subtitle: "Account Data",
@@ -187,26 +187,26 @@ export default function PrivacyPage() {
           { label: "About", href: "/about" },
         ]}
         ctaButton={{
-          text: "Try Free",
+          text: "Start Designing",
           href: "/dashboard",
         }}
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-2 border-gray-200">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-2 border-gray-200 rounded-2xl mb-8">
-              <RiShieldCheckLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Privacy Policy</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-8">
+              <RiShieldCheckLine className="w-5 h-5 text-purple-600" />
+              <span className="text-sm font-semibold text-purple-800">Privacy Policy</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              YOUR PRIVACY MATTERS
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Your Privacy Matters
             </h1>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-600 mb-6">
               We take your privacy seriously. This policy explains how we collect, use, protect, and share your information when you use FashionForge.
             </p>
-            <p className="text-sm font-bold uppercase text-gray-900">
+            <p className="text-sm font-semibold text-gray-900">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -214,33 +214,33 @@ export default function PrivacyPage() {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-16 bg-black border-b-8 border-purple-400">
+      <section className="py-16 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold uppercase mb-8 text-purple-400">
-              THE SHORT VERSION
+            <h2 className="text-3xl font-bold mb-8 text-white">
+              The Short Version
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-6 bg-white border-4 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ WHAT WE COLLECT</h3>
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
+                <h3 className="text-lg font-bold mb-3">What We Collect</h3>
                 <p className="text-gray-700 text-sm">
-                  Account info, voice data you upload, text inputs, generated design, usage analytics, and payment data (via Stripe).
+                  Account info, design sketches you upload, text inputs, generated designs, usage analytics, and payment data (via Stripe).
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ HOW WE USE IT</h3>
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
+                <h3 className="text-lg font-bold mb-3">How We Use It</h3>
                 <p className="text-gray-700 text-sm">
                   To provide services, improve features, send updates, ensure security, and comply with legal requirements.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ WHO WE SHARE WITH</h3>
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
+                <h3 className="text-lg font-bold mb-3">Who We Share With</h3>
                 <p className="text-gray-700 text-sm">
                   Service providers (Replicate, Stripe, AWS), legal authorities when required, and no one else without your consent.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ YOUR RIGHTS</h3>
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
+                <h3 className="text-lg font-bold mb-3">Your Rights</h3>
                 <p className="text-gray-700 text-sm">
                   Access, correct, delete, or export your data anytime. GDPR and CCPA compliant. Full data control.
                 </p>
@@ -251,7 +251,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* Detailed Sections */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto space-y-16">
             {sections.map((section, sectionIndex) => {
@@ -260,10 +260,10 @@ export default function PrivacyPage() {
                 <div key={sectionIndex} id={`section-${sectionIndex + 1}`}>
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-purple-400" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
+                      <h2 className="text-3xl font-bold">{section.title}</h2>
                     </div>
                   </div>
 
@@ -275,7 +275,7 @@ export default function PrivacyPage() {
                           itemIndex % 2 === 0 ? "bg-white shadow-lg" : "bg-purple-50"
                         }`}
                       >
-                        <h3 className="text-lg font-bold uppercase mb-3">{item.subtitle}</h3>
+                        <h3 className="text-lg font-bold mb-3">{item.subtitle}</h3>
                         <p className="text-gray-700 leading-relaxed">{item.text}</p>
                       </div>
                     ))}
@@ -288,10 +288,10 @@ export default function PrivacyPage() {
             <div id="section-8">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                    <RiGlobalLine className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                    <RiGlobalLine className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-3xl font-bold uppercase">8. International Data Transfers</h2>
+                  <h2 className="text-3xl font-bold">8. International Data Transfers</h2>
                 </div>
               </div>
 
@@ -311,10 +311,10 @@ export default function PrivacyPage() {
             <div id="section-9">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                    <RiUserLine className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                    <RiUserLine className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-3xl font-bold uppercase">9. Children's Privacy</h2>
+                  <h2 className="text-3xl font-bold">9. Children's Privacy</h2>
                 </div>
               </div>
 
@@ -331,10 +331,10 @@ export default function PrivacyPage() {
             <div id="section-10">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                    <RiLockLine className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                    <RiLockLine className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-3xl font-bold uppercase">10. Changes to This Policy</h2>
+                  <h2 className="text-3xl font-bold">10. Changes to This Policy</h2>
                 </div>
               </div>
 
@@ -355,49 +355,49 @@ export default function PrivacyPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black border-t-8 border-purple-400">
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-20 h-20 bg-purple-400 border-4 border-purple-400 flex items-center justify-center mx-auto mb-6">
-              <RiMailLine className="w-10 h-10 text-black" />
+            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <RiMailLine className="w-10 h-10 text-purple-600" />
             </div>
-            <h2 className="text-4xl font-bold uppercase mb-6 text-purple-400">
-              QUESTIONS ABOUT PRIVACY?
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Questions About Privacy?
             </h2>
-            <p className="text-xl text-white mb-8">
+            <p className="text-xl text-purple-100 mb-8">
               If you have questions about this Privacy Policy or how we handle your data, we're here to help.
             </p>
 
-            <div className="p-8 bg-white border-4 border-white shadow-lg-purple">
-              <h3 className="text-2xl font-bold uppercase mb-4">CONTACT US</h3>
+            <div className="p-8 bg-white rounded-2xl shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <div className="space-y-3 text-left max-w-2xl mx-auto">
                 <div>
-                  <span className="font-bold uppercase text-sm">Email:</span>
+                  <span className="font-bold text-sm">Email:</span>
                   <br />
                   <a
                     href="mailto:support@fashionforge.ai"
-                    className="text-lg font-bold text-black underline hover:no-underline"
+                    className="text-lg font-bold text-purple-600 underline hover:no-underline"
                   >
                     support@fashionforge.ai
                   </a>
                 </div>
                 <div>
-                  <span className="font-bold uppercase text-sm">Data Protection Officer:</span>
+                  <span className="font-bold text-sm">Data Protection Officer:</span>
                   <br />
                   <a
                     href="mailto:support@fashionforge.ai"
-                    className="text-lg font-bold text-black underline hover:no-underline"
+                    className="text-lg font-bold text-purple-600 underline hover:no-underline"
                   >
                     support@fashionforge.ai
                   </a>
                 </div>
                 <div>
-                  <span className="font-bold uppercase text-sm">Mailing Address:</span>
+                  <span className="font-bold text-sm">Mailing Address:</span>
                   <br />
                   <address className="text-gray-700 not-italic">
                     FashionForge, Inc.
                     <br />
-                    123 Voice Street, Suite 100
+                    123 Fashion Street, Suite 100
                     <br />
                     San Francisco, CA 94105
                     <br />

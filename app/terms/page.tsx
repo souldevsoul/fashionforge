@@ -59,7 +59,7 @@ export default function TermsPage() {
         },
         {
           subtitle: "Service Availability",
-          text: "We strive to provide 99.9% uptime for Pro and Enterprise customers. However, the Service may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control. We are not liable for any downtime or service interruptions.",
+          text: "We strive to provide 99.9% uptime for Studio plan customers. However, the Service may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control. We are not liable for any downtime or service interruptions.",
         },
         {
           subtitle: "Credit-Based Usage",
@@ -117,7 +117,7 @@ export default function TermsPage() {
         },
         {
           subtitle: "AI Model Providers",
-          text: "The underlying AI models (FLUX Pro, Stable Diffusion) are owned by their respective creators and licensed through Replicate. Your use of generated designs must comply with the terms of these model providers and include proper commercial licensing where applicable.",
+          text: "The underlying AI models (Flux Pro, Stable Diffusion) are owned by their respective creators and licensed through Replicate. Your use of generated designs must comply with the terms of these model providers and include proper commercial licensing where applicable.",
         },
       ],
     },
@@ -221,7 +221,7 @@ export default function TermsPage() {
           text: "You agree to indemnify, defend, and hold harmless FashionForge, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:",
         },
         {
-          text: "Your use of the Service; your content or generated design; your violation of these Terms; your violation of any rights of third parties; your violation of applicable laws or regulations.",
+          text: "Your use of the Service; your content or generated designs; your violation of these Terms; your violation of any rights of third parties; your violation of applicable laws or regulations.",
         },
         {
           text: "This indemnification obligation survives termination of these Terms and your use of the Service.",
@@ -262,26 +262,26 @@ export default function TermsPage() {
           { label: "About", href: "/about" },
         ]}
         ctaButton={{
-          text: "Try Free",
+          text: "Start Designing",
           href: "/dashboard",
         }}
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-2 border-gray-200">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-2 border-gray-200 rounded-2xl mb-8">
-              <RiFileTextLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Terms of Service</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-8">
+              <RiFileTextLine className="w-5 h-5 text-purple-600" />
+              <span className="text-sm font-semibold text-purple-800">Terms of Service</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              TERMS & CONDITIONS
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Terms & Conditions
             </h1>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-600 mb-6">
               These Terms of Service govern your use of FashionForge. Please read them carefully before using our platform.
             </p>
-            <p className="text-sm font-bold uppercase text-gray-900">
+            <p className="text-sm font-semibold text-gray-900">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -289,47 +289,47 @@ export default function TermsPage() {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-16 bg-black border-b-8 border-purple-400">
+      <section className="py-16 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold uppercase mb-8 text-purple-400">
-              THE KEY POINTS
+            <h2 className="text-3xl font-bold mb-8 text-white">
+              The Key Points
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiCheckLine className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">YOUR RIGHTS</h3>
+                  <RiCheckLine className="w-6 h-6 flex-shrink-0 text-purple-600" />
+                  <h3 className="text-lg font-bold">Your Rights</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  You own your content and generated design. Use the Service according to your plan limits. Cancel anytime.
+                  You own your content and generated designs. Use the Service according to your plan limits. Cancel anytime.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiCloseLine className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">PROHIBITED</h3>
+                  <RiCloseLine className="w-6 h-6 flex-shrink-0 text-orange-500" />
+                  <h3 className="text-lg font-bold">Prohibited</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  No illegal activity, impersonation, harassment, or service abuse. Voice cloning requires consent.
+                  No illegal activity, counterfeit designs, trademark infringement, or service abuse. Respect intellectual property.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiScalesLine className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">LIABILITY</h3>
+                  <RiScalesLine className="w-6 h-6 flex-shrink-0 text-purple-600" />
+                  <h3 className="text-lg font-bold">Liability</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
                   Service provided "as is." Our liability is limited. You're responsible for your use of generated content.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiShieldLine className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">PAYMENT</h3>
+                  <RiShieldLine className="w-6 h-6 flex-shrink-0 text-purple-600" />
+                  <h3 className="text-lg font-bold">Payment</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Subscriptions billed in advance. Non-refundable except as required by law. Cancel anytime.
+                  Credit-based pricing. Non-refundable except as required by law. Credits never expire.
                 </p>
               </div>
             </div>
@@ -338,7 +338,7 @@ export default function TermsPage() {
       </section>
 
       {/* Main Terms Sections */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto space-y-16">
             {sections.map((section, sectionIndex) => {
@@ -347,10 +347,10 @@ export default function TermsPage() {
                 <div key={sectionIndex} id={`section-${sectionIndex + 1}`}>
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-purple-400" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
+                      <h2 className="text-3xl font-bold">{section.title}</h2>
                     </div>
                   </div>
 
@@ -363,7 +363,7 @@ export default function TermsPage() {
                         }`}
                       >
                         {('subtitle' in item) && item.subtitle && (
-                          <h3 className="text-lg font-bold uppercase mb-3">{item.subtitle}</h3>
+                          <h3 className="text-lg font-bold mb-3">{item.subtitle}</h3>
                         )}
                         <p className="text-gray-700 leading-relaxed">{item.text}</p>
                       </div>
@@ -378,10 +378,10 @@ export default function TermsPage() {
               <div key={sectionIndex + 8} id={`section-${sectionIndex + 9}`}>
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                      <RiScalesLine className="w-6 h-6 text-purple-400" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                      <RiScalesLine className="w-6 h-6 text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
+                    <h2 className="text-3xl font-bold">{section.title}</h2>
                   </div>
                 </div>
 
@@ -392,7 +392,7 @@ export default function TermsPage() {
                       className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl"
                     >
                       {('subtitle' in item) && item.subtitle && (
-                        <h3 className="text-lg font-bold uppercase mb-3">{item.subtitle}</h3>
+                        <h3 className="text-lg font-bold mb-3">{item.subtitle}</h3>
                       )}
                       <p className="text-gray-700 leading-relaxed font-medium">{item.text}</p>
                     </div>
@@ -405,44 +405,44 @@ export default function TermsPage() {
             <div id="section-13">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
-                    <RiFileTextLine className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-md">
+                    <RiFileTextLine className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-3xl font-bold uppercase">13. Miscellaneous</h2>
+                  <h2 className="text-3xl font-bold">13. Miscellaneous</h2>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
-                  <h3 className="text-lg font-bold uppercase mb-3">Entire Agreement</h3>
+                  <h3 className="text-lg font-bold mb-3">Entire Agreement</h3>
                   <p className="text-gray-700 leading-relaxed">
                     These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and FashionForge regarding the Service. They supersede all prior agreements and understandings.
                   </p>
                 </div>
 
                 <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
-                  <h3 className="text-lg font-bold uppercase mb-3">Severability</h3>
+                  <h3 className="text-lg font-bold mb-3">Severability</h3>
                   <p className="text-gray-700 leading-relaxed">
                     If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
                   </p>
                 </div>
 
                 <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
-                  <h3 className="text-lg font-bold uppercase mb-3">Waiver</h3>
+                  <h3 className="text-lg font-bold mb-3">Waiver</h3>
                   <p className="text-gray-700 leading-relaxed">
                     No waiver of any term or provision of these Terms shall be deemed a further or continuing waiver of such term or any other term. Our failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision.
                   </p>
                 </div>
 
                 <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
-                  <h3 className="text-lg font-bold uppercase mb-3">Assignment</h3>
+                  <h3 className="text-lg font-bold mb-3">Assignment</h3>
                   <p className="text-gray-700 leading-relaxed">
                     You may not assign or transfer these Terms or your rights and obligations hereunder without our prior written consent. We may assign these Terms to any affiliate or in connection with a merger, acquisition, or sale of assets.
                   </p>
                 </div>
 
                 <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
-                  <h3 className="text-lg font-bold uppercase mb-3">Force Majeure</h3>
+                  <h3 className="text-lg font-bold mb-3">Force Majeure</h3>
                   <p className="text-gray-700 leading-relaxed">
                     We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, pandemics, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
                   </p>
@@ -454,49 +454,49 @@ export default function TermsPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black border-t-8 border-purple-400">
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-20 h-20 bg-purple-400 border-4 border-purple-400 flex items-center justify-center mx-auto mb-6">
-              <RiMailLine className="w-10 h-10 text-black" />
+            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <RiMailLine className="w-10 h-10 text-purple-600" />
             </div>
-            <h2 className="text-4xl font-bold uppercase mb-6 text-purple-400">
-              QUESTIONS ABOUT THESE TERMS?
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Questions About These Terms?
             </h2>
-            <p className="text-xl text-white mb-8">
+            <p className="text-xl text-purple-100 mb-8">
               If you have questions about these Terms of Service, please contact us.
             </p>
 
-            <div className="p-8 bg-white border-4 border-white shadow-lg-purple">
-              <h3 className="text-2xl font-bold uppercase mb-4">CONTACT US</h3>
+            <div className="p-8 bg-white rounded-2xl shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <div className="space-y-3 text-left max-w-2xl mx-auto">
                 <div>
-                  <span className="font-bold uppercase text-sm">Email:</span>
+                  <span className="font-bold text-sm">Email:</span>
                   <br />
                   <a
                     href="mailto:support@fashionforge.ai"
-                    className="text-lg font-bold text-black underline hover:no-underline"
+                    className="text-lg font-bold text-purple-600 underline hover:no-underline"
                   >
                     support@fashionforge.ai
                   </a>
                 </div>
                 <div>
-                  <span className="font-bold uppercase text-sm">Support:</span>
+                  <span className="font-bold text-sm">Support:</span>
                   <br />
                   <a
                     href="mailto:support@fashionforge.ai"
-                    className="text-lg font-bold text-black underline hover:no-underline"
+                    className="text-lg font-bold text-purple-600 underline hover:no-underline"
                   >
                     support@fashionforge.ai
                   </a>
                 </div>
                 <div>
-                  <span className="font-bold uppercase text-sm">Mailing Address:</span>
+                  <span className="font-bold text-sm">Mailing Address:</span>
                   <br />
                   <address className="text-gray-700 not-italic">
                     FashionForge, Inc.
                     <br />
-                    123 Voice Street, Suite 100
+                    123 Fashion Street, Suite 100
                     <br />
                     San Francisco, CA 94105
                     <br />
@@ -505,7 +505,7 @@ export default function TermsPage() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t-4 border-black">
+              <div className="mt-6 pt-6 border-t-2 border-gray-200">
                 <p className="text-sm text-gray-600">
                   By using FashionForge, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
                 </p>
