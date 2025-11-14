@@ -211,33 +211,37 @@ export default function FeaturesPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
-              <RiSparklingLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Features</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-8">
+              <RiSparklingLine className="w-5 h-5 text-purple-600" />
+              <span className="text-sm font-semibold text-purple-800">Features</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              EVERYTHING YOU NEED FOR PROFESSIONAL FASHION DESIGN
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Everything You Need for Professional Fashion Design
             </h1>
-            <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
               Powered by cutting-edge AI models. Built for designers, brands, and creators who demand the best.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="gap-3 bg-black text-purple-400 border-4 border-black font-bold uppercase"
+                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+                asChild
               >
-                <RiArrowRightLine className="w-5 h-5" />
-                Start Free Trial
+                <a href="/dashboard">
+                  <RiArrowRightLine className="w-5 h-5" />
+                  Buy Credits Now
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-3 border-4 border-black font-bold uppercase"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
+                asChild
               >
-                View Pricing
+                <a href="/pricing">View Pricing</a>
               </Button>
             </div>
           </div>
@@ -245,68 +249,62 @@ export default function FeaturesPage() {
       </section>
 
       {/* Model Stats */}
-      <section className="py-16 bg-black border-b-8 border-purple-400">
+      <section className="py-16 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">1M+</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Designs Generated</div>
+              <div className="text-5xl font-bold text-white mb-2">1M+</div>
+              <div className="text-sm font-semibold text-purple-200">Designs Generated</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">5</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Style Categories</div>
+              <div className="text-5xl font-bold text-white mb-2">5</div>
+              <div className="text-sm font-semibold text-purple-200">Style Categories</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">100+</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Color Palettes</div>
+              <div className="text-5xl font-bold text-white mb-2">100+</div>
+              <div className="text-sm font-semibold text-purple-200">Color Palettes</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2 uppercase">4K</div>
-              <div className="text-sm font-bold text-white uppercase tracking-wider">Export Quality</div>
+              <div className="text-5xl font-bold text-white mb-2">4K</div>
+              <div className="text-sm font-semibold text-purple-200">Export Quality</div>
             </div>
           </div>
         </Container>
       </section>
 
       {/* Main Features Grid */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mainFeatures.map((feature, index) => {
               const Icon = feature.icon
-              const bgColors = ["bg-white", "bg-black", "bg-purple-400"]
-              const textColors = ["text-black", "text-purple-400", "text-black"]
-              const subtitleColors = ["text-gray-600", "text-white", "text-gray-900"]
-              const colorIndex = index % 3
 
               return (
                 <div
                   key={index}
-                  className={`p-8 ${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-purple" : "brutalist-shadow"
-                  }`}
+                  className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-purple-400" : "bg-black"} flex items-center justify-center mb-6`}>
-                    <Icon className={`w-8 h-8 ${colorIndex === 1 ? "text-black" : "text-purple-400"}`} />
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
 
-                  <h3 className={`text-2xl font-bold uppercase mb-2 ${textColors[colorIndex]}`}>
+                  <h3 className="text-2xl font-bold mb-2">
                     {feature.title}
                   </h3>
 
-                  <div className={`text-xs font-bold uppercase tracking-wider mb-4 ${subtitleColors[colorIndex]}`}>
+                  <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-4">
                     {feature.subtitle}
                   </div>
 
-                  <p className={`mb-6 ${colorIndex === 1 ? "text-white" : "text-gray-700"}`}>
+                  <p className="mb-6 text-gray-600">
                     {feature.description}
                   </p>
 
                   <ul className="space-y-2">
                     {feature.features.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <RiCheckDoubleLine className={`w-5 h-5 flex-shrink-0 ${colorIndex === 1 ? "text-purple-400" : "text-black"}`} />
-                        <span className={`text-sm ${colorIndex === 1 ? "text-white" : "text-gray-700"}`}>
+                        <RiCheckDoubleLine className="w-5 h-5 flex-shrink-0 text-purple-600" />
+                        <span className="text-sm text-gray-600">
                           {item}
                         </span>
                       </li>
@@ -320,54 +318,61 @@ export default function FeaturesPage() {
       </section>
 
       {/* Style Categories CTA */}
-      <section className="py-24 bg-purple-400 border-y-8 border-black">
+      <section className="py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50">
         <Container maxWidth="xl">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-black border-4 border-black mb-8">
-              <RiPaintBrushLine className="w-6 h-6 text-purple-400" />
-              <span className="text-sm font-bold uppercase tracking-wider text-purple-400">Multiple Styles</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-8">
+              <RiPaintBrushLine className="w-5 h-5 text-purple-600" />
+              <span className="text-sm font-semibold text-purple-800">Multiple Styles</span>
             </div>
-            <h2 className="text-5xl font-bold uppercase mb-6 text-black">
-              CHOOSE THE RIGHT STYLE FOR YOUR BRAND
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Choose the Right Style for Your Brand
             </h2>
-            <p className="text-xl text-gray-900 mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               We support multiple design styles: Modern (sleek & contemporary), Retro (vintage vibes), Minimalist (clean & simple), Bold (statement pieces), and Elegant (refined luxury).
             </p>
             <Button
               size="xl"
-              className="gap-3 bg-black text-purple-400 border-4 border-black font-bold uppercase brutalist-shadow"
+              className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
+              asChild
             >
-              <RiArrowRightLine className="w-5 h-5" />
-              Explore Styles
+              <a href="/dashboard/create">
+                <RiArrowRightLine className="w-5 h-5" />
+                Explore Styles
+              </a>
             </Button>
           </div>
         </Container>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-black border-t-8 border-purple-400">
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold uppercase mb-6 text-purple-400">
-              READY TO GET STARTED?
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Ready to Get Started?
             </h2>
-            <p className="text-xl text-white mb-12">
-              Join thousands of designers and brands using FashionForge. Start your free trial today—no credit card required.
+            <p className="text-xl text-purple-100 mb-12">
+              Join thousands of designers and brands using FashionForge. Buy credits starting at just $9—no subscriptions required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="xl"
-                className="gap-3 bg-purple-400 text-black border-4 border-purple-400 font-bold uppercase"
+                className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
+                asChild
               >
-                <RiArrowRightLine className="w-5 h-5" />
-                Start Free Trial
+                <a href="/dashboard">
+                  <RiArrowRightLine className="w-5 h-5" />
+                  Buy Credits Now
+                </a>
               </Button>
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-white text-black border-4 border-white font-bold uppercase"
+                className="gap-2 bg-transparent text-white hover:bg-white/10 border-2 border-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
+                asChild
               >
-                View Pricing
+                <a href="/pricing">View Pricing</a>
               </Button>
             </div>
           </div>

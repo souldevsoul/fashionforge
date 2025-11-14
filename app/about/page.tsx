@@ -110,17 +110,17 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
-              <RiSparklingLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">About Us</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full mb-8">
+              <RiSparklingLine className="w-5 h-5 text-purple-600" />
+              <span className="text-sm font-semibold text-purple-800">About Us</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              MAKING AI FASHION DESIGN ACCESSIBLE TO EVERYONE
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Making AI Fashion Design Accessible to Everyone
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               We&apos;re building the future of fashion design. Professional-quality apparel designs powered by cutting-edge AI models.
             </p>
           </div>
@@ -128,40 +128,40 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase mb-6">
-                OUR MISSION
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Our Mission
               </h2>
-              <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Fashion design technology has the power to transform how we create apparel, explore styles, and bring design visions to life. But for too long, professional design tools have been out of reach for most creators and small brands.
               </p>
-              <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 We built FashionForge to change that. By leveraging cutting-edge AI models like FLUX Pro, we&apos;re making professional-quality fashion design accessible to everyone—from solo creators to enterprise design teams.
               </p>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                Our platform transforms sketches into production-ready designs in seconds. Generate multiple style variations, explore color palettes, and export high-resolution files. This isn&apos;t experimental technology—it&apos;s proven AI powered by <span className="font-bold">FLUX Pro</span> and trusted by thousands of designers worldwide.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Our platform transforms sketches into production-ready designs in seconds. Generate multiple style variations, explore color palettes, and export high-resolution files. This isn&apos;t experimental technology—it&apos;s proven AI powered by <span className="font-bold text-purple-600">FLUX Pro</span> and trusted by thousands of designers worldwide.
               </p>
             </div>
-            <div className="bg-black p-8 border-4 border-black brutalist-shadow-purple">
+            <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 p-10 rounded-2xl shadow-xl">
               <div className="space-y-8">
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">1M+</div>
-                  <div className="text-sm font-bold text-white uppercase">Designs Generated</div>
+                  <div className="text-5xl font-bold text-white mb-2">1M+</div>
+                  <div className="text-sm font-semibold text-purple-200">Designs Generated</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">5</div>
-                  <div className="text-sm font-bold text-white uppercase">Style Categories</div>
+                  <div className="text-5xl font-bold text-white mb-2">5</div>
+                  <div className="text-sm font-semibold text-purple-200">Style Categories</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">100+</div>
-                  <div className="text-sm font-bold text-white uppercase">Color Palettes</div>
+                  <div className="text-5xl font-bold text-white mb-2">100+</div>
+                  <div className="text-sm font-semibold text-purple-200">Color Palettes</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-purple-400 mb-2">99.9%</div>
-                  <div className="text-sm font-bold text-white uppercase">Platform Uptime</div>
+                  <div className="text-5xl font-bold text-white mb-2">99.9%</div>
+                  <div className="text-sm font-semibold text-purple-200">Platform Uptime</div>
                 </div>
               </div>
             </div>
@@ -170,13 +170,13 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-purple-400 border-y-8 border-black">
+      <section className="py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              OUR VALUES
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Our Values
             </h2>
-            <p className="text-xl text-gray-900 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The principles that guide everything we build
             </p>
           </div>
@@ -187,13 +187,13 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="p-8 bg-white border-4 border-black brutalist-shadow"
+                  className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  <div className="w-16 h-16 bg-black flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-purple-400" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold uppercase mb-4">{value.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                  <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
                 </div>
               )
             })}
@@ -202,13 +202,13 @@ export default function AboutPage() {
       </section>
 
       {/* Technology Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              POWERED BY THE BEST
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Powered by the Best
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We use only proven AI models and enterprise-grade infrastructure
             </p>
           </div>
@@ -216,30 +216,24 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {technology.map((tech, index) => {
               const Icon = tech.icon
-              const bgColors = ["bg-white", "bg-black"]
-              const textColors = ["text-black", "text-purple-400"]
-              const descColors = ["text-gray-700", "text-white"]
-              const colorIndex = index % 2
 
               return (
                 <div
                   key={index}
-                  className={`p-8 ${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-purple" : "brutalist-shadow"
-                  }`}
+                  className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-purple-400" : "bg-black"} flex items-center justify-center mb-6`}>
-                    <Icon className={`w-8 h-8 ${colorIndex === 1 ? "text-black" : "text-purple-400"}`} />
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className={`text-2xl font-bold uppercase ${textColors[colorIndex]}`}>
+                    <h3 className="text-2xl font-bold">
                       {tech.name}
                     </h3>
-                    <span className={`text-sm font-bold uppercase ${colorIndex === 1 ? "text-purple-400" : "text-black"} px-3 py-1 ${colorIndex === 1 ? "bg-black" : "bg-purple-400"} border-2 border-black`}>
+                    <span className="text-xs font-bold text-white px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-sm">
                       {tech.stats}
                     </span>
                   </div>
-                  <p className={`${descColors[colorIndex]} leading-relaxed`}>{tech.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{tech.description}</p>
                 </div>
               )
             })}
@@ -248,13 +242,13 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 bg-black border-y-8 border-purple-400">
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4 text-purple-400">
-              OUR JOURNEY
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Our Journey
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
               From idea to platform serving thousands of designers
             </p>
           </div>
@@ -265,12 +259,12 @@ export default function AboutPage() {
                 key={index}
                 className="flex gap-6"
               >
-                <div className="flex-shrink-0 w-24 h-24 bg-purple-400 border-4 border-purple-400 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-black">{milestone.year}</span>
+                <div className="flex-shrink-0 w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{milestone.year}</span>
                 </div>
-                <div className="flex-1 p-6 bg-white border-4 border-white brutalist-shadow-purple">
-                  <h3 className="text-xl font-bold uppercase mb-2">{milestone.title}</h3>
-                  <p className="text-gray-700">{milestone.description}</p>
+                <div className="flex-1 p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl hover:bg-white/15 transition-all">
+                  <h3 className="text-xl font-bold mb-2 text-white">{milestone.title}</h3>
+                  <p className="text-purple-100">{milestone.description}</p>
                 </div>
               </div>
             ))}
@@ -279,79 +273,79 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-8 text-center">
-              WHY CHOOSE FASHIONFORGE?
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+              Why Choose FashionForge?
             </h2>
 
             <div className="space-y-6">
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+              <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
+                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2">
-                      PROVEN TECHNOLOGY
+                    <h3 className="text-xl font-bold mb-2">
+                      Proven Technology
                     </h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-600">
                       Our platform is powered by FLUX Pro, a cutting-edge AI model trusted by thousands of designers. Over 1 million designs generated with consistently high quality.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
+              <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-400" />
+                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2 text-purple-400">
-                      TRANSPARENT PRICING
+                    <h3 className="text-xl font-bold mb-2">
+                      Transparent Credit-Based Pricing
                     </h3>
-                    <p className="text-white">
-                      No hidden fees, no surprises. We show you exactly what you&apos;re paying for based on real API costs. Start free, scale as you grow.
+                    <p className="text-gray-700">
+                      No hidden fees, no subscriptions. Buy credits once and use them anytime. Credits never expire. Clear pricing: $9 for 100 credits, $39 for 500, $149 for 2000.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+              <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
+                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2">
-                      ENTERPRISE SECURITY
+                    <h3 className="text-xl font-bold mb-2">
+                      Enterprise Security
                     </h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-600">
                       End-to-end encryption, GDPR compliance, SOC 2 Type II certification. Your design data is protected with enterprise-grade security standards.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-purple-400 border-4 border-black brutalist-shadow">
+              <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
+                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2">
-                      BEST-IN-CLASS SUPPORT
+                    <h3 className="text-xl font-bold mb-2">
+                      Best-in-Class Support
                     </h3>
-                    <p className="text-gray-900">
-                      Real humans ready to help. From email support on free plans to dedicated account managers for enterprise customers.
+                    <p className="text-gray-700">
+                      Real humans ready to help. Email support for all users, priority support for larger credit bundles, and dedicated account managers for studio plans.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
+              <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-400" />
+                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-purple-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2 text-purple-400">
-                      CONSTANTLY IMPROVING
+                    <h3 className="text-xl font-bold mb-2">
+                      Constantly Improving
                     </h3>
-                    <p className="text-white">
-                      We&apos;re always adding new models, features, and capabilities. Beta access to cutting-edge design technology for Pro and Enterprise users.
+                    <p className="text-gray-600">
+                      We&apos;re always adding new models, features, and capabilities. Beta access to cutting-edge design technology for Pro and Studio users.
                     </p>
                   </div>
                 </div>
@@ -362,44 +356,44 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-gray-50 border-y-8 border-black">
+      <section className="py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              BUILT BY DESIGNERS, FOR DESIGNERS
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Built by Designers, for Designers
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our team combines expertise in AI, fashion technology, and product design to build the best fashion design platform.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white border-4 border-black brutalist-shadow text-center">
-              <div className="w-24 h-24 bg-black border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiCodeLine className="w-12 h-12 text-purple-400" />
+            <div className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-md">
+                <RiCodeLine className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2">AI ENGINEERS</h3>
-              <p className="text-gray-700">
+              <h3 className="text-xl font-bold mb-3">AI Engineers</h3>
+              <p className="text-gray-600">
                 Deep expertise in machine learning, design generation, and model optimization.
               </p>
             </div>
 
-            <div className="p-6 bg-purple-400 border-4 border-black brutalist-shadow text-center">
-              <div className="w-24 h-24 bg-black border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiPaletteLine className="w-12 h-12 text-purple-400" />
+            <div className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-md">
+                <RiPaletteLine className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2">FASHION EXPERTS</h3>
-              <p className="text-gray-900">
+              <h3 className="text-xl font-bold mb-3">Fashion Experts</h3>
+              <p className="text-gray-600">
                 Professional designers ensuring high-quality outputs and trend-aware aesthetics.
               </p>
             </div>
 
-            <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple text-center">
-              <div className="w-24 h-24 bg-purple-400 border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiTeamLine className="w-12 h-12 text-black" />
+            <div className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-md">
+                <RiTeamLine className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2 text-purple-400">PRODUCT TEAM</h3>
-              <p className="text-white">
+              <h3 className="text-xl font-bold mb-3">Product Team</h3>
+              <p className="text-gray-600">
                 Focused on building intuitive tools that designers actually want to use.
               </p>
             </div>
@@ -408,30 +402,30 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold uppercase mb-6">
-              JOIN THOUSANDS OF DESIGNERS
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Join Thousands of Designers
             </h2>
-            <p className="text-xl text-gray-700 mb-12">
-              Start creating professional fashion designs today. Free tier available—no credit card required.
+            <p className="text-xl text-gray-600 mb-12">
+              Start creating professional fashion designs today. Buy credits starting at just $9—no subscriptions required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="xl"
-                className="gap-3 bg-purple-400 text-black border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
                 asChild
               >
-                <a href="/signup">
+                <a href="/dashboard">
                   <RiArrowRightLine className="w-5 h-5" />
-                  Get Started Free
+                  Buy Credits Now
                 </a>
               </Button>
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-white text-black border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
                 asChild
               >
                 <a href="/demo">Try Demo</a>
@@ -439,7 +433,7 @@ export default function AboutPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-black text-purple-400 border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
                 asChild
               >
                 <a href="/contact">Contact Us</a>
