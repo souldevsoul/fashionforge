@@ -3,9 +3,6 @@ import {
   RiMailLine,
   RiPhoneLine,
   RiMapPinLine,
-  RiTwitterXFill,
-  RiLinkedinBoxFill,
-  RiGithubFill,
 } from "react-icons/ri"
 import { SiVisa, SiMastercard, SiApplepay, SiGooglepay } from "react-icons/si"
 
@@ -29,51 +26,20 @@ export function Footer() {
             {/* Payment Logos */}
             <div className="mb-6">
               <p className="text-xs font-bold uppercase text-gray-400 mb-3">Accepted Payment Methods</p>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white px-3 py-2 border-2 border-white flex items-center justify-center">
+              <div className="flex flex-wrap gap-3">
+                <div className="bg-white px-3 py-2 border-2 border-gray-200 rounded flex items-center justify-center">
                   <SiVisa className="w-12 h-8 text-[#1A1F71]" />
                 </div>
-                <div className="bg-white px-3 py-2 border-2 border-white flex items-center justify-center">
-                  <SiMastercard className="w-12 h-8" />
+                <div className="bg-white px-3 py-2 border-2 border-gray-200 rounded flex items-center justify-center">
+                  <SiMastercard className="w-12 h-8 text-[#EB001B]" />
                 </div>
-                <div className="bg-white px-3 py-2 border-2 border-white flex items-center justify-center">
+                <div className="bg-white px-3 py-2 border-2 border-gray-200 rounded flex items-center justify-center">
                   <SiApplepay className="w-12 h-8 text-black" />
                 </div>
-                <div className="bg-white px-3 py-2 border-2 border-white flex items-center justify-center">
-                  <SiGooglepay className="w-12 h-8" />
+                <div className="bg-white px-3 py-2 border-2 border-gray-200 rounded flex items-center justify-center">
+                  <SiGooglepay className="w-12 h-8 text-[#5F6368]" />
                 </div>
               </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              <a
-                href="https://twitter.com/fashionforge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-purple-400 transition-colors"
-                aria-label="Twitter"
-              >
-                <RiTwitterXFill className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/fashionforge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-purple-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <RiLinkedinBoxFill className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com/fashionforge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-purple-400 transition-colors"
-                aria-label="GitHub"
-              >
-                <RiGithubFill className="w-5 h-5" />
-              </a>
             </div>
           </div>
 

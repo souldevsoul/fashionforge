@@ -122,7 +122,7 @@ export function DesignUploader({ onUploadComplete, category, userId }: DesignUpl
           />
         </div>
       ) : (
-        <div className="border-4 border-black p-6 bg-white">
+        <div className="border-2 border-gray-200 rounded-2xl p-6 bg-white">
           <div className="flex justify-between items-start mb-4">
             <h3 className="font-bold uppercase text-lg">Preview</h3>
             <button
@@ -145,7 +145,7 @@ export function DesignUploader({ onUploadComplete, category, userId }: DesignUpl
             <Button
               onClick={handleUpload}
               disabled={uploading}
-              className="flex-1 bg-purple-400 hover:bg-purple-500 text-black font-bold uppercase border-4 border-black brutalist-shadow"
+              className="flex-1 bg-purple-400 hover:bg-purple-500 text-black font-bold uppercase border-2 border-gray-200 rounded-2xl shadow-lg"
             >
               <RiUploadLine className="w-5 h-5 mr-2" />
               {uploading ? "Uploading..." : "Upload Design"}
@@ -153,7 +153,7 @@ export function DesignUploader({ onUploadComplete, category, userId }: DesignUpl
             <Button
               onClick={handleClear}
               variant="secondary"
-              className="border-4 border-black font-bold uppercase"
+              className="border-2 border-gray-200 rounded-2xl font-bold uppercase"
             >
               Cancel
             </Button>
@@ -162,7 +162,7 @@ export function DesignUploader({ onUploadComplete, category, userId }: DesignUpl
       )}
 
       {error && (
-        <div className="mt-4 p-4 bg-rose-500 text-white border-4 border-black">
+        <div className="mt-4 p-4 bg-rose-500 text-white border-2 border-gray-200 rounded-2xl">
           <p className="font-bold uppercase text-sm">{error}</p>
         </div>
       )}

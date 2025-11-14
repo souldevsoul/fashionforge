@@ -81,7 +81,7 @@ export function NewsletterPopup() {
       {/* Popup */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
         <div
-          className="bg-white border-8 border-black max-w-lg w-full brutalist-shadow pointer-events-auto animate-in zoom-in-95 duration-300"
+          className="bg-white border-8 border-black max-w-lg w-full shadow-lg pointer-events-auto animate-in zoom-in-95 duration-300"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header with Close Button */}
@@ -141,7 +141,7 @@ export function NewsletterPopup() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
                     required
-                    className="w-full pl-12 pr-4 py-3 border-4 border-black focus:outline-none focus:ring-4 focus:ring-purple-400 font-mono text-sm"
+                    className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-400 font-mono text-sm"
                   />
                 </div>
               </div>
@@ -150,7 +150,7 @@ export function NewsletterPopup() {
                 type="submit"
                 size="lg"
                 disabled={isLoading}
-                className="w-full gap-3 bg-black text-purple-400 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow disabled:opacity-50"
+                className="w-full gap-3 bg-black text-purple-400 hover:bg-gray-900 border-2 border-gray-200 rounded-2xl font-bold uppercase shadow-lg disabled:opacity-50"
               >
                 {isLoading ? (
                   <>
@@ -167,8 +167,8 @@ export function NewsletterPopup() {
 
               {/* Status Message */}
               {status !== 'idle' && (
-                <div className={`p-4 border-4 border-black ${
-                  status === 'success' ? 'bg-purple-100' : 'bg-red-100'
+                <div className={`p-4 border-2 border-gray-200 rounded-2xl ${
+                  status === 'success' ? 'bg-purple-100' : 'bg-rose-100'
                 }`}>
                   <p className={`text-sm font-bold ${
                     status === 'success' ? 'text-purple-800' : 'text-rose-800'

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { Container } from "@/components/ui/container"
@@ -16,18 +15,18 @@ export default function CancellationPolicyPage() {
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
-          { label: "Demo", href: "/demo" },
+          { label: "About", href: "/about" },
         ]}
         ctaButton={{
-          text: "Get Started",
-          href: "/signup",
+          text: "Try Free",
+          href: "/dashboard",
         }}
       />
 
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 border-b-2 border-gray-200">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-2 border-gray-200 rounded-2xl mb-8">
               <RiCloseLine className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Cancellation Policy</span>
             </div>
@@ -50,14 +49,14 @@ export default function CancellationPolicyPage() {
             {/* How to Cancel */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiCloseLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">1. How to Cancel</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Cancel Through Dashboard</h3>
                   <ol className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
@@ -79,7 +78,7 @@ export default function CancellationPolicyPage() {
                   </ol>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Cancel Via Email</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     Alternatively, send an email to{" "}
@@ -109,14 +108,14 @@ export default function CancellationPolicyPage() {
             {/* What Happens */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiTimeLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">2. What Happens After Cancellation</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Immediate Effects</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
@@ -134,7 +133,7 @@ export default function CancellationPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Access Retention</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     <span className="font-bold">You keep full access</span> to all features until the end of your current billing period.
@@ -144,7 +143,7 @@ export default function CancellationPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
+                <div className="p-6 bg-black text-white border-2 border-gray-200 rounded-2xl shadow-lg-purple">
                   <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">After Billing Period Ends</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
@@ -175,38 +174,38 @@ export default function CancellationPolicyPage() {
             {/* Specific Scenarios */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiAlertLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">3. Cancellation Scenarios</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Free Trial Cancellation</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Cancel anytime during your 14-day free trial without being charged. No payment information is required to cancel a trial.
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Monthly Subscription</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Cancel anytime. You keep access until the end of your current month. No refund for unused portion of the month (see Refund Policy for exceptions).
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Annual Subscription</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Cancel anytime. You keep access until the end of your annual term. No refund for unused months (see Refund Policy for eligible circumstances).
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Enterprise Plans</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Enterprise customers should refer to their specific contract terms. Contact your account manager or email enterprise@fashionforge.ai for cancellation procedures.
+                    Enterprise customers should refer to their specific contract terms. Contact your account manager or email support@fashionforge.ai for cancellation procedures.
                   </p>
                 </div>
               </div>
@@ -214,7 +213,7 @@ export default function CancellationPolicyPage() {
 
             {/* Reactivation */}
             <div>
-              <div className="p-8 bg-purple-400 border-4 border-black brutalist-shadow">
+              <div className="p-8 bg-purple-400 border-2 border-gray-200 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold uppercase mb-4">REACTIVATING YOUR SUBSCRIPTION</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   Changed your mind? You can reactivate your subscription at any time before your billing period ends by visiting Settings → Subscription → Reactivate.
@@ -227,7 +226,7 @@ export default function CancellationPolicyPage() {
 
             {/* Data Retention */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
+              <div className="p-6 bg-black text-white border-2 border-gray-200 rounded-2xl shadow-lg-purple">
                 <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   DATA RETENTION AFTER CANCELLATION
                 </h2>
@@ -250,7 +249,7 @@ export default function CancellationPolicyPage() {
 
             {/* Contact */}
             <div>
-              <div className="p-8 bg-white border-4 border-black brutalist-shadow text-center">
+              <div className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg text-center">
                 <h2 className="text-2xl font-bold uppercase mb-4">NEED HELP?</h2>
                 <p className="text-gray-700 mb-6">
                   Before canceling, let us know if there's anything we can do to improve your experience.

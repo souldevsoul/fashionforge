@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { Container } from "@/components/ui/container"
@@ -16,18 +15,18 @@ export default function DeliveryPolicyPage() {
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
-          { label: "Demo", href: "/demo" },
+          { label: "About", href: "/about" },
         ]}
         ctaButton={{
-          text: "Get Started",
-          href: "/signup",
+          text: "Try Free",
+          href: "/dashboard",
         }}
       />
 
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 border-b-2 border-gray-200">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-2 border-gray-200 rounded-2xl mb-8">
               <RiTruckLine className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Delivery Policy</span>
             </div>
@@ -50,14 +49,14 @@ export default function DeliveryPolicyPage() {
             {/* Digital Service */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiTruckLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">1. Nature of Service</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Digital Service Delivery</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     FashionForge is a 100% digital service platform. We do not ship physical goods. All services are delivered electronically via our web application and API.
@@ -67,7 +66,7 @@ export default function DeliveryPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">What Gets Delivered</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start gap-2">
@@ -98,14 +97,14 @@ export default function DeliveryPolicyPage() {
             {/* Delivery Timing */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiTimeLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">2. Delivery Timeframes</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Account Access</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     <span className="font-bold">Delivery Time:</span> Instant
@@ -115,7 +114,7 @@ export default function DeliveryPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Voice Generation</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
@@ -133,7 +132,7 @@ export default function DeliveryPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Confirmation & Receipts</h3>
                   <p className="text-gray-700 leading-relaxed">
                     <span className="font-bold">Email confirmation:</span> Sent immediately upon successful payment and service activation. Receipts include transaction details, plan information, and next billing date.
@@ -145,14 +144,14 @@ export default function DeliveryPolicyPage() {
             {/* Geographic Availability */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiGlobalLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">3. Geographic Availability</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Global Service</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     FashionForge services are available worldwide. You can access our platform from anywhere with an internet connection.
@@ -162,7 +161,7 @@ export default function DeliveryPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Regional Restrictions</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     Our services may not be available in regions where:
@@ -191,14 +190,14 @@ export default function DeliveryPolicyPage() {
             {/* Service Interruptions */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                   <RiCheckLine className="w-6 h-6 text-purple-400" />
                 </div>
                 <h2 className="text-3xl font-bold uppercase">4. Service Availability & Uptime</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Uptime Commitment</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     <span className="font-bold">Target Uptime:</span> 99.9% monthly uptime
@@ -208,7 +207,7 @@ export default function DeliveryPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Planned Maintenance</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start gap-2">
@@ -226,7 +225,7 @@ export default function DeliveryPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
+                <div className="p-6 bg-black text-white border-2 border-gray-200 rounded-2xl shadow-lg-purple">
                   <h3 className="text-lg font-bold uppercase mb-3 text-purple-400">Unplanned Outages</h3>
                   <p className="leading-relaxed mb-3">
                     In rare cases of unplanned service interruption:
@@ -255,7 +254,7 @@ export default function DeliveryPolicyPage() {
 
             {/* Enterprise Delivery */}
             <div>
-              <div className="p-8 bg-purple-400 border-4 border-black brutalist-shadow">
+              <div className="p-8 bg-purple-400 border-2 border-gray-200 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold uppercase mb-4">ENTERPRISE CUSTOMERS</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   <span className="font-bold">Custom Delivery Options:</span> Enterprise customers may have custom service delivery terms including:
@@ -279,14 +278,14 @@ export default function DeliveryPolicyPage() {
                   </li>
                 </ul>
                 <p className="text-gray-900 leading-relaxed mt-4">
-                  Contact: <a href="mailto:enterprise@fashionforge.ai" className="underline hover:no-underline font-bold">enterprise@fashionforge.ai</a>
+                  Contact: <a href="mailto:support@fashionforge.ai" className="underline hover:no-underline font-bold">support@fashionforge.ai</a>
                 </p>
               </div>
             </div>
 
             {/* Failed Delivery */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-purple">
+              <div className="p-6 bg-black text-white border-2 border-gray-200 rounded-2xl shadow-lg-purple">
                 <h2 className="text-2xl font-bold uppercase mb-4 text-purple-400">
                   IF SERVICE DELIVERY FAILS
                 </h2>
@@ -320,7 +319,7 @@ export default function DeliveryPolicyPage() {
 
             {/* Contact */}
             <div>
-              <div className="p-8 bg-white border-4 border-black brutalist-shadow text-center">
+              <div className="p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg text-center">
                 <h2 className="text-2xl font-bold uppercase mb-4">DELIVERY SUPPORT</h2>
                 <p className="text-gray-700 mb-6">
                   Questions about service delivery or experiencing access issues?

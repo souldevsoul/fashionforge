@@ -259,19 +259,19 @@ export default function TermsPage() {
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
-          { label: "Demo", href: "/demo" },
+          { label: "About", href: "/about" },
         ]}
         ctaButton={{
-          text: "Get Started",
-          href: "/signup",
+          text: "Try Free",
+          href: "/dashboard",
         }}
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 border-b-2 border-gray-200">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-4 border-black mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-purple-400 border-2 border-gray-200 rounded-2xl mb-8">
               <RiFileTextLine className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Terms of Service</span>
             </div>
@@ -347,7 +347,7 @@ export default function TermsPage() {
                 <div key={sectionIndex} id={`section-${sectionIndex + 1}`}>
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                      <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                         <Icon className="w-6 h-6 text-purple-400" />
                       </div>
                       <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
@@ -358,8 +358,8 @@ export default function TermsPage() {
                     {section.content.map((item, itemIndex) => (
                       <div
                         key={itemIndex}
-                        className={`p-6 border-4 border-black ${
-                          itemIndex % 2 === 0 ? "bg-white brutalist-shadow" : "bg-purple-50"
+                        className={`p-6 border-2 border-gray-200 rounded-2xl ${
+                          itemIndex % 2 === 0 ? "bg-white shadow-lg" : "bg-purple-50"
                         }`}
                       >
                         {('subtitle' in item) && item.subtitle && (
@@ -378,7 +378,7 @@ export default function TermsPage() {
               <div key={sectionIndex + 8} id={`section-${sectionIndex + 9}`}>
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                    <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                       <RiScalesLine className="w-6 h-6 text-purple-400" />
                     </div>
                     <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
@@ -389,7 +389,7 @@ export default function TermsPage() {
                   {section.content.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="p-6 bg-purple-50 border-4 border-black"
+                      className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl"
                     >
                       {('subtitle' in item) && item.subtitle && (
                         <h3 className="text-lg font-bold uppercase mb-3">{item.subtitle}</h3>
@@ -405,7 +405,7 @@ export default function TermsPage() {
             <div id="section-13">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                  <div className="w-12 h-12 bg-black border-2 border-gray-200 rounded-2xl flex items-center justify-center">
                     <RiFileTextLine className="w-6 h-6 text-purple-400" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">13. Miscellaneous</h2>
@@ -413,35 +413,35 @@ export default function TermsPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Entire Agreement</h3>
                   <p className="text-gray-700 leading-relaxed">
                     These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and FashionForge regarding the Service. They supersede all prior agreements and understandings.
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Severability</h3>
                   <p className="text-gray-700 leading-relaxed">
                     If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Waiver</h3>
                   <p className="text-gray-700 leading-relaxed">
                     No waiver of any term or provision of these Terms shall be deemed a further or continuing waiver of such term or any other term. Our failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision.
                   </p>
                 </div>
 
-                <div className="p-6 bg-purple-50 border-4 border-black">
+                <div className="p-6 bg-purple-50 border-2 border-gray-200 rounded-2xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Assignment</h3>
                   <p className="text-gray-700 leading-relaxed">
                     You may not assign or transfer these Terms or your rights and obligations hereunder without our prior written consent. We may assign these Terms to any affiliate or in connection with a merger, acquisition, or sale of assets.
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
                   <h3 className="text-lg font-bold uppercase mb-3">Force Majeure</h3>
                   <p className="text-gray-700 leading-relaxed">
                     We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, pandemics, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
@@ -467,17 +467,17 @@ export default function TermsPage() {
               If you have questions about these Terms of Service, please contact us.
             </p>
 
-            <div className="p-8 bg-white border-4 border-white brutalist-shadow-purple">
+            <div className="p-8 bg-white border-4 border-white shadow-lg-purple">
               <h3 className="text-2xl font-bold uppercase mb-4">CONTACT US</h3>
               <div className="space-y-3 text-left max-w-2xl mx-auto">
                 <div>
                   <span className="font-bold uppercase text-sm">Email:</span>
                   <br />
                   <a
-                    href="mailto:legal@fashionforge.ai"
+                    href="mailto:support@fashionforge.ai"
                     className="text-lg font-bold text-black underline hover:no-underline"
                   >
-                    legal@fashionforge.ai
+                    support@fashionforge.ai
                   </a>
                 </div>
                 <div>

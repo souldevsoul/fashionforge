@@ -3,6 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import { Button, Heading, Text } from "@/components/ui"
+import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
 import { NewsletterPopup } from "@/components/marketing/NewsletterPopup"
 import {
@@ -143,29 +144,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-md">
-              <RiShirtLine className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">FashionForge</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">Features</a>
-            <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">Pricing</a>
-            <a href="/about" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">About</a>
-            <a href="/contact" className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">Contact</a>
-          </nav>
-          <Button
-            size="md"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-md"
-            onClick={() => window.location.href = '/dashboard'}
-          >
-            Get Started
-          </Button>
-        </div>
-      </header>
+      <Header
+        logoText="FashionForge"
+        navLinks={[
+          { label: "Features", href: "#features" },
+          { label: "Pricing", href: "#pricing" },
+          { label: "About", href: "/about" },
+        ]}
+        ctaButton={{
+          text: "Try Free",
+          href: "/dashboard",
+        }}
+      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50 min-h-[90vh] flex items-center">
@@ -348,7 +338,7 @@ export default function Home() {
                 )}
                 {bundle.savings && (
                   <div className="absolute -top-4 right-4">
-                    <div className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full shadow-md">
+                    <div className="px-3 py-1 bg-rose-500 text-white text-xs font-bold rounded-full shadow-md">
                       {bundle.savings}
                     </div>
                   </div>

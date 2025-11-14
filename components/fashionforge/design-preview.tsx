@@ -45,7 +45,7 @@ export function DesignPreview({
   }
 
   return (
-    <div className="border-4 border-black bg-white">
+    <div className="border-2 border-gray-200 rounded-2xl bg-white">
       {/* Header */}
       <div className="p-4 border-b-4 border-black bg-black text-white flex items-center justify-between">
         <div>

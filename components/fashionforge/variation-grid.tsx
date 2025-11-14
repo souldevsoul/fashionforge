@@ -52,7 +52,7 @@ export function VariationGrid({ variations, onSelect, onDownload }: VariationGri
         return (
           <div
             key={variation.id}
-            className="border-4 border-black bg-white hover:shadow-lg transition-shadow group"
+            className="border-2 border-gray-200 rounded-2xl bg-white hover:shadow-lg transition-shadow group"
           >
             {/* Image */}
             <div className="relative aspect-square bg-gray-100 overflow-hidden">

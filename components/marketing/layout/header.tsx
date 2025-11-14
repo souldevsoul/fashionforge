@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
@@ -65,10 +66,16 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
             <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               {logo || (
                 <>
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-md">
-                    <RiShirtLine className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 relative">
+                    <Image
+                      src="/images/logo/fashionforge-icon.svg"
+                      alt="FashionForge Logo"
+                      width={48}
+                      height={48}
+                      className="w-12 h-12"
+                    />
                   </div>
-                  <span className="text-xl font-bold tracking-tight">{logoText}</span>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{logoText}</span>
                 </>
               )}
             </Link>
