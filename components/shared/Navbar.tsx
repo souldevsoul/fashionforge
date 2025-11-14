@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { RiTShirtLine } from "react-icons/ri"
 import { Menu, X } from "lucide-react"
 
@@ -25,12 +26,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-sm border-b border-gray-200 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <nav className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-pink-600 rounded flex items-center justify-center">
               <RiTShirtLine className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold">FashionForge</span>
-          </a>
+          </Link>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
               <a key={index} href={link.href} className="text-sm font-medium text-gray-700 hover:text-pink-700 transition-colors">

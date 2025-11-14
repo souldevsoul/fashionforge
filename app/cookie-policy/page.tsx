@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"

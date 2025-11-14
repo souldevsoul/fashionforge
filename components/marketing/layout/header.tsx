@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 import { RiShirtLine } from "react-icons/ri"
@@ -62,7 +62,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
         <Container maxWidth="xl">
           <nav className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               {logo || (
                 <>
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-md">
@@ -71,7 +71,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   <span className="text-xl font-bold tracking-tight">{logoText}</span>
                 </>
               )}
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
