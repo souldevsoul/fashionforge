@@ -226,8 +226,9 @@ export default function FeaturesPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all" type="button"
                 asChild
+                aria-label="Buy credits now"
               >
                 <a href="/dashboard">
                   <RiArrowRightLine className="w-5 h-5" />
@@ -237,7 +238,7 @@ export default function FeaturesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all" type="button"
                 asChild
               >
                 <a href="/pricing">View Pricing</a>
@@ -332,8 +333,9 @@ export default function FeaturesPage() {
             </p>
             <Button
               size="xl"
-              className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
+              className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6" type="button"
               asChild
+              aria-label="Explore styles"
             >
               <a href="/dashboard/create">
                 <RiArrowRightLine className="w-5 h-5" />
@@ -357,8 +359,9 @@ export default function FeaturesPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="xl"
-                className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
+                className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6" type="button"
                 asChild
+                aria-label="Buy credits now"
               >
                 <a href="/dashboard">
                   <RiArrowRightLine className="w-5 h-5" />
@@ -368,7 +371,7 @@ export default function FeaturesPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-2 bg-transparent text-white hover:bg-white/10 border-2 border-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
+                className="gap-2 bg-transparent text-white hover:bg-white/10 border-2 border-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6" type="button"
                 asChild
               >
                 <a href="/pricing">View Pricing</a>

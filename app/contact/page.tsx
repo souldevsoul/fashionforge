@@ -183,7 +183,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white p-8 border-2 border-gray-200 rounded-2xl shadow-xl">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); /* Form submission logic here */ }}>
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -387,8 +387,9 @@ export default function ContactPage() {
               </p>
               <Button
                 size="lg"
-                className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+                className="gap-2 bg-white text-purple-900 hover:bg-gray-100 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all" type="button"
                 asChild
+                aria-label="Contact Studio Support"
               >
                 <a href="mailto:support@fashionforge.ai">
                   Contact Studio Support

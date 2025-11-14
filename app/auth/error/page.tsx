@@ -66,6 +66,7 @@ function ErrorContent() {
                 <Button
                   variant="secondary"
                   className="w-full h-12 gap-3 bg-white text-black hover:bg-gray-100 border-4 border-black font-bold uppercase"
+                  type="button"
                 >
                   Back to Home
                 </Button>

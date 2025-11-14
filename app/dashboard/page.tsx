@@ -176,7 +176,7 @@ export default async function DashboardPage() {
                 Recent Designs
               </Heading>
               <Link href="/dashboard/designs">
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" type="button">
                   View All
                   <RiArrowRightLine className="ml-2 h-4 w-4" />
                 </Button>
@@ -233,7 +233,7 @@ export default async function DashboardPage() {
               <Heading variant="h3" className="uppercase">
                 Designs Left
               </Heading>
-              <Button variant="primary" size="sm">
+              <Button variant="primary" size="sm" type="button">
                 Upgrade
               </Button>
             </div>
@@ -279,7 +279,7 @@ export default async function DashboardPage() {
                 </div>
               </div>
 
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full" type="button">
                 View Pricing
               </Button>
             </div>

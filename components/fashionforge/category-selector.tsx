@@ -59,6 +59,7 @@ export function CategorySelector({ value, onChange }: CategorySelectorProps) {
                 : "border-gray-300 hover:border-purple-300 bg-white"
               }
             `}
+            aria-label={`Select ${category.name} category`}
           >
             <Icon className={`w-8 h-8 mx-auto mb-2 ${isSelected ? "text-purple-600" : "text-gray-400"}`} />
             <h4 className="font-semibold text-sm mb-1">{category.name}</h4>

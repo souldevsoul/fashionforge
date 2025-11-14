@@ -44,6 +44,8 @@ export function AppHeader({ user }: AppHeaderProps) {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
+                type="button"
+                aria-label="User menu"
                 variant="outline"
                 size="md"
                 className="border-4 border-black font-bold uppercase hover:bg-purple-50"
@@ -66,13 +68,13 @@ export function AppHeader({ user }: AppHeaderProps) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/dashboard/voices" className="cursor-pointer">
-                  Voices
+                <Link href="/dashboard/designs" className="cursor-pointer">
+                  Designs
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/dashboard/audios" className="cursor-pointer">
-                  Audios
+                <Link href="/dashboard/variations" className="cursor-pointer">
+                  Variations
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>

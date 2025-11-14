@@ -336,7 +336,7 @@ export default function ProjectsPage() {
           <Button variant="outline" onClick={() => window.location.href = '/credits'}>
             💳 {userData.credits.toLocaleString()} Credits
           </Button>
-          <Button variant="primary">
+          <Button variant="primary" type="button">
             <RiAddLine className="mr-2 h-4 w-4" />
             New Project
           </Button>

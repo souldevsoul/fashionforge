@@ -377,6 +377,8 @@ export default function Home() {
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0"
                       : "bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300"
                   }`}
+                  type="button"
+                  aria-label={bundle.ctaText}
                 >
                   {bundle.ctaText}
                   <RiArrowRightLine className="w-5 h-5" />

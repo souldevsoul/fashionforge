@@ -66,7 +66,7 @@ export default async function DesignsPage() {
           </Text>
         </div>
         <Link href="/dashboard/create">
-          <Button variant="primary" className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
+          <Button variant="primary" className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all" type="button">
             <RiAddLine className="w-5 h-5" />
             New Design
           </Button>
@@ -87,7 +87,7 @@ export default async function DesignsPage() {
                 Upload your first fashion sketch to start generating professional designs with AI
               </Text>
               <Link href="/dashboard/create">
-                <Button variant="primary" size="lg" className="gap-2 mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
+                <Button variant="primary" size="lg" className="gap-2 mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all" type="button">
                   <RiAddLine className="w-5 h-5" />
                   Create Your First Design
                 </Button>

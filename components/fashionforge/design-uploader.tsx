@@ -128,6 +128,7 @@ export function DesignUploader({ onUploadComplete, category, userId }: DesignUpl
             <button
               onClick={handleClear}
               className="p-2 hover:bg-gray-100 transition-colors"
+              aria-label="Clear preview"
             >
               <RiCloseLine className="w-5 h-5" />
             </button>
@@ -146,6 +147,7 @@ export function DesignUploader({ onUploadComplete, category, userId }: DesignUpl
               onClick={handleUpload}
               disabled={uploading}
               className="flex-1 bg-purple-400 hover:bg-purple-500 text-black font-bold uppercase border-2 border-gray-200 rounded-2xl shadow-lg"
+              aria-label={uploading ? "Uploading design" : "Upload design"}
             >
               <RiUploadLine className="w-5 h-5 mr-2" />
               {uploading ? "Uploading..." : "Upload Design"}

@@ -59,6 +59,7 @@ export function DesignPreview({
             onClick={handleZoomOut}
             className="p-2 bg-white text-black hover:bg-gray-200 transition-colors"
             disabled={zoom <= 0.5}
+            aria-label="Zoom out"
           >
             <RiZoomOutLine className="w-5 h-5" />
           </button>
@@ -67,6 +68,7 @@ export function DesignPreview({
             onClick={handleZoomIn}
             className="p-2 bg-white text-black hover:bg-gray-200 transition-colors"
             disabled={zoom >= 3}
+            aria-label="Zoom in"
           >
             <RiZoomInLine className="w-5 h-5" />
           </button>
@@ -74,6 +76,7 @@ export function DesignPreview({
             <button
               onClick={handleDownload}
               className="p-2 bg-purple-400 text-black hover:bg-purple-500 transition-colors ml-2"
+              aria-label="Download design"
             >
               <RiDownloadLine className="w-5 h-5" />
             </button>

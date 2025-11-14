@@ -230,8 +230,9 @@ export default function PricingPage() {
                     bundle.popular
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0"
                       : "bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300"
-                  }`}
+                  }`} type="button"
                   asChild
+                  aria-label={bundle.cta}
                 >
                   <a href={bundle.ctaHref}>
                     {bundle.cta}
@@ -322,8 +323,9 @@ export default function PricingPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="xl"
-                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
+                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6" type="button"
                 asChild
+                aria-label="Buy credits now"
               >
                 <a href="/dashboard">
                   <RiArrowRightLine className="w-5 h-5" />
@@ -333,7 +335,7 @@ export default function PricingPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6" type="button"
                 asChild
               >
                 <a href="/demo">Try Demo</a>
@@ -341,7 +343,7 @@ export default function PricingPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
+                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6" type="button"
                 asChild
               >
                 <a href="/contact">Contact Sales</a>

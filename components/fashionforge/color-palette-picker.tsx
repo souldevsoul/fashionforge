@@ -63,6 +63,7 @@ export function ColorPalettePicker({ selectedColors, onChange, maxColors = 5 }: 
                       `}
                       style={{ backgroundColor: color }}
                       title={color}
+                      aria-label={`${isSelected ? 'Deselect' : 'Select'} color ${color}`}
                     >
                       {isSelected && (
                         <div className="absolute inset-0 flex items-center justify-center">

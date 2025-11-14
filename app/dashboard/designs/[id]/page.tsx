@@ -197,11 +197,11 @@ export default function DesignDetailPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" type="button">
             <RiShareLine className="w-4 h-4 mr-2" />
             Share
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" type="button">
             <RiEditLine className="w-4 h-4 mr-2" />
             Edit
           </Button>
@@ -278,6 +278,7 @@ export default function DesignDetailPage() {
                   onClick={handleGenerateMore}
                   disabled={selectedColors.length === 0 || isGenerating}
                   className="gap-2"
+                  aria-label={isGenerating ? "Generating variations" : "Generate variations"}
                 >
                   {isGenerating ? (
                     <>

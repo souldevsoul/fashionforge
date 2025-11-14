@@ -256,6 +256,7 @@ function SignUpForm() {
               type="submit"
               className="w-full h-12 text-base gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               disabled={isLoading}
+              aria-label={isLoading ? "Creating account" : "Create account"}
             >
               {isLoading ? "Creating Account..." : "Create Account"}
               <RiArrowRightLine className="w-5 h-5" />

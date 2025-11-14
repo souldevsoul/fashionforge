@@ -416,6 +416,7 @@ export default function AboutPage() {
                 size="xl"
                 className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
                 asChild
+                aria-label="Buy credits now"
               >
                 <a href="/dashboard">
                   <RiArrowRightLine className="w-5 h-5" />

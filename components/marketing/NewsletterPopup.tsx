@@ -151,6 +151,7 @@ export function NewsletterPopup() {
                 size="lg"
                 disabled={isLoading}
                 className="w-full gap-3 bg-black text-purple-400 hover:bg-gray-900 border-2 border-gray-200 rounded-2xl font-bold uppercase shadow-lg disabled:opacity-50"
+                aria-label={isLoading ? "Subscribing to newsletter" : "Subscribe to newsletter"}
               >
                 {isLoading ? (
                   <>

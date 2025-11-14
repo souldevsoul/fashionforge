@@ -101,6 +101,7 @@ export function DesignForm({ onSubmit, loading = false }: DesignFormProps) {
                       ? "border-purple-500 bg-purple-50"
                       : "border-gray-300 hover:border-purple-300"
                   }`}
+                  aria-label={`Select ${type.name} design type`}
                 >
                   <div className="text-3xl mb-1">{type.icon}</div>
                   <div className="text-xs font-semibold">{type.name}</div>
@@ -199,6 +200,7 @@ export function DesignForm({ onSubmit, loading = false }: DesignFormProps) {
             type="submit"
             disabled={loading || !formData.description.trim()}
             className="w-full h-12 text-lg font-bold uppercase bg-purple-600 hover:bg-purple-700 disabled:opacity-50"
+            aria-label={loading ? "Generating design" : "Generate design"}
           >
             {loading ? (
               <>

@@ -35,7 +35,7 @@ export function DashboardQuickActions() {
             <RiVoiceprintLine className="mr-2 h-4 w-4" />
             Clone Voice
           </Button>
-          <Button variant="outline" className="w-full" asChild>
+          <Button variant="outline" className="w-full" asChild aria-label="Create Project">
             <a href="/dashboard/projects">
               <RiFolder3Line className="mr-2 h-4 w-4" />
               Create Project

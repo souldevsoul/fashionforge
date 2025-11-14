@@ -307,7 +307,7 @@ export default function TermsPage() {
               </div>
               <div className="p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiCloseLine className="w-6 h-6 flex-shrink-0 text-orange-500" />
+                  <RiCloseLine className="w-6 h-6 flex-shrink-0 text-rose-500" />
                   <h3 className="text-lg font-bold">Prohibited</h3>
                 </div>
                 <p className="text-gray-700 text-sm">

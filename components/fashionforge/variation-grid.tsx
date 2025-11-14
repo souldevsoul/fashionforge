@@ -68,6 +68,7 @@ export function VariationGrid({ variations, onSelect, onDownload }: VariationGri
                   onClick={() => onSelect?.(variation)}
                   className="p-3 bg-white hover:bg-purple-400 transition-colors"
                   title="Preview"
+                  aria-label="Preview design"
                 >
                   <RiEyeLine className="w-6 h-6" />
                 </button>
@@ -75,6 +76,7 @@ export function VariationGrid({ variations, onSelect, onDownload }: VariationGri
                   onClick={() => onDownload?.(variation.id)}
                   className="p-3 bg-white hover:bg-purple-400 transition-colors"
                   title="Download"
+                  aria-label="Download design"
                 >
                   <RiDownloadLine className="w-6 h-6" />
                 </button>
@@ -87,6 +89,7 @@ export function VariationGrid({ variations, onSelect, onDownload }: VariationGri
                   toggleFavorite(variation.id)
                 }}
                 className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white transition-colors"
+                aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
               >
                 {isFavorite ? (
                   <RiHeartFill className="w-5 h-5 text-rose-500" />
