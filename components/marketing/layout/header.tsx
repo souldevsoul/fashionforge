@@ -46,29 +46,29 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     }, [])
 
     const headerBg = transparent && !scrolled
-      ? "bg-transparent"
-      : "bg-white border-b-4 border-black"
+      ? "bg-white/80 backdrop-blur-md"
+      : "bg-white/95 backdrop-blur-md shadow-sm"
 
     return (
       <header
         ref={ref}
         className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-300",
+          "sticky top-0 z-50 w-full transition-all duration-300 border-b border-gray-200",
           headerBg,
           className
         )}
         {...props}
       >
         <Container maxWidth="xl">
-          <nav className="flex items-center justify-between h-20">
+          <nav className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               {logo || (
                 <>
-                  <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-purple">
-                    <RiShirtLine className="w-7 h-7 text-purple-400" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-md">
+                    <RiShirtLine className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-xl font-bold uppercase tracking-tight">{logoText}</span>
+                  <span className="text-xl font-bold tracking-tight">{logoText}</span>
                 </>
               )}
             </a>
@@ -79,7 +79,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                 <a
                   key={index}
                   href={link.href}
-                  className="text-sm font-bold uppercase tracking-wider hover:text-purple-400 transition-colors"
+                  className="text-sm font-semibold text-gray-700 hover:text-purple-600 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -89,22 +89,19 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
             {/* CTA Button */}
             <div className="hidden md:flex items-center gap-4">
               {ctaButton && (
-                <button
+                <a
+                  href={ctaButton.href}
                   onClick={ctaButton.onClick}
-                  className="bg-purple-400 text-black hover:bg-purple-300 border-4 border-black font-bold uppercase px-6 py-2 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-purple-700 hover:to-pink-700 transition-all"
                 >
-                  {ctaButton.href ? (
-                    <a href={ctaButton.href}>{ctaButton.text}</a>
-                  ) : (
-                    ctaButton.text
-                  )}
-                </button>
+                  {ctaButton.text}
+                </a>
               )}
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2"
+              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -118,32 +115,29 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t-4 border-black py-4">
-              <div className="flex flex-col gap-4">
+            <div className="md:hidden border-t border-gray-200 py-4 bg-white">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
-                    className="text-sm font-bold uppercase tracking-wider hover:text-purple-400 transition-colors py-2"
+                    className="text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors py-3 px-4 rounded-lg"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
                   </a>
                 ))}
                 {ctaButton && (
-                  <button
-                    className="bg-purple-400 text-black hover:bg-purple-300 border-4 border-black font-bold uppercase px-6 py-3 transition-colors w-full"
+                  <a
+                    href={ctaButton.href}
+                    className="mt-2 inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
                     onClick={() => {
                       ctaButton.onClick?.()
                       setMobileMenuOpen(false)
                     }}
                   >
-                    {ctaButton.href ? (
-                      <a href={ctaButton.href}>{ctaButton.text}</a>
-                    ) : (
-                      ctaButton.text
-                    )}
-                  </button>
+                    {ctaButton.text}
+                  </a>
                 )}
               </div>
             </div>

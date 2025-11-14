@@ -39,70 +39,70 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const sizeConfig = sizeMap[size]
 
-    // Custom variant styles - Brutalist Black/White/Yellow
+    // Custom variant styles - Fashion-forward Purple/Pink Gradients
     const variantStyles = {
       primary: {
         variant: 'filled' as const,
-        color: 'yellow',
+        color: 'violet',
         style: {
-          backgroundColor: '#EAB308',
-          color: '#000000',
-          borderWidth: 4,
-          borderColor: '#000000',
-          fontWeight: 700,
-          textTransform: 'uppercase' as const,
+          background: 'linear-gradient(to right, #9333EA, #EC4899)',
+          color: '#FFFFFF',
+          borderWidth: 0,
+          fontWeight: 600,
+          borderRadius: '0.5rem',
+          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
         },
       },
       secondary: {
         variant: 'outline' as const,
-        color: 'dark',
+        color: 'gray',
         style: {
-          borderWidth: 4,
-          borderColor: '#000000',
-          color: '#000000',
+          borderWidth: 2,
+          borderColor: '#D1D5DB',
+          color: '#111827',
           backgroundColor: '#FFFFFF',
-          fontWeight: 700,
-          textTransform: 'uppercase' as const,
+          fontWeight: 600,
+          borderRadius: '0.5rem',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         },
       },
       outline: {
         variant: 'outline' as const,
-        color: 'dark',
+        color: 'gray',
         style: {
-          borderWidth: 4,
-          borderColor: '#000000',
-          color: '#000000',
-          fontWeight: 700,
-          textTransform: 'uppercase' as const,
+          borderWidth: 2,
+          borderColor: '#D1D5DB',
+          color: '#111827',
+          fontWeight: 600,
+          borderRadius: '0.5rem',
         },
       },
       ghost: {
         variant: 'subtle' as const,
-        color: 'dark',
+        color: 'gray',
         style: {
-          borderWidth: 4,
-          borderColor: 'transparent',
-          fontWeight: 700,
-          textTransform: 'uppercase' as const,
+          borderWidth: 0,
+          fontWeight: 600,
+          borderRadius: '0.5rem',
         },
       },
       destructive: {
         variant: 'filled' as const,
         color: 'red',
         style: {
-          borderWidth: 4,
-          borderColor: '#000000',
-          fontWeight: 700,
-          textTransform: 'uppercase' as const,
+          borderWidth: 0,
+          fontWeight: 600,
+          borderRadius: '0.5rem',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         },
       },
       link: {
         variant: 'transparent' as const,
-        color: 'dark',
+        color: 'violet',
         style: {
           textDecoration: 'underline',
           textUnderlineOffset: 4,
-          fontWeight: 700,
+          fontWeight: 600,
         },
       },
     }
@@ -113,10 +113,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (asChild && React.isValidElement(children)) {
       return React.cloneElement(children as React.ReactElement<any>, {
         className: cn(
-          "inline-flex items-center justify-center gap-2 font-bold transition-all duration-200",
-          "hover:scale-[1.02] active:scale-[0.98]",
-          "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-400 focus-visible:ring-offset-2",
-          variant === 'primary' && "bg-purple-400 text-black border-4 border-black uppercase",
+          "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200",
+          "hover:shadow-xl active:scale-[0.98]",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-600 focus-visible:ring-offset-2",
+          variant === 'primary' && "bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg shadow-lg",
           className,
           (children as any).props.className
         ),
@@ -141,11 +141,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         rightSection={rightIcon}
         className={cn(
           // Base styles
-          "font-bold transition-all duration-200",
+          "font-semibold transition-all duration-200",
           // Hover effects
-          "hover:scale-[1.02] active:scale-[0.98]",
-          // Focus styles - Yellow ring for brutalist design
-          "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-400 focus-visible:ring-offset-2",
+          "hover:shadow-xl active:scale-[0.98]",
+          // Focus styles - Purple ring for fashion design
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-600 focus-visible:ring-offset-2",
           className
         )}
         styles={{
