@@ -12,17 +12,11 @@ import {
   RiPaletteLine,
   RiFlashlightLine,
   RiShieldCheckLine,
-  RiGlobalLine,
-  RiShirtLine,
   RiArrowRightLine,
   RiPlayCircleLine,
   RiCheckLine,
-  RiCloseLine,
-  RiStarFill,
-  RiLineChartLine,
-  RiUserLine,
   RiImageEditLine,
-  RiTimerLine,
+  RiShirtLine,
 } from "react-icons/ri"
 
 export default function Home() {
@@ -157,72 +151,180 @@ export default function Home() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1558769132-cb1aea1f19c5?w=1920&q=80"
-            alt="Fashion background"
-            className="w-full h-full object-cover"
-          />
-          {/* Gradient overlay with purple/pink tones */}
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-pink-900/60 to-purple-900/80" />
-        </div>
+      {/* Hero Section - Editorial Fashion Magazine Layout */}
+      <section className="relative overflow-hidden bg-white">
+        <div className="max-w-[1600px] mx-auto">
+          {/* Magazine-style grid layout */}
+          <div className="grid lg:grid-cols-2 min-h-screen">
 
-        <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-          <div className="text-center space-y-8">
-            {/* Badge */}
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-              <RiSparklingLine className="w-5 h-5 text-purple-300" />
-              <Text variant="body-sm" className="font-semibold text-white">AI-Powered Fashion Design Studio</Text>
+            {/* LEFT: Editorial Content - Fashion Magazine Style */}
+            <div className="relative flex flex-col justify-center px-8 md:px-16 py-20 lg:py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-white">
+              {/* Vogue-style top badge */}
+              <div className={`mb-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
+                <div className="inline-block">
+                  <div className="text-xs tracking-[0.3em] text-purple-600 font-bold mb-2">SPRING/SUMMER 2025</div>
+                  <div className="h-px w-24 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                </div>
+              </div>
+
+              {/* Editorial Typography - Like Vogue/Harper's Bazaar */}
+              <div className="space-y-6 mb-10">
+                <h1 className={`font-serif ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.9] mb-4">
+                    <span className="italic text-gray-900">Design</span>
+                  </div>
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.9] mb-4">
+                    <span className="font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">Without</span>
+                  </div>
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.9]">
+                    <span className="italic text-gray-900">Limits</span>
+                  </div>
+                </h1>
+
+                {/* Subtitle - Editorial style */}
+                <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
+                  <p className="text-lg md:text-xl text-gray-700 max-w-xl font-light leading-relaxed border-l-2 border-purple-500 pl-6">
+                    AI-powered atelier transforming sketches into haute couture.
+                    From concept to runway in moments.
+                  </p>
+                </div>
+              </div>
+
+              {/* Stats - Fashion Week Style */}
+              <div className={`grid grid-cols-3 gap-6 mb-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
+                <div className="border-l-2 border-purple-500 pl-4">
+                  <div className="text-3xl font-bold text-purple-600">10K+</div>
+                  <div className="text-xs tracking-wider text-gray-600 uppercase mt-1">Designs</div>
+                </div>
+                <div className="border-l-2 border-pink-500 pl-4">
+                  <div className="text-3xl font-bold text-pink-600">5min</div>
+                  <div className="text-xs tracking-wider text-gray-600 uppercase mt-1">Avg Time</div>
+                </div>
+                <div className="border-l-2 border-purple-500 pl-4">
+                  <div className="text-3xl font-bold text-purple-600">AI</div>
+                  <div className="text-xs tracking-wider text-gray-600 uppercase mt-1">Powered</div>
+                </div>
+              </div>
+
+              {/* CTA Buttons - Minimalist Editorial */}
+              <div className={`flex flex-col sm:flex-row gap-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '800ms' }}>
+                <button
+                  onClick={() => window.location.href = '/dashboard'}
+                  className="group relative px-8 py-4 bg-gray-900 text-white font-medium tracking-wider text-sm uppercase overflow-hidden transition-all hover:bg-purple-600"
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Start Creating
+                    <RiArrowRightLine className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                </button>
+                <button
+                  onClick={() => window.location.href = '/demo'}
+                  className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-medium tracking-wider text-sm uppercase hover:bg-gray-900 hover:text-white transition-all flex items-center justify-center gap-2"
+                >
+                  <RiPlayCircleLine className="w-5 h-5" />
+                  View Collections
+                </button>
+              </div>
+
+              {/* Bottom decorative line */}
+              <div className={`mt-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1000ms' }}>
+                <div className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-2">Featured In</div>
+                <div className="flex gap-4 text-gray-400">
+                  <span className="text-sm font-light">Vogue</span>
+                  <span className="text-sm font-light">•</span>
+                  <span className="text-sm font-light">Elle</span>
+                  <span className="text-sm font-light">•</span>
+                  <span className="text-sm font-light">Harper's Bazaar</span>
+                </div>
+              </div>
             </div>
 
-            {/* Big Revealing Text */}
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className={`block transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-white">From</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Sketch</span>
-                </span>
-                <span className={`block transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-white">to</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Runway</span>
-                </span>
-                <span className={`block transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-white">in</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Seconds</span>
-                </span>
-              </h1>
+            {/* RIGHT: Fashion Design Showcase - Mood Board Style */}
+            <div className="relative bg-gray-900 flex items-center justify-center p-8 lg:p-12">
+              {/* Mood board grid - design sketches to 3D */}
+              <div className="relative w-full h-full max-w-2xl">
+
+                {/* Main featured design - rotated slightly like a polaroid */}
+                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] ${isVisible ? 'animate-sophisticated-scale' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
+                  <div className="relative bg-white p-4 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-pink-100 relative overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80"
+                        alt="AI Fashion Design"
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Sketch overlay effect */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent"></div>
+                    </div>
+                    {/* Polaroid caption */}
+                    <div className="mt-3 text-center font-handwriting text-gray-700 text-sm">
+                      Sketch → 3D in seconds
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating fabric swatches - top left */}
+                <div className={`absolute top-8 left-8 ${isVisible ? 'animate-float' : 'opacity-0'}`} style={{ animationDelay: '500ms' }}>
+                  <div className="bg-white p-3 shadow-lg transform -rotate-6">
+                    <div className="flex gap-2">
+                      <div className="w-12 h-12 bg-purple-500 rounded-sm"></div>
+                      <div className="w-12 h-12 bg-pink-500 rounded-sm"></div>
+                      <div className="w-12 h-12 bg-purple-300 rounded-sm"></div>
+                    </div>
+                    <div className="text-[10px] text-gray-600 mt-2 tracking-wider">COLOR PALETTE</div>
+                  </div>
+                </div>
+
+                {/* Fashion sketch card - top right */}
+                <div className={`absolute top-12 right-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '700ms' }}>
+                  <div className="bg-white/90 backdrop-blur-sm p-4 shadow-xl transform rotate-3 w-32">
+                    <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 relative">
+                      <RiPaintBrushLine className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-purple-400" />
+                    </div>
+                    <div className="text-[9px] text-gray-600 mt-2 tracking-wider uppercase">Sketch Mode</div>
+                  </div>
+                </div>
+
+                {/* Design specs card - bottom left */}
+                <div className={`absolute bottom-16 left-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '900ms' }}>
+                  <div className="bg-white/95 backdrop-blur-sm p-4 shadow-xl transform -rotate-3 w-40">
+                    <div className="text-[10px] tracking-[0.2em] text-purple-600 font-bold mb-2">TECH SPECS</div>
+                    <div className="space-y-1 text-[9px] text-gray-600">
+                      <div className="flex justify-between">
+                        <span>FABRIC</span>
+                        <span className="font-medium">Silk</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>CUT</span>
+                        <span className="font-medium">Tailored</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>STYLE</span>
+                        <span className="font-medium">Couture</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI badge - bottom right */}
+                <div className={`absolute bottom-8 right-12 ${isVisible ? 'animate-pulse' : 'opacity-0'}`} style={{ animationDelay: '1100ms' }}>
+                  <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <RiSparklingLine className="w-4 h-4" />
+                      <span className="text-xs font-bold tracking-wider">AI POWERED</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative corner marks - like a design template */}
+                <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-purple-400"></div>
+                <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-pink-400"></div>
+                <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-pink-400"></div>
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-purple-400"></div>
+              </div>
             </div>
 
-            {/* Subtitle */}
-            <div className={`transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <Text variant="lead" className="text-purple-100 max-w-3xl mx-auto text-lg md:text-xl">
-                Transform sketches into professional fashion designs. Create apparel mockups, try-on visualizations, and export ready-to-produce designs with AI.
-              </Text>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className={`flex flex-wrap justify-center gap-4 pt-4 transition-all duration-700 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <Button
-                size="xl"
-                className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 border-0 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all px-8 py-6"
-                onClick={() => window.location.href = '/dashboard'}
-              >
-                <RiArrowRightLine className="w-5 h-5" />
-                Start Designing Free
-              </Button>
-              <Button
-                size="xl"
-                variant="secondary"
-                className="gap-2 bg-white text-gray-900 hover:bg-gray-50 border border-gray-300 font-semibold rounded-lg shadow-md hover:shadow-lg transition-all px-8 py-6"
-                onClick={() => window.location.href = '/demo'}
-              >
-                <RiPlayCircleLine className="w-5 h-5" />
-                Watch Demo
-              </Button>
-            </div>
           </div>
         </div>
       </section>

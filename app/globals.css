@@ -84,6 +84,8 @@
   --font-display: 'Stack Sans Headline', system-ui, -apple-system, sans-serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: "SF Mono", "Monaco", "Menlo", monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-handwriting: 'Caveat', cursive;
 
   /* Type Scale */
   --text-display: 5rem;        /* 80px */
@@ -163,6 +165,71 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.02em;
+}
+
+/* Fashion Editorial Typography */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Editorial design utilities */
+.editorial-line {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.editorial-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #A855F7, #EC4899);
+}
+
+/* Mood board card styles */
+.mood-card {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-5px) rotate(0deg) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Fashion corner marks */
+.corner-marks {
+  position: relative;
+}
+
+.corner-marks::before,
+.corner-marks::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.corner-marks::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.corner-marks::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
 }
 
 /* Typography Utilities */
@@ -261,6 +328,77 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes elegantSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes sophisticatedScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sketchDraw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes polaroidRotate {
+  0% {
+    transform: rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(2deg) scale(1);
+    opacity: 1;
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out;
@@ -292,6 +430,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-wave {
   animation: wave 1s ease-in-out infinite;
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s linear infinite;
+}
+
+.animate-elegant-slide-up {
+  animation: elegantSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-sophisticated-scale {
+  animation: sophisticatedScale 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-sketch-draw {
+  animation: sketchDraw 2s ease-out forwards;
+}
+
+.animate-polaroid-rotate {
+  animation: polaroidRotate 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 /* Hover Effects */
