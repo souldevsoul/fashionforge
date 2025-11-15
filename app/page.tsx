@@ -158,36 +158,47 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50 min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1558769132-cb1aea1f19c5?w=1920&q=80"
+            alt="Fashion background"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay with purple/pink tones */}
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-pink-900/60 to-purple-900/80" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
           <div className="text-center space-y-8">
             {/* Badge */}
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 rounded-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-              <RiSparklingLine className="w-5 h-5 text-purple-600" />
-              <Text variant="body-sm" className="font-semibold text-purple-800">AI-Powered Fashion Design Studio</Text>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+              <RiSparklingLine className="w-5 h-5 text-purple-300" />
+              <Text variant="body-sm" className="font-semibold text-white">AI-Powered Fashion Design Studio</Text>
             </div>
 
             {/* Big Revealing Text */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
                 <span className={`block transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-gray-900">From</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Sketch</span>
+                  <span className="text-white">From</span>{" "}
+                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Sketch</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-gray-900">to</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Runway</span>
+                  <span className="text-white">to</span>{" "}
+                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Runway</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-gray-900">in</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Seconds</span>
+                  <span className="text-white">in</span>{" "}
+                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Seconds</span>
                 </span>
               </h1>
             </div>
 
             {/* Subtitle */}
             <div className={`transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <Text variant="lead" className="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl">
+              <Text variant="lead" className="text-purple-100 max-w-3xl mx-auto text-lg md:text-xl">
                 Transform sketches into professional fashion designs. Create apparel mockups, try-on visualizations, and export ready-to-produce designs with AI.
               </Text>
             </div>
